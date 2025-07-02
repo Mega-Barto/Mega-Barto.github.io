@@ -19,9 +19,12 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap",
   },
 ];
+
+// Import Header and Footer components
+import { Header, Footer } from "./components";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,11 +32,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              body {
+                font-family: 'Ubuntu', system-ui, sans-serif;
+              }
+            `
+          }}
+        />
         <Meta />
         <Links />
       </head>
       <body>
-        {children}
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
