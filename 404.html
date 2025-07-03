@@ -4,19 +4,26 @@
     <meta charset="utf-8">
     <title>Mega-Barto</title>
     <script type="text/javascript">
-      // Configuración de redirección para SPA en GitHub Pages
-      // Guarda la URL actual
-      var pathSegments = window.location.pathname.split('/');
-      var repositoryName = pathSegments[1]; // Para mega-barto.github.io, este valor será vacío
-      
-      var redirectTo = window.location.origin + 
-        (repositoryName ? '/' + repositoryName : '') + 
-        '/?path=' + 
-        window.location.pathname.replace(/^\/[^\/]+/, '').replace(/&/g, '~and~') + 
-        (window.location.search ? '&' + window.location.search.slice(1).replace(/&/g, '~and~') : '') + 
-        window.location.hash;
-      
-      window.location.replace(redirectTo);
+      // Evitar redireccionamiento si ya estamos en la página principal con el parámetro path
+      if (window.location.search.includes('?path=')) {
+        window.location.href = window.location.origin;
+      } else {
+        // Configuración de redirección para SPA en GitHub Pages
+        var segmentCount = 0;
+        // Si es un sitio de proyecto (username.github.io/repo), segmentCount = 1
+        var l = window.location;
+        
+        // Solo redirigir si no estamos en la raíz
+        if (l.pathname !== '/' && !l.pathname.includes('/index.html')) {
+          l.replace(
+            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?path=' +
+            l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+            l.hash
+          );
+        }
+      }
     </script>
   </head>
   <body>
