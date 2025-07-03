@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mega-Barto</title>
+    <script type="text/javascript">
+      // Configuración de redirección para SPA en GitHub Pages
+      // Guarda la URL actual
+      var pathSegments = window.location.pathname.split('/');
+      var repositoryName = pathSegments[1]; // Para mega-barto.github.io, este valor será vacío
+      
+      var redirectTo = window.location.origin + 
+        (repositoryName ? '/' + repositoryName : '') + 
+        '/?path=' + 
+        window.location.pathname.replace(/^\/[^\/]+/, '').replace(/&/g, '~and~') + 
+        (window.location.search ? '&' + window.location.search.slice(1).replace(/&/g, '~and~') : '') + 
+        window.location.hash;
+      
+      window.location.replace(redirectTo);
+    </script>
+  </head>
+  <body>
+    Redireccionando...
+  </body>
+</html>
