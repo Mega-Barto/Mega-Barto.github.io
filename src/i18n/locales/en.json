@@ -61,9 +61,9 @@
     "domain": "megabarto.rocks"
   },
   "autobiography": {
-    "introduction": "Hello! I'm MegaBarto, a passionate Systems and Computer Engineer with a love for technology and innovation.",
-    "background": "With years of experience in software development, I specialize in creating efficient solutions and exploring cutting-edge technologies.",
-    "current": "Currently, I'm focused on web development, cloud computing, and sharing knowledge through my blog and projects."
+  "introduction": "Hello! I’m Juan Alejandro Pérez Bermúdez (or Barto, as friends call me), a Systems and Computing Engineer eager to gain professional experience in software projects.",
+  "background": "In my current role as a web developer, I have gained experience with technologies such as React and FastAPI, deployments on Ubuntu/Digital Ocean, and cross-platform development using Unity.",
+  "current": "At present, I work in web development, software quality, and building tech community engagement."
   },
   "projects": {
     "portfolio": {

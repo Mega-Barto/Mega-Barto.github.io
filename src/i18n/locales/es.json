@@ -61,9 +61,9 @@
     "domain": "megabarto.rocks"
   },
   "autobiography": {
-    "introduction": "¡Hola! Soy MegaBarto, un apasionado Ingeniero en Sistemas y Computación con amor por la tecnología y la innovación.",
-    "background": "Con años de experiencia en desarrollo de software, me especializo en crear soluciones eficientes y explorar tecnologías de vanguardia.",
-    "current": "Actualmente, me enfoco en desarrollo web, computación en la nube y compartir conocimiento a través de mi blog y proyectos."
+    "introduction": "¡Hola! Soy Juan Alejandro Pérez Bermúdez (o Barto para los amigos), un Ingeniero en Sistemas y Computación con gran interés en adquirir experiencia profesional en proyectos de software.",
+    "background": "En mi trabajo actual como desarrollador web, he adquirido experiencia en tecnologias como React y FastAPI, despliegues en Ubuntu/Digital Ocean y desarrollo cross-platform con Unity.",
+    "current": "Actualmente, me desenvuelvo en desarrollo web, la calidad de software y la generación de comunidad alrededor del entorno tech."
   },
   "projects": {
     "portfolio": {

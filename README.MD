@@ -72,7 +72,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-This portfolio is a showcase of my professional skills and technical expertise, built using cutting-edge technologies such as React, TypeScript, TailwindCSS, Vite, and Bun. 
+This portfolio is a showcase of my professional skills and technical expertise, built using cutting-edge technologies such as React, TypeScript, Vite, and Bun. 
 
 The main goal of this project is to highlight my capabilities as a professional, demonstrating my ability to create modern and efficient web applications. Through this webpage, I aim to provide potential employers and collaborators with a comprehensive view of my work and the value I can bring to their projects.
 
@@ -83,7 +83,6 @@ The main goal of this project is to highlight my capabilities as a professional,
 [![Notion][Notion.so]][Notion-url]
 [![React][React.js]][React-url]
 [![TypeScript][TypeScript.js]][TypeScript-url]
-[![TailwindCSS][TailwindCSS.js]][TailwindCSS-url]
 [![Vite][Vite.js]][Vite-url]
 [![Bun][Bun.js]][Bun-url]
 
@@ -188,8 +187,6 @@ Project Link: [https://github.com/mega-barto/mega-barto.github.io](https://githu
 [React-url]: https://reactjs.org/
 [TypeScript.js]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
 [TypeScript-url]: https://www.typescriptlang.org/
-[TailwindCSS.js]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-[TailwindCSS-url]: https://tailwindcss.com/
 [Vite.js]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
 [Vite-url]: https://vitejs.dev/
 [Bun.js]: https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white

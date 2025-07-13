@@ -20,7 +20,7 @@ const ProjectsSection: React.FC = () => {
       id: '1',
       title: t('projects.portfolio.title'),
       description: t('projects.portfolio.description'),
-      technologies: ['React', 'TypeScript', 'Vite', 'CSS3'],
+      technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
       github: 'https://github.com/Mega-Barto/Mega-Barto.github.io',
       status: 'in-progress'
     },
@@ -29,7 +29,7 @@ const ProjectsSection: React.FC = () => {
       title: t('projects.project2.title'),
       description: t('projects.project2.description'),
       technologies: ['Node.js', 'Express', 'MongoDB'],
-      status: 'completed'
+      status: 'planned'
     },
     {
       id: '3',
