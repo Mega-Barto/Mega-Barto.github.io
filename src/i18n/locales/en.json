@@ -48,7 +48,7 @@
   },
   "home": {
     "hero": {
-      "welcome": "Welcome to {{name}}!",
+      "welcome": "Welcome to MegaBarto's Portfolio!",
       "description": "{{description}}"
     }
   },
