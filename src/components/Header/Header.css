@@ -292,7 +292,21 @@
   transform: scale(1.1);
 }
 
-/* Responsive Design */
+/* Language Toggle in Header */
+.header-language-toggle {
+  flex-shrink: 0;
+}
+
+/* Mobile Language Section */
+.mobile-language {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .header-container {
     padding: 1rem;
@@ -325,6 +339,10 @@
   .logo-text {
     font-size: 1.2rem;
   }
+  
+  .header-language-toggle {
+    display: none; /* Hide in desktop header on tablet */
+  }
 }
 
 @media (max-width: 480px) {
@@ -350,6 +368,10 @@
   
   .logo-text {
     font-size: 1rem;
+  }
+  
+  .header-language-toggle {
+    display: none; /* Hide in desktop header on mobile */
   }
 }
 

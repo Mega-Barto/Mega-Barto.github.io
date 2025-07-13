@@ -85,7 +85,7 @@ export const PERSONAL_INFO = {
   name: 'MegaBarto',
   displayName: 'MegaBarto',
   companyName: 'Bartland Labs',
-  logoUrlk: '/logo.png',
-  description: 'Desarrollador apasionado por crear soluciones innovadoras y experiencias digitales excepcionales.',
+  logoUrl: '/logo.png',
+  description: 'Ingeniero en sistemas y computación.',
   domain: 'megabarto.rocks'
 } as const;

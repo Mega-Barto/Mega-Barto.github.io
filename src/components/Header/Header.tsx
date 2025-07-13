@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Header.css';
 import { FaRocket } from 'react-icons/fa';
-import { getActiveSocialLinks, PERSONAL_INFO } from '../../config';
+import { getActiveSocialLinks } from '../../config';
+import LanguageToggle from '../LanguageToggle';
 
 interface HeaderProps {
   className?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ className = '' }) => {
+  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const navigationItems = [
-    { label: 'Inicio', href: '#home' },
-    { label: 'Proyectos', href: '#projects' },
-    { label: 'Sobre mí', href: '#about' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'Contacto', href: '#contact' }
+    { label: t('header.navigation.home'), href: '#home' },
+    { label: t('header.navigation.projects'), href: '#projects' },
+    { label: t('header.navigation.about'), href: '#about' },
+    { label: t('header.navigation.blog'), href: '#blog' },
+    { label: t('header.navigation.contact'), href: '#contact' }
   ];
 
   // Obtener enlaces sociales activos desde la configuración centralizada
@@ -38,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             <div className="logo-icon">
               <FaRocket />
             </div>
-            <span className="logo-text">{PERSONAL_INFO.displayName}</span>
+            <span className="logo-text">{t('personal.displayName')}</span>
           </a>
         </div>
 
@@ -76,11 +79,14 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           })}
         </div>
 
+        {/* Language Toggle */}
+        <LanguageToggle className="header-language-toggle" />
+
         {/* Mobile Menu Toggle */}
         <button 
           className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={toggleMobileMenu}
-          aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={isMobileMenuOpen ? t('header.accessibility.closeMenu') : t('header.accessibility.openMenu')}
           aria-expanded={isMobileMenuOpen}
         >
           <span className="hamburger-line"></span>
@@ -120,6 +126,9 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   </a>
                 );
               })}
+            </div>
+            <div className="mobile-language">
+              <LanguageToggle showText={true} />
             </div>
           </div>
         </div>

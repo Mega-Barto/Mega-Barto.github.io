@@ -1,0 +1,66 @@
+{
+  "header": {
+    "navigation": {
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "about": "Sobre mí",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "accessibility": {
+      "openMenu": "Abrir menú",
+      "closeMenu": "Cerrar menú",
+      "toggleLanguage": "Cambiar idioma"
+    }
+  },
+  "footer": {
+    "sections": {
+      "navigation": {
+        "title": "Navegación",
+        "home": "Inicio",
+        "projects": "Proyectos",
+        "about": "Sobre mí",
+        "blog": "Blog"
+      },
+      "resources": {
+        "title": "Recursos",
+        "github": "GitHub",
+        "documentation": "Documentación",
+        "tutorials": "Tutoriales",
+        "faq": "FAQ"
+      }
+    },
+    "social": {
+      "github": "Sígueme en GitHub",
+      "linkedin": "Conecta conmigo en LinkedIn",
+      "twitter": "Sígueme en Twitter",
+      "email": "Envíame un email",
+      "instagram": "Sígueme en Instagram",
+      "youtube": "Suscríbete a mi canal",
+      "discord": "Únete a mi Discord"
+    },
+    "copyright": "Todos los derechos reservados.",
+    "links": {
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "cookies": "Cookies"
+    }
+  },
+  "home": {
+    "hero": {
+      "welcome": "¡Bienvenido a {{name}}!",
+      "description": "{{description}}"
+    }
+  },
+  "personal": {
+    "name": "MegaBarto",
+    "displayName": "MegaBarto",
+    "companyName": "Bartland Labs",
+    "description": "Ingeniero en sistemas y computación.",
+    "domain": "megabarto.rocks"
+  },
+  "languages": {
+    "spanish": "Español",
+    "english": "English"
+  }
+}
