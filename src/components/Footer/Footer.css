@@ -169,3 +169,29 @@
 .footer-bottom-links .separator {
   color: rgba(75, 85, 99, 1);
 }
+
+/* Footer Love Message */
+.footer-love {
+  color: rgba(156, 163, 175, 1);
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.footer-love .source-link {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-love .source-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .footer-love {
+    text-align: left;
+  }
+}

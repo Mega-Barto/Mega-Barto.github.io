@@ -91,6 +91,16 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <p>
               © {currentYear} {t('personal.companyName')}. {t('footer.copyright')}
             </p>
+            <p className="footer-love">
+              {t('footer.madeWithLove')} • <a 
+                href="https://github.com/Mega-Barto/Mega-Barto.github.io" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="source-link"
+              >
+                {t('footer.sourceCode')}
+              </a>
+            </p>
           </div>
         </div>
       </div>
