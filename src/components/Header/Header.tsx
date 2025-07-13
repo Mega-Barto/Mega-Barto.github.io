@@ -101,7 +101,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="mobile-toggle"
+          className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={toggleMobileMenu}
           aria-label={isMobileMenuOpen ? t('header.accessibility.closeMenu') : t('header.accessibility.openMenu')}
         >
@@ -120,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 <a 
                   href={item.href} 
                   className="mobile-nav-link"
-                  onClick={item.external ? undefined : closeMobileMenu}
+                  onClick={closeMobileMenu}
                   target={item.external ? "_blank" : undefined}
                   rel={item.external ? "noopener noreferrer" : undefined}
                 >
@@ -154,6 +154,11 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           </div>
         </nav>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-overlay" onClick={closeMobileMenu}></div>
+      )}
     </header>
   );
 };
