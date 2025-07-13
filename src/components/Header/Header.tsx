@@ -14,11 +14,27 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const navigationItems = [
-    { label: t('header.navigation.home'), href: '#home' },
-    { label: t('header.navigation.projects'), href: '#projects' },
-    { label: t('header.navigation.about'), href: '#about' },
-    { label: t('header.navigation.blog'), href: '#blog' },
-    { label: t('header.navigation.contact'), href: '#contact' }
+    { 
+      label: t('header.navigation.autobiography'), 
+      href: '#autobiography',
+      id: 'autobiography' 
+    },
+    { 
+      label: t('header.navigation.blog'), 
+      href: 'https://megabarto.notion.site',
+      id: 'blog',
+      external: true 
+    },
+    { 
+      label: t('header.navigation.projects'), 
+      href: '#projects',
+      id: 'storage' 
+    },
+    { 
+      label: t('header.navigation.contact'), 
+      href: '#contact',
+      id: 'contact' 
+    }
   ];
 
   // Obtener enlaces sociales activos desde la configuración centralizada
@@ -49,8 +65,14 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         <nav className={`header-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <ul className="nav-list">
             {navigationItems.map((item) => (
-              <li key={item.label} className="nav-item">
-                <a href={item.href} className="nav-link" onClick={closeMobileMenu}>
+              <li key={item.id} className="nav-item">
+                <a 
+                  href={item.href} 
+                  className="nav-link" 
+                  onClick={item.external ? undefined : closeMobileMenu}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                >
                   {item.label}
                 </a>
               </li>
@@ -102,8 +124,14 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             <nav className="mobile-nav">
               <ul className="mobile-nav-list">
                 {navigationItems.map((item) => (
-                  <li key={item.label} className="mobile-nav-item">
-                    <a href={item.href} className="mobile-nav-link" onClick={closeMobileMenu}>
+                  <li key={item.id} className="mobile-nav-item">
+                    <a 
+                      href={item.href} 
+                      className="mobile-nav-link" 
+                      onClick={item.external ? undefined : closeMobileMenu}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}
+                    >
                       {item.label}
                     </a>
                   </li>

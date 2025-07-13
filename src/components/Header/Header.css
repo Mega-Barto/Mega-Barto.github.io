@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 /* Logo Section */
@@ -28,7 +28,7 @@
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease;
@@ -73,7 +73,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-item {
@@ -83,7 +83,7 @@
 .nav-link {
   color: rgba(255, 255, 255, 0.87);
   text-decoration: none;
-  padding: 0.5rem 1rem;
+
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   position: relative;
@@ -114,7 +114,7 @@
 /* Social Links */
 .header-social {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-shrink: 0;
 }
 
@@ -307,9 +307,10 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .header-container {
     padding: 1rem;
+    gap: 2rem;
   }
   
   .header-nav {
@@ -317,46 +318,33 @@
   }
   
   .header-social {
-    gap: 0.5rem;
-  }
-  
-  .social-link {
-    width: 2rem;
-    height: 2rem;
-  }
-  
-  .social-icon {
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
   }
   
   .mobile-menu-toggle {
     display: flex;
   }
   
-  .logo-text {
-    font-size: 1.2rem;
+  .header-language-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+    gap: 2rem;
   }
   
-  .header-language-toggle {
-    display: none; /* Hide in desktop header on tablet */
+  .logo-text {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .header-container {
-    gap: 1rem;
-  }
-  
-  .header-social {
-    gap: 0.25rem;
-  }
-  
-  .social-link {
-    width: 1.8rem;
-    height: 1.8rem;
+    gap: 1.5rem;
+    padding: 0.75rem 1rem;
   }
   
   .logo-icon {
@@ -368,10 +356,6 @@
   
   .logo-text {
     font-size: 1rem;
-  }
-  
-  .header-language-toggle {
-    display: none; /* Hide in desktop header on mobile */
   }
 }
 

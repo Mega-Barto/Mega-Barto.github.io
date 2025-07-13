@@ -1,11 +1,10 @@
 {
   "header": {
     "navigation": {
-      "home": "Home",
-      "projects": "Projects",
-      "about": "About",
-      "blog": "Blog",
-      "contact": "Contact"
+      "autobiography": "Who's Barto?",
+      "blog": "What's thinking Barto?",
+      "projects": "My Projects",
+      "contact": "Contact Me"
     },
     "accessibility": {
       "openMenu": "Open menu",
