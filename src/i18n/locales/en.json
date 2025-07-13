@@ -58,6 +58,54 @@
     "description": "Systems and Computer Engineer.",
     "domain": "megabarto.rocks"
   },
+  "autobiography": {
+    "introduction": "Hello! I'm MegaBarto, a passionate Systems and Computer Engineer with a love for technology and innovation.",
+    "background": "With years of experience in software development, I specialize in creating efficient solutions and exploring cutting-edge technologies.",
+    "current": "Currently, I'm focused on web development, cloud computing, and sharing knowledge through my blog and projects."
+  },
+  "projects": {
+    "portfolio": {
+      "title": "Personal Portfolio",
+      "description": "A modern, responsive portfolio website built with React and TypeScript, featuring internationalization and modern design patterns."
+    },
+    "project2": {
+      "title": "Web Application",
+      "description": "A full-stack web application with user authentication, real-time features, and modern architecture."
+    },
+    "project3": {
+      "title": "API Service",
+      "description": "A robust REST API service with comprehensive documentation and scalable architecture."
+    },
+    "status": {
+      "completed": "Completed",
+      "in-progress": "In Progress",
+      "planned": "Planned"
+    },
+    "links": {
+      "github": "View Code",
+      "demo": "Live Demo"
+    }
+  },
+  "contact": {
+    "info": {
+      "title": "Let's Connect!",
+      "description": "I'm always open to discussing new opportunities, collaborations, or just having a chat about technology. Feel free to reach out!"
+    },
+    "methods": {
+      "email": "Email",
+      "social": "Social Media"
+    },
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Sorry, there was an error sending your message. Please try again."
+    }
+  },
   "languages": {
     "spanish": "Español",
     "english": "English"

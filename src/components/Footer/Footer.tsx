@@ -63,11 +63,8 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={social.description}
-                    aria-label={social.description}
                   >
-                    <span className="social-icon">
-                      <IconComponent />
-                    </span>
+                    <IconComponent />
                   </a>
                 );
               })}
@@ -78,13 +75,12 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           <div className="footer-sections">
             {footerSections.map((section) => (
               <div key={section.title} className="footer-section">
-                <h3 className="section-title">{section.title}</h3>
-                <ul className="section-links">
+                <h3>{section.title}</h3>
+                <ul>
                   {section.links.map((link) => (
                     <li key={link.label}>
                       <a 
                         href={link.href}
-                        className="section-link"
                         target={link.href.startsWith('http') ? '_blank' : undefined}
                         rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       >
@@ -101,15 +97,15 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p className="copyright">
+            <p>
               © {currentYear} {t('personal.companyName')}. {t('footer.copyright')}
             </p>
             <div className="footer-bottom-links">
-              <a href="#privacy" className="bottom-link">{t('footer.links.privacy')}</a>
+              <a href="#privacy">{t('footer.links.privacy')}</a>
               <span className="separator">•</span>
-              <a href="#terms" className="bottom-link">{t('footer.links.terms')}</a>
+              <a href="#terms">{t('footer.links.terms')}</a>
               <span className="separator">•</span>
-              <a href="#cookies" className="bottom-link">{t('footer.links.cookies')}</a>
+              <a href="#cookies">{t('footer.links.cookies')}</a>
             </div>
           </div>
         </div>

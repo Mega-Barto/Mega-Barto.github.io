@@ -20,23 +20,18 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       id: 'autobiography' 
     },
     { 
-      label: t('header.navigation.blog'), 
-      href: 'https://megabarto.notion.site',
-      id: 'blog',
-      external: true 
-    },
-    { 
       label: t('header.navigation.projects'), 
       href: '#projects',
       id: 'storage' 
     },
     { 
-      label: t('header.navigation.contact'), 
-      href: '#contact',
-      id: 'contact' 
-    }
+      label: t('header.navigation.blog'), 
+      href: 'https://megabarto.notion.site',
+      id: 'blog',
+      external: true 
+    },
   ];
-
+  
   // Obtener enlaces sociales activos desde la configuración centralizada
   const socialLinks = getActiveSocialLinks();
 
@@ -52,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     <header className={`header ${className}`}>
       <div className="header-container">
         {/* Logo Section */}
-        <div className="header-logo">
+        <div className="logo-section">
           <a href="#home" className="logo-link" onClick={closeMobileMenu}>
             <div className="logo-icon">
               <FaRocket />
@@ -61,14 +56,14 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           </a>
         </div>
 
-        {/* Navigation Menu */}
-        <nav className={`header-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+        {/* Navigation Menu - Desktop */}
+        <nav className="nav-desktop">
           <ul className="nav-list">
             {navigationItems.map((item) => (
-              <li key={item.id} className="nav-item">
+              <li key={item.id}>
                 <a 
                   href={item.href} 
-                  className="nav-link" 
+                  className="nav-link"
                   onClick={item.external ? undefined : closeMobileMenu}
                   target={item.external ? "_blank" : undefined}
                   rel={item.external ? "noopener noreferrer" : undefined}
@@ -80,8 +75,8 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           </ul>
         </nav>
 
-        {/* Social Links */}
-        <div className="header-social">
+        {/* Social Links - Desktop */}
+        <div className="social-desktop">
           {socialLinks.map((social) => {
             const IconComponent = social.icon;
             return (
@@ -93,23 +88,22 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 rel="noopener noreferrer"
                 title={social.description}
               >
-                <span className="social-icon">
-                  <IconComponent />
-                </span>
+                <IconComponent />
               </a>
             );
           })}
         </div>
 
         {/* Language Toggle */}
-        <LanguageToggle className="header-language-toggle" />
+        <div className="language-toggle">
+          <LanguageToggle />
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button 
-          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+          className="mobile-toggle"
           onClick={toggleMobileMenu}
           aria-label={isMobileMenuOpen ? t('header.accessibility.closeMenu') : t('header.accessibility.openMenu')}
-          aria-expanded={isMobileMenuOpen}
         >
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
@@ -117,50 +111,49 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="mobile-overlay" onClick={closeMobileMenu}>
-          <div className="mobile-menu">
-            <nav className="mobile-nav">
-              <ul className="mobile-nav-list">
-                {navigationItems.map((item) => (
-                  <li key={item.id} className="mobile-nav-item">
-                    <a 
-                      href={item.href} 
-                      className="mobile-nav-link" 
-                      onClick={item.external ? undefined : closeMobileMenu}
-                      target={item.external ? "_blank" : undefined}
-                      rel={item.external ? "noopener noreferrer" : undefined}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <div className="mobile-social">
-              {socialLinks.map((social) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    className="mobile-social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={social.description}
-                  >
-                    <IconComponent />
-                  </a>
-                );
-              })}
-            </div>
-            <div className="mobile-language">
-              <LanguageToggle showText={true} />
-            </div>
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <nav className="mobile-nav">
+          <ul className="mobile-nav-list">
+            {navigationItems.map((item) => (
+              <li key={item.id}>
+                <a 
+                  href={item.href} 
+                  className="mobile-nav-link"
+                  onClick={item.external ? undefined : closeMobileMenu}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          
+          {/* Mobile Social Links */}
+          <div className="mobile-social">
+            {socialLinks.map((social) => {
+              const IconComponent = social.icon;
+              return (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  className="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconComponent />
+                </a>
+              );
+            })}
           </div>
-        </div>
-      )}
+          
+          {/* Mobile Language Toggle */}
+          <div className="mobile-language">
+            <LanguageToggle showText={true} />
+          </div>
+        </nav>
+      </div>
     </header>
   );
 };

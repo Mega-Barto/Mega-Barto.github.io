@@ -58,6 +58,54 @@
     "description": "Ingeniero en sistemas y computación.",
     "domain": "megabarto.rocks"
   },
+  "autobiography": {
+    "introduction": "¡Hola! Soy MegaBarto, un apasionado Ingeniero en Sistemas y Computación con amor por la tecnología y la innovación.",
+    "background": "Con años de experiencia en desarrollo de software, me especializo en crear soluciones eficientes y explorar tecnologías de vanguardia.",
+    "current": "Actualmente, me enfoco en desarrollo web, computación en la nube y compartir conocimiento a través de mi blog y proyectos."
+  },
+  "projects": {
+    "portfolio": {
+      "title": "Portafolio Personal",
+      "description": "Un sitio web moderno y responsivo construido con React y TypeScript, con internacionalización y patrones de diseño modernos."
+    },
+    "project2": {
+      "title": "Aplicación Web",
+      "description": "Una aplicación web full-stack con autenticación de usuarios, características en tiempo real y arquitectura moderna."
+    },
+    "project3": {
+      "title": "Servicio API",
+      "description": "Un servicio REST API robusto con documentación completa y arquitectura escalable."
+    },
+    "status": {
+      "completed": "Completado",
+      "in-progress": "En Progreso",
+      "planned": "Planeado"
+    },
+    "links": {
+      "github": "Ver Código",
+      "demo": "Demo en Vivo"
+    }
+  },
+  "contact": {
+    "info": {
+      "title": "¡Conectemos!",
+      "description": "Siempre estoy abierto a discutir nuevas oportunidades, colaboraciones o simplemente charlar sobre tecnología. ¡No dudes en contactarme!"
+    },
+    "methods": {
+      "email": "Email",
+      "social": "Redes Sociales"
+    },
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Tu Email",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Gracias! Tu mensaje ha sido enviado exitosamente.",
+      "error": "Lo siento, hubo un error al enviar tu mensaje. Por favor intenta de nuevo."
+    }
+  },
   "languages": {
     "spanish": "Español",
     "english": "English"
