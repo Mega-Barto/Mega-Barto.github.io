@@ -72,17 +72,15 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
+This portfolio is a showcase of my professional skills and technical expertise, built using cutting-edge technologies such as React, TypeScript, TailwindCSS, Vite, and Bun. 
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Built in base of a modern, production-ready template for building full-stack React applications using React Router. This project contains features like server-side rendering, hot module replacement, and more.
-
-With this, I wish expose my laboral capacity.
+The main goal of this project is to highlight my capabilities as a professional, demonstrating my ability to create modern and efficient web applications. Through this webpage, I aim to provide potential employers and collaborators with a comprehensive view of my work and the value I can bring to their projects.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
+[![Notion][Notion.so]][Notion-url]
 [![React][React.js]][React-url]
 [![TypeScript][TypeScript.js]][TypeScript-url]
 [![TailwindCSS][TailwindCSS.js]][TailwindCSS-url]
@@ -196,3 +194,5 @@ Project Link: [https://github.com/mega-barto/mega-barto.github.io](https://githu
 [Vite-url]: https://vitejs.dev/
 [Bun.js]: https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white
 [Bun-url]: https://bun.sh/
+[Notion.so]: https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white
+[Notion-url]: https://notion.so/
