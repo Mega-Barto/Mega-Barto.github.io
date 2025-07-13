@@ -15,7 +15,6 @@ interface Project {
 const ProjectsSection: React.FC = () => {
   const { t } = useTranslation();
 
-  // Mock projects - estas podrían venir de una API o archivo de configuración
   const projects: Project[] = [
     {
       id: '1',

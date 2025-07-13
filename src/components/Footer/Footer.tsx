@@ -19,18 +19,9 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
         { label: t('footer.sections.navigation.home'), href: '#home' },
         { label: t('footer.sections.navigation.projects'), href: '#projects' },
         { label: t('footer.sections.navigation.about'), href: '#about' },
-        { label: t('footer.sections.navigation.blog'), href: '#blog' }
+        { label: t('footer.sections.navigation.blog'), href: 'https://megabarto.notion.site/' }
       ]
     },
-    {
-      title: t('footer.sections.resources.title'),
-      links: [
-        { label: t('footer.sections.resources.github'), href: 'https://github.com/Mega-Barto' },
-        { label: t('footer.sections.resources.documentation'), href: '#docs' },
-        { label: t('footer.sections.resources.tutorials'), href: '#tutorials' },
-        { label: t('footer.sections.resources.faq'), href: '#faq' }
-      ]
-    }
   ];
 
   // Obtener enlaces sociales activos desde la configuración centralizada
@@ -100,13 +91,6 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <p>
               © {currentYear} {t('personal.companyName')}. {t('footer.copyright')}
             </p>
-            <div className="footer-bottom-links">
-              <a href="#privacy">{t('footer.links.privacy')}</a>
-              <span className="separator">•</span>
-              <a href="#terms">{t('footer.links.terms')}</a>
-              <span className="separator">•</span>
-              <a href="#cookies">{t('footer.links.cookies')}</a>
-            </div>
           </div>
         </div>
       </div>
