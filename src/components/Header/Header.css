@@ -29,7 +29,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .nav-desktop {
     display: block;
   }
@@ -91,7 +91,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .language-toggle {
     display: block;
   }
@@ -102,16 +102,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  gap: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  gap: 0.3rem;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease;
 }
 
-@media (min-width: 768px) {
+.mobile-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 1024px) {
   .mobile-toggle {
     display: none;
   }
@@ -120,14 +126,15 @@
 .hamburger-line {
   display: block;
   width: 100%;
-  height: 2px;
+  height: 2.5px;
   background-color: white;
   transition: all 0.3s ease;
   transform-origin: center;
+  border-radius: 1px;
 }
 
 .mobile-toggle.active .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translate(0.375rem, 0.375rem);
+  transform: rotate(45deg) translate(0.5rem, 0.5rem);
 }
 
 .mobile-toggle.active .hamburger-line:nth-child(2) {
@@ -135,7 +142,7 @@
 }
 
 .mobile-toggle.active .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translate(0.375rem, -0.375rem);
+  transform: rotate(-45deg) translate(0.5rem, -0.5rem);
 }
 
 /* Mobile Menu */
@@ -155,14 +162,14 @@
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .mobile-menu {
     display: none !important;
   }
 }
 
 .mobile-nav {
-  padding: 1rem;
+  padding: 1.5rem;
   max-height: calc(100vh - 100px);
   overflow-y: auto;
 }
@@ -173,7 +180,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .mobile-nav-link {
@@ -181,10 +188,17 @@
   color: white;
   text-decoration: none;
   transition: color 0.3s;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.3);
 }
 
 .mobile-nav-link:hover {
   color: #60a5fa;
+  background-color: rgba(96, 165, 250, 0.1);
+  border-radius: 0.375rem;
+  padding-left: 0.5rem;
 }
 
 .mobile-social {
@@ -218,7 +232,7 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .mobile-overlay {
     display: block;
   }

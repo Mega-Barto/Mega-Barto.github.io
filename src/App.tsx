@@ -1,7 +1,7 @@
 import './App.css'
 import { useTranslation } from 'react-i18next'
 import { Header, Footer } from './components'
-import { AutobiographySection, ProjectsSection } from './components/sections'
+import { AutobiographySection, ProjectsSection, CertificatesSection } from './components/sections'
 
 function App() {
   const { t } = useTranslation();
@@ -18,6 +18,7 @@ function App() {
         </section>
         <AutobiographySection />
         <ProjectsSection />
+        <CertificatesSection />
       </main>
       <Footer />
     </div>

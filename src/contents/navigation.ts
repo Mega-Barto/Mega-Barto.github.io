@@ -16,7 +16,12 @@ export const getNavigationItems = (t: TFunction): NavigationItem[] => [
   { 
     label: t('header.navigation.projects'), 
     href: '#projects',
-    id: 'storage' 
+    id: 'projects' 
+  },
+  { 
+    label: t('header.navigation.certificates'), 
+    href: '#certificates',
+    id: 'certificates' 
   },
   { 
     label: t('header.navigation.blog'), 

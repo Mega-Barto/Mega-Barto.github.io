@@ -4,6 +4,7 @@
       "autobiography": "Who's Barto?",
       "blog": "What's thinking Barto?",
       "projects": "My Projects",
+      "certificates": "My Certificates",
       "contact": "Contact Me",
       "cv": "CV"
     },
@@ -19,6 +20,7 @@
         "title": "Navigation",
         "home": "Home",
         "projects": "Projects",
+        "certificates": "Certificates",
         "about": "About",
         "blog": "Blog"
       },
@@ -28,6 +30,10 @@
         "documentation": "Documentation",
         "tutorials": "Tutorials",
         "faq": "FAQ"
+      },
+      "certificates": {
+        "title": "Certificates",
+        "view": "View Certificate"
       }
     },
     "social": {
@@ -85,6 +91,25 @@
     "links": {
       "github": "View Code",
       "demo": "Live Demo"
+    }
+  },
+  "certificates": {
+    "academyLabel": "Academy",
+    "verificationCode": "Verification Code",
+    "react": {
+      "title": "Professional React Course",
+      "academy": "Platzi",
+      "dateObtained": "February 2024"
+    },
+    "typescript": {
+      "title": "TypeScript: Configuration and Fundamentals",
+      "academy": "Platzi",
+      "dateObtained": "January 2024"
+    },
+    "javascript": {
+      "title": "Modern JavaScript: ES6+",
+      "academy": "FreeCodeCamp",
+      "dateObtained": "December 2023"
     }
   },
   "contact": {

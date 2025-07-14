@@ -16,6 +16,7 @@ export const getFooterSections = (t: TFunction): FooterSection[] => [
     links: [
       { label: t('footer.sections.navigation.home'), href: '#home' },
       { label: t('footer.sections.navigation.projects'), href: '#projects' },
+      { label: t('footer.sections.navigation.certificates'), href: '#certificates' },
       { label: t('footer.sections.navigation.about'), href: '#about' },
       { label: t('footer.sections.navigation.blog'), href: 'https://megabarto.notion.site/' }
     ]

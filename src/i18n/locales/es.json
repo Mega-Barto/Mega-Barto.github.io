@@ -4,6 +4,7 @@
       "autobiography": "¿Quién es Barto?",
       "blog": "¿Qué piensa Barto?",
       "projects": "Mis Proyectos",
+      "certificates": "Mis Certificados",
       "contact": "Contáctame",
       "cv": "Currículum"
     },
@@ -19,6 +20,7 @@
         "title": "Navegación",
         "home": "Inicio",
         "projects": "Proyectos",
+        "certificates": "Certificados",
         "about": "Sobre mí",
         "blog": "Blog"
       },
@@ -28,6 +30,10 @@
         "documentation": "Documentación",
         "tutorials": "Tutoriales",
         "faq": "FAQ"
+      },
+      "certificates": {
+        "title": "Certificados",
+        "view": "Ver Certificado"
       }
     },
     "social": {
@@ -85,6 +91,25 @@
     "links": {
       "github": "Ver Código",
       "demo": "Demo en Vivo"
+    }
+  },
+  "certificates": {
+    "academyLabel": "Academia",
+    "verificationCode": "Código de Verificación",
+    "react": {
+      "title": "Curso Profesional de React",
+      "academy": "Platzi",
+      "dateObtained": "Febrero 2024"
+    },
+    "typescript": {
+      "title": "TypeScript: Configuración y Fundamentos",
+      "academy": "Platzi",
+      "dateObtained": "Enero 2024"
+    },
+    "javascript": {
+      "title": "JavaScript Moderno: ES6+",
+      "academy": "FreeCodeCamp",
+      "dateObtained": "Diciembre 2023"
     }
   },
   "contact": {
