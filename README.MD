@@ -54,6 +54,14 @@
       </ul>
     </li>
     <li>
+      <a href="#project-architecture">Project Architecture</a>
+      <ul>
+        <li><a href="#folder-structure">Folder Structure</a></li>
+        <li><a href="#key-features">Key Features</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+      </ul>
+    </li>
+    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
@@ -85,6 +93,95 @@ The main goal of this project is to highlight my capabilities as a professional,
 [![TypeScript][TypeScript.js]][TypeScript-url]
 [![Vite][Vite.js]][Vite-url]
 [![Bun][Bun.js]][Bun-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- PROJECT ARCHITECTURE -->
+
+## Project Architecture
+
+### Folder Structure
+
+```
+src/
+├── components/           # Reusable UI components
+│   ├── index.ts         # Barrel export for clean imports
+│   ├── Header/          # Navigation header component
+│   ├── Footer/          # Site footer component
+│   ├── LanguageToggle/  # Internationalization toggle
+│   └── sections/        # Page sections
+│       ├── index.ts     # Section exports
+│       ├── AutobiographySection/
+│       └── ProjectsSection/
+├── contents/            # Content data and configuration
+│   ├── index.ts        # Content exports
+│   ├── projects.ts     # Project data and interfaces
+│   ├── navigation.ts   # Navigation items configuration
+│   └── footer.ts       # Footer sections configuration
+├── config/              # Application configuration
+│   ├── index.ts        # Main configuration exports
+│   ├── colors.ts       # Color palette and theme
+│   ├── sections.ts     # Section configuration
+│   └── socialLinks.ts  # Social media links config
+├── i18n/               # Internationalization
+│   ├── index.ts        # i18n setup and configuration
+│   └── locales/        # Translation files
+│       ├── en.json     # English translations
+│       └── es.json     # Spanish translations
+└── assets/             # Static assets
+    └── react.svg       # Component icons and images
+```
+
+### Key Features
+
+#### 🎯 **Modular Component Architecture**
+- **Component Isolation**: Each component is self-contained with its own CSS, TypeScript, and index files
+- **Barrel Exports**: Clean import statements using index.ts files throughout the project
+- **Section-Based Layout**: Logical separation of page sections for better organization
+
+#### 📦 **Content Management System**
+- **Centralized Content**: All data structures organized in dedicated `contents/` directory
+- **Type-Safe Data**: TypeScript interfaces for projects, navigation, and footer content
+- **Reusable Content Functions**: Easy data access across multiple components
+- **Separation of Concerns**: Content logic separated from presentation components
+
+#### 🌍 **Internationalization (i18n)**
+- **react-i18next Integration**: Seamless language switching between English and Spanish
+- **Type-Safe Translations**: TypeScript support for translation keys
+- **Scalable Localization**: Easy addition of new languages through JSON files
+- **Complete Coverage**: All UI elements and content properly translated
+
+#### ⚙️ **Configuration Management**
+- **Centralized Config**: All configuration files organized in dedicated config folder
+- **Environment Agnostic**: Easy configuration changes without code modification
+- **Social Links Management**: Dynamic social media links with activation states
+- **Color System**: Centralized color palette and theming
+
+#### 🎨 **Modern Styling Architecture**
+- **Component-Scoped CSS**: Each component has its own CSS file for better maintainability
+- **Custom CSS Variables**: Consistent theming through CSS custom properties
+- **Responsive Design**: Mobile-first approach with modern CSS Grid and Flexbox
+- **Performance Optimized**: No external CSS framework dependencies
+
+### Library Usage
+
+#### **Core Technologies**
+- **React 19**: Latest React features for modern component development
+- **TypeScript**: Full type safety and enhanced developer experience
+- **Vite**: Lightning-fast build tool and development server
+- **Bun**: High-performance JavaScript runtime and package manager
+
+#### **UI & Styling**
+- **react-icons**: Comprehensive icon library for consistent iconography
+- **Custom CSS**: Tailored styling without framework dependencies
+- **CSS Variables**: Dynamic theming and color management
+
+#### **Internationalization**
+- **react-i18next**: Industry-standard i18n solution
+- **i18next-browser-languagedetector**: Automatic language detection
+- **JSON-based translations**: Easy translation management
+
+This architecture ensures the project remains maintainable, scalable, and developer-friendly while providing excellent performance and user experience.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

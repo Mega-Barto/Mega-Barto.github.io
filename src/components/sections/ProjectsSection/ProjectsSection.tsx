@@ -1,53 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './ProjectsSection.css';
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  link?: string;
-  github?: string;
-  status: 'completed' | 'in-progress' | 'planned';
-}
+import { getProjects, getStatusColor, type Project } from '../../../contents';
 
 const ProjectsSection: React.FC = () => {
   const { t } = useTranslation();
 
-  const projects: Project[] = [
-    {
-      id: '1',
-      title: t('projects.portfolio.title'),
-      description: t('projects.portfolio.description'),
-      technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
-      github: 'https://github.com/Mega-Barto/Mega-Barto.github.io',
-      status: 'in-progress'
-    },
-    {
-      id: '2',
-      title: t('projects.project2.title'),
-      description: t('projects.project2.description'),
-      technologies: ['Node.js', 'Express', 'MongoDB'],
-      status: 'planned'
-    },
-    {
-      id: '3',
-      title: t('projects.project3.title'),
-      description: t('projects.project3.description'),
-      technologies: ['Python', 'Django', 'PostgreSQL'],
-      status: 'planned'
-    }
-  ];
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'completed': return '#28a745';
-      case 'in-progress': return '#ffc107';
-      case 'planned': return '#6c757d';
-      default: return '#6c757d';
-    }
-  };
+  const projects: Project[] = getProjects(t);
 
   return (
     <section id="projects" className="projects-section">

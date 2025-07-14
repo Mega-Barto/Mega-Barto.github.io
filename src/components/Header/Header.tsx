@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './Header.css';
 import { FaRocket } from 'react-icons/fa';
 import { getActiveSocialLinks } from '../../config';
+import { getNavigationItems } from '../../contents';
 import LanguageToggle from '../LanguageToggle';
 
 interface HeaderProps {
@@ -13,24 +14,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  const navigationItems = [
-    { 
-      label: t('header.navigation.autobiography'), 
-      href: '#autobiography',
-      id: 'autobiography' 
-    },
-    { 
-      label: t('header.navigation.projects'), 
-      href: '#projects',
-      id: 'storage' 
-    },
-    { 
-      label: t('header.navigation.blog'), 
-      href: 'https://megabarto.notion.site',
-      id: 'blog',
-      external: true 
-    },
-  ];
+  const navigationItems = getNavigationItems(t);
   
   // Obtener enlaces sociales activos desde la configuración centralizada
   const socialLinks = getActiveSocialLinks();
@@ -64,9 +48,9 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 <a 
                   href={item.href} 
                   className="nav-link"
-                  onClick={item.external ? undefined : closeMobileMenu}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
+                  onClick={item.isExternal ? undefined : closeMobileMenu}
+                  target={item.isExternal ? "_blank" : undefined}
+                  rel={item.isExternal ? "noopener noreferrer" : undefined}
                 >
                   {item.label}
                 </a>
@@ -121,8 +105,8 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   href={item.href} 
                   className="mobile-nav-link"
                   onClick={closeMobileMenu}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
+                  target={item.isExternal ? "_blank" : undefined}
+                  rel={item.isExternal ? "noopener noreferrer" : undefined}
                 >
                   {item.label}
                 </a>

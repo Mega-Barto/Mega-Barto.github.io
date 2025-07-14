@@ -4,7 +4,8 @@
       "autobiography": "¿Quién es Barto?",
       "blog": "¿Qué piensa Barto?",
       "projects": "Mis Proyectos",
-      "contact": "Contáctame"
+      "contact": "Contáctame",
+      "cv": "Currículum"
     },
     "accessibility": {
       "openMenu": "Abrir menú",
@@ -34,9 +35,7 @@
       "linkedin": "Conecta conmigo en LinkedIn",
       "twitter": "Sígueme en Twitter",
       "email": "Envíame un email",
-      "instagram": "Sígueme en Instagram",
-      "youtube": "Suscríbete a mi canal",
-      "discord": "Únete a mi Discord"
+      "telegram": "Contáctame en Telegram"
     },
     "copyright": "Todos los derechos reservados.",
     "madeWithLove": "Hecho con ❤️ por MegaBarto",

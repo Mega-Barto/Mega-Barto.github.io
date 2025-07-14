@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './Footer.css';
 import { FaRocket } from 'react-icons/fa';
 import { getActiveSocialLinks } from '../../config';
+import { getFooterSections } from '../../contents';
 
 interface FooterProps {
   className?: string;
@@ -12,17 +13,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   
-  const footerSections = [
-    {
-      title: t('footer.sections.navigation.title'),
-      links: [
-        { label: t('footer.sections.navigation.home'), href: '#home' },
-        { label: t('footer.sections.navigation.projects'), href: '#projects' },
-        { label: t('footer.sections.navigation.about'), href: '#about' },
-        { label: t('footer.sections.navigation.blog'), href: 'https://megabarto.notion.site/' }
-      ]
-    },
-  ];
+  const footerSections = getFooterSections(t);
 
   // Obtener enlaces sociales activos desde la configuración centralizada
   const socialLinks = getActiveSocialLinks();

@@ -4,9 +4,7 @@ import {
   FaLinkedin, 
   FaTwitter, 
   FaEnvelope,
-  FaInstagram,
-  FaYoutube,
-  FaDiscord
+  FaTelegram
 } from 'react-icons/fa';
 
 export interface SocialLink {
@@ -47,26 +45,13 @@ export const SOCIAL_LINKS: SocialLink[] = [
     description: 'Envíame un email',
     isActive: true
   },
+
   {
-    name: 'Instagram',
-    url: 'https://instagram.com/tu-usuario',
-    icon: FaInstagram,
-    description: 'Sígueme en Instagram',
-    isActive: false // Desactivado por defecto
-  },
-  {
-    name: 'YouTube',
-    url: 'https://youtube.com/@tu-canal',
-    icon: FaYoutube,
-    description: 'Suscríbete a mi canal',
-    isActive: false // Desactivado por defecto
-  },
-  {
-    name: 'Discord',
-    url: 'https://discord.gg/tu-servidor',
-    icon: FaDiscord,
-    description: 'Únete a mi Discord',
-    isActive: false // Desactivado por defecto
+    name: 'Telegram',
+    url: 'https://t.me/MegaBarto',
+    icon: FaTelegram,
+    description: 'Contáctame en Telegram',
+    isActive: true
   }
 ];
 
@@ -84,8 +69,8 @@ export const getSocialLinkByName = (name: string): SocialLink | undefined => {
 export const PERSONAL_INFO = {
   name: 'MegaBarto',
   displayName: 'MegaBarto',
-  companyName: 'Bartland Labs',
-  logoUrl: '/logo.png',
+  companyName: 'Bartland Labs.',
+  logoUrl: 'https://i.imgur.com/kBWOFBL.png',
   description: 'Ingeniero en sistemas y computación.',
   domain: 'megabarto.rocks'
 } as const;
