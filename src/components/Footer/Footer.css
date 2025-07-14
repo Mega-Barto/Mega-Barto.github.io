@@ -40,17 +40,6 @@
   margin-bottom: 0.5rem;
 }
 
-.footer-logo .logo-icon {
-  font-size: 1.25rem;
-  color: #60a5fa;
-}
-
-.footer-logo .logo-text {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #60a5fa;
-}
-
 .footer-description {
   color: rgba(156, 163, 175, 1);
   font-size: 0.875rem;

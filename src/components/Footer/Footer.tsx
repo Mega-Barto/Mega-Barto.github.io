@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Footer.css';
-import { FaRocket } from 'react-icons/fa';
 import { getActiveSocialLinks } from '../../config';
 import { getFooterSections } from '../../contents';
+import Logo from '../Logo';
 
 interface FooterProps {
   className?: string;
@@ -26,10 +26,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           {/* Brand Section */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <div className="logo-icon">
-                <FaRocket />
-              </div>
-              <span className="logo-text">{t('personal.displayName')}</span>
+              <Logo href={null} size="medium" />
             </div>
             <p className="footer-description">
               {t('personal.description')}

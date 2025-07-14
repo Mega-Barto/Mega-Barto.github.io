@@ -24,40 +24,6 @@
   flex-shrink: 0;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: white;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-.logo-link:hover {
-  opacity: 0.8;
-}
-
-.logo-icon {
-  font-size: 1.5rem;
-  color: #60a5fa;
-}
-
-.logo-text {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #60a5fa;
-}
-
-@media (max-width: 480px) {
-  .logo-text {
-    font-size: 1rem;
-  }
-  
-  .logo-icon {
-    font-size: 1.25rem;
-  }
-}
-
 /* Navigation */
 .nav-desktop {
   display: none;

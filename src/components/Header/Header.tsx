@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
-import { FaRocket } from 'react-icons/fa';
 import { getActiveSocialLinks } from '../../config';
 import { getNavigationItems } from '../../contents';
 import LanguageToggle from '../LanguageToggle';
+import Logo from '../Logo';
 
 interface HeaderProps {
   className?: string;
@@ -32,12 +32,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       <div className="header-container">
         {/* Logo Section */}
         <div className="logo-section">
-          <a href="#home" className="logo-link" onClick={closeMobileMenu}>
-            <div className="logo-icon">
-              <FaRocket />
-            </div>
-            <span className="logo-text">{t('personal.displayName')}</span>
-          </a>
+          <Logo onClick={closeMobileMenu} />
         </div>
 
         {/* Navigation Menu - Desktop */}
