@@ -96,20 +96,25 @@
   "certificates": {
     "academyLabel": "Academia",
     "verificationCode": "Código de Verificación",
-    "react": {
-      "title": "Curso Profesional de React",
+    "automation": {
+      "title": "Diplomado en Automatización de Pruebas Web",
+      "academy": "Diplearn Academy",
+      "dateObtained": "Noviembre 2023"
+    },
+    "django": {
+      "title": "Curso: DJANGO REST FRAMEWORK",
+      "academy": "Platzi",
+      "dateObtained": "Diciembre 2024"
+    },
+    "testing": {
+      "title": "Curso: FUNDAMENTOS DE PRUEBAS DE SOFTWARE",
       "academy": "Platzi",
       "dateObtained": "Febrero 2024"
     },
-    "typescript": {
-      "title": "TypeScript: Configuración y Fundamentos",
+    "docker": {
+      "title": "Curso: DOCKER - FUNDAMENTOS",
       "academy": "Platzi",
-      "dateObtained": "Enero 2024"
-    },
-    "javascript": {
-      "title": "JavaScript Moderno: ES6+",
-      "academy": "FreeCodeCamp",
-      "dateObtained": "Diciembre 2023"
+      "dateObtained": "Febrero 2024"
     }
   },
   "contact": {
