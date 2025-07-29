@@ -24,6 +24,11 @@ export const getNavigationItems = (t: TFunction): NavigationItem[] => [
     id: 'certificates' 
   },
   { 
+    label: t('header.navigation.events'), 
+    href: '#events',
+    id: 'events' 
+  },
+  { 
     label: t('header.navigation.blog'), 
     href: 'https://megabarto.notion.site',
     id: 'blog',

@@ -62,11 +62,13 @@
   gap: 0.75rem;
 }
 
+/* Comentado para ocultar las redes sociales del escritorio
 @media (min-width: 1024px) {
   .social-desktop {
     display: flex;
   }
 }
+*/
 
 .social-link {
   width: 2rem;

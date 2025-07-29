@@ -5,6 +5,7 @@
       "blog": "¿Qué piensa Barto?",
       "projects": "Mis Proyectos",
       "certificates": "Mis Certificados",
+      "events": "Mis Eventos",
       "contact": "Contáctame",
       "cv": "Currículum"
     },
@@ -21,6 +22,7 @@
         "home": "Inicio",
         "projects": "Proyectos",
         "certificates": "Certificados",
+        "events": "Eventos",
         "about": "Sobre mí",
         "blog": "Blog"
       },
@@ -140,5 +142,66 @@
   "languages": {
     "spanish": "Español",
     "english": "English"
+  },
+  "events": {
+    "name": "Eventos Destacados",
+    "description": "Mantente actualizado con los últimos eventos y novedades en los que me he involucrado.",
+    "flisol-1": {
+      "title": "FLISOL 2023",
+      "date": "Abril 27-28, 2023",
+      "location": "Pereira, Colombia",
+      "description": "Participé como miembro del staff y ponente.",
+      "source": "https://flisol.info/FLISOL2023/Colombia/Pereira"
+    },
+    "flisol-2": {
+      "title": "FLISOL 2024",
+      "date": "Mayo 16, 2024",
+      "location": "Pereira - Ibague - Bogotá, Colombia",
+      "description": "Participé como miembro del staff y ponente.",
+      "source": "https://flisol.info/FLISOL2024/Colombia"
+    },
+    "flisol-3": {
+      "title": "FLISOL 2025",
+      "date": "Mayo 8, 2025",
+      "location": "Pereira, Colombia",
+      "description": "Participé como coordinador del staff y host del evento.",
+      "source": "https://flisolpereira.vercel.app/"
+    },
+    "sfd-1": {
+      "title": "Software Freedom Day 2023",
+      "date": "Septiembre 7, 2023",
+      "location": "Pereira, Colombia",
+      "description": "Participé como miembro del staff.",
+      "source": "https://cidt.utp.edu.co/noticias-y-eventos/preparate-para-el-software-freedom-day/"
+    },
+    "sfd-2": {
+      "title": "Software Freedom Day 2024",
+      "date": "Octubre 10, 2024",
+      "location": "Pereira, Colombia",
+      "description": "Participé como moderador de panel.",
+      "source": "https://backboneutp.com/events/software-freedom-day-2024"
+    },
+    "qaconf-1": {
+      "title": "QAConf Pereira 2024",
+      "date": "Septiembre 5-6, 2024",
+      "location": "Pereira, Colombia",
+      "description": "Fundador y organizador del evento.",
+      "source": "https://www.qaconf.co/qaconfpereira"
+    },
+    "qaconf-2": {
+      "title": "QAConf Pereira 2025",
+      "date": "Septiembre 11-12, 2025",
+      "location": "Pereira, Colombia",
+      "description": "Fundador y organizador del evento.",
+      "source": "https://www.qaconf.co"
+    },
+    "pertt": {
+      "title": "Pereira Tech Talks",
+      "date": "Desde 2024",
+      "location": "Pereira, Colombia",
+      "description": "Participé como miembro del staff y buscador de ponentes.",
+      "source": "https://www.pereiratechtalks.com/"
+    },
+    "viewMore": "Ver más información"
   }
 }
