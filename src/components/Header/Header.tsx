@@ -73,21 +73,24 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           })}
         </div>
 
-        {/* Language Toggle */}
-        <div className="language-toggle">
-          <LanguageToggle />
-        </div>
+        {/* Header Right - Language Toggle & Mobile Menu */}
+        <div className="header-right">
+          {/* Language Toggle */}
+          <div className="language-toggle">
+            <LanguageToggle />
+          </div>
 
-        {/* Mobile Menu Toggle */}
-        <button 
-          className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
-          onClick={toggleMobileMenu}
-          aria-label={isMobileMenuOpen ? t('header.accessibility.closeMenu') : t('header.accessibility.openMenu')}
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
+          {/* Mobile Menu Toggle */}
+          <button 
+            className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label={isMobileMenuOpen ? t('header.accessibility.closeMenu') : t('header.accessibility.openMenu')}
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

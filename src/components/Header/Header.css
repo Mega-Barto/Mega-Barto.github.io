@@ -19,6 +19,13 @@
   justify-content: space-between;
 }
 
+/* Contenedor para el lado derecho (idioma + hamburguesa) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Logo */
 .logo-section {
   flex-shrink: 0;
@@ -29,7 +36,7 @@
   display: none;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .nav-desktop {
     display: block;
   }
@@ -40,7 +47,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-link {
@@ -90,10 +97,10 @@
 
 /* Language Toggle */
 .language-toggle {
-  display: none;
+  display: block;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .language-toggle {
     display: block;
   }
@@ -119,7 +126,7 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .mobile-toggle {
     display: none;
   }
@@ -164,7 +171,7 @@
   display: block;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .mobile-menu {
     display: none !important;
   }
@@ -234,7 +241,7 @@
   display: none;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .mobile-overlay {
     display: block;
   }
