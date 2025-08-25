@@ -6,6 +6,7 @@
       "projects": "Mis Proyectos",
       "certificates": "Mis Certificados",
       "events": "Mis Eventos",
+      "workExperience": "Experiencia Laboral",
       "contact": "Contáctame",
       "cv": "Currículum"
     },
@@ -23,6 +24,7 @@
         "projects": "Proyectos",
         "certificates": "Certificados",
         "events": "Eventos",
+        "workExperience": "Experiencia Laboral",
         "about": "Sobre mí",
         "blog": "Blog"
       },
@@ -203,5 +205,24 @@
       "source": "https://www.pereiratechtalks.com/"
     },
     "viewMore": "Ver más información"
+  },
+  "workExperience": {
+    "current": "Actual",
+    "duration": "Duración",
+    "descriptions": {
+      "webspro": "Desarrollador web full-stack especializado en frameworks modernos de JavaScript y tecnologías backend. Responsable del desarrollo de aplicaciones web escalables utilizando React, TypeScript y FastAPI. Enfocado en la calidad del código, optimización del rendimiento e implementación de mejores prácticas en desarrollo de software.",
+      "taejf": "Desarrollador de software e ingeniero de aseguramiento de calidad enfocado en desarrollo web y testing de software. Actualmente contribuyendo a iniciativas de engagement comunitario, programas de educación tecnológica y proyectos de código abierto, manteniendo altos estándares de calidad de software."
+    }
+  },
+  "works": {
+    "webspro": "WebsPro",
+    "taejf": "TAEJF",
+    "periods": {
+      "webspro": "2024 - 2025",
+      "taejf": "2025 - Actualidad"
+    },
+    "durations": {
+      "webspro": "9 meses"
+    }
   }
 }

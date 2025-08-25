@@ -40,7 +40,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:personal.jpere@gmail.com',
+    url: 'mailto:personal.jperez@gmail.com',
     icon: FaEnvelope,
     description: 'Envíame un email',
     isActive: true

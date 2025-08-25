@@ -14,6 +14,11 @@ export const getNavigationItems = (t: TFunction): NavigationItem[] => [
     id: 'autobiography' 
   },
   { 
+    label: t('header.navigation.workExperience'), 
+    href: '#work-experience',
+    id: 'work-experience' 
+  },
+  { 
     label: t('header.navigation.projects'), 
     href: '#projects',
     id: 'projects' 

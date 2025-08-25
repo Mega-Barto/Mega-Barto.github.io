@@ -6,6 +6,7 @@
       "projects": "My Projects",
       "certificates": "My Certificates",
       "events": "My Events",
+      "workExperience": "Work Experience",
       "contact": "Contact Me",
       "cv": "CV"
     },
@@ -23,6 +24,7 @@
         "projects": "Projects",
         "certificates": "Certificates",
         "events": "Events",
+        "workExperience": "Work Experience",
         "about": "About",
         "blog": "Blog"
       },
@@ -205,5 +207,24 @@
       "source": "https://www.pereiratechtalks.com/"
     },
     "viewMore": "View More Information"
+  },
+  "workExperience": {
+    "current": "Current",
+    "duration": "Duration",
+    "descriptions": {
+      "webspro": "Full-stack web developer specializing in modern JavaScript frameworks and backend technologies. Responsible for developing scalable web applications using React, TypeScript, and FastAPI. Focused on code quality, performance optimization, and implementing best practices in software development.",
+      "taejf": "Software developer and quality assurance engineer focused on web development and software testing. Currently contributing to community engagement initiatives, technology education programs, and open-source projects while ensuring high standards of software quality."
+    }
+  },
+  "works": {
+    "webspro": "WebsPro",
+    "taejf": "TAEJF",
+    "periods": {
+      "webspro": "2024 - 2025",
+      "taejf": "2025 - Present"
+    },
+    "durations": {
+      "webspro": "9 months"
+    }
   }
 }

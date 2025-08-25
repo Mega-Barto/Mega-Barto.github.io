@@ -21,10 +21,16 @@ export const SECTIONS_CONFIG: SectionConfig[] = [
     order: 1
   },
   {
+    id: 'work-experience',
+    component: 'WorkExperienceSection',
+    isVisible: true,
+    order: 2
+  },
+  {
     id: 'projects',
     component: 'ProjectsSection',
     isVisible: true,
-    order: 2
+    order: 3
   }
 ];
 
@@ -44,6 +50,11 @@ export const SECTION_SETTINGS = {
   autobiography: {
     showTimeline: false,
     showSkills: true
+  },
+  workExperience: {
+    showCompanyLogos: false,
+    showDuration: true,
+    highlightCurrent: true
   },
   projects: {
     itemsPerPage: 6,
