@@ -35,5 +35,12 @@ export const getCertificates = (t: TFunction): Certificate[] => [
         academy: t('certificates.docker.academy'),
         dateObtained: t('certificates.docker.dateObtained'),
         verificationCode: 'e759659f-40dc-4560-a84e-881b7cacf6d5'
+    },
+    {
+        id: '5',
+        title: t('certificates.flutter.title'),
+        academy: t('certificates.flutter.academy'),
+        dateObtained: t('certificates.flutter.dateObtained'),
+        verificationCode: 'a312dc9b-2112-447e-9d12-9fe384778f49'
     }
 ];
