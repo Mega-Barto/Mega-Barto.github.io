@@ -71,8 +71,8 @@
   },
   "autobiography": {
   "introduction": "Hello! I’m Juan Alejandro Pérez Bermúdez (or Barto, as friends call me), a Systems and Computing Engineer eager to gain professional experience in software projects.",
-  "background": "In my current role as a web developer, I have gained experience with technologies such as React and FastAPI, deployments on Ubuntu/Digital Ocean, and cross-platform development using Unity.",
-  "current": "At present, I work in web development, software quality, and building tech community engagement."
+  "background": "I have experience in web development, working with technologies such as React, FastAPI and BaaS as Supabase. Now, I'm working in a new project using the Flutter + Firebase stack to create mobile cross-platform applications.",
+  "current": "At present, I work in mobile development, software quality, and building tech community engagement."
   },
   "projects": {
     "portfolio": {
@@ -86,6 +86,10 @@
     "project3": {
       "title": "API Service",
       "description": "A robust REST API service with comprehensive documentation and scalable architecture."
+    },
+    "legendary-pokedex": {
+      "title": "Legendary Pokedex",
+      "description": "A simple mobile application to search and view information about legendary Pokémon. Part of a learning project to master Flutter and briefly experiment with Flask."
     },
     "status": {
       "completed": "Completed",
@@ -159,57 +163,61 @@
       "title": "FLISOL 2023",
       "date": "April 27-28, 2023",
       "location": "Pereira, Colombia",
-      "description": "Participated as a staff member and speaker.",
-      "source": "https://flisol.info/FLISOL2023/Colombia/Pereira"
+      "description": "Participated as a staff member and speaker."
     },
     "flisol-2": {
       "title": "FLISOL 2024",
       "date": "May 16, 2024",
       "location": "Pereira - Ibague - Bogotá, Colombia",
-      "description": "Participated as a staff member and speaker.",
-      "source": "https://flisol.info/FLISOL2024/Colombia"
+      "description": "Participated as a staff member and speaker."
     },
     "flisol-3": {
       "title": "FLISOL 2025",
       "date": "May 8, 2025",
       "location": "Pereira, Colombia",
-      "description": "Participated as a staff coordinator and event host.",
-      "source": "https://flisolpereira.vercel.app/"
+      "description": "Participated as a staff coordinator and event host."
     },
     "sfd-1": {
       "title": "Software Freedom Day 2023",
       "date": "September 7, 2023",
       "location": "Pereira, Colombia",
-      "description": "Participated as a staff member.",
-      "source": "https://cidt.utp.edu.co/noticias-y-eventos/preparate-para-el-software-freedom-day/"
+      "description": "Participated as a staff member."
     },
     "sfd-2": {
       "title": "Software Freedom Day 2024",
       "date": "October 10, 2024",
       "location": "Pereira, Colombia",
-      "description": "Participated as Panel moderator.",
-      "source": "https://backboneutp.com/events/software-freedom-day-2024"
+      "description": "Participated as Panel moderator."
+    },
+    "sfd-3": {
+      "title": "Software Freedom Day 2025",
+      "date": "October 10, 2025",
+      "location": "Pereira, Colombia",
+      "description": "Participated as logistics manager and speaker."
     },
     "qaconf-1": {
       "title": "QAConf Pereira 2024",
       "date": "September 5-6, 2024",
       "location": "Pereira, Colombia",
-      "description": "Founder and organizer of the event.",
-      "source": "https://www.qaconf.co/qaconfpereira"
+      "description": "Founder and organizer of the event."
     },
     "qaconf-2": {
       "title": "QAConf Pereira 2025",
       "date": "September 11-12, 2025",
       "location": "Pereira, Colombia",
-      "description": "Founder and organizer of the event.",
-      "source": "https://www.qaconf.co"
+      "description": "Founder and organizer of the event."
     },
     "pertt": {
       "title": "Pereira Tech Talks",
       "date": "Since 2024",
       "location": "Pereira, Colombia",
-      "description": "Participated as a staff member and speakers finder.",
-      "source": "https://www.pereiratechtalks.com/"
+      "description": "Participate as a staff member and speakers finder."
+    },
+    "oth": {
+      "title": "Open Tech Hackathon",
+      "date": "October 6-11, 2025",
+      "location": "Virtual + Pereira, Colombia",
+      "description": "Participated as a staff member."
     },
     "viewMore": "View More Information"
   },

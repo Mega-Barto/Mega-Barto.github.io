@@ -32,6 +32,13 @@ export const getProjects = (t: TFunction): Project[] => [
     description: t('projects.project3.description'),
     technologies: ['Python', 'Django', 'PostgreSQL'],
     status: 'planned'
+  },
+  {
+    id: '4',
+    title: t('projects.legendary-pokedex.title'),
+    description: t('projects.legendary-pokedex.description'),
+    technologies: ['Flutter', 'Dart', 'Flask', 'Python'],
+    status: 'in-progress',
   }
 ];
 

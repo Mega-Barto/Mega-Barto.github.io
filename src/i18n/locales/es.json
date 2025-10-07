@@ -70,9 +70,9 @@
     "domain": "megabarto.rocks"
   },
   "autobiography": {
-    "introduction": "¡Hola! Soy Juan Alejandro Pérez Bermúdez (o Barto para los amigos), un Ingeniero en Sistemas y Computación con gran interés en adquirir experiencia profesional en proyectos de software.",
-    "background": "En mi trabajo actual como desarrollador web, he adquirido experiencia en tecnologias como React y FastAPI, despliegues en Ubuntu/Digital Ocean y desarrollo cross-platform con Unity.",
-    "current": "Actualmente, me desenvuelvo en desarrollo web, la calidad de software y la generación de comunidad alrededor del entorno tech."
+    "introduction": "¡Hola! Soy Juan Alejandro Pérez Bermúdez (o Barto, como me llaman mis amigos), un Ingeniero en Sistemas y Computación con ganas de adquirir experiencia profesional en proyectos de software.",
+    "background": "Tengo experiencia en desarrollo web, trabajando con tecnologías como React, FastAPI y BaaS como Supabase. Actualmente, estoy trabajando en un nuevo proyecto utilizando el stack Flutter + Firebase para crear aplicaciones móviles multiplataforma.",
+    "current": "En la actualidad, trabajo en desarrollo móvil, calidad de software y fomentando el compromiso con la comunidad tecnológica."
   },
   "projects": {
     "portfolio": {
@@ -86,6 +86,10 @@
     "project3": {
       "title": "Servicio API",
       "description": "Un servicio REST API robusto con documentación completa y arquitectura escalable."
+    },
+    "legendary-pokedex": {
+      "title": "Legendary Pokedex",
+      "description": "Una aplicacion movil sencilla para buscar y visualizar información sobre Pokémon legendarios. Parte de un proyecto de aprendizaje para dominar Flutter y experimentar brevemente con Flask."
     },
     "status": {
       "completed": "Completado",
@@ -157,57 +161,61 @@
       "title": "FLISOL 2023",
       "date": "Abril 27-28, 2023",
       "location": "Pereira, Colombia",
-      "description": "Participé como miembro del staff y ponente.",
-      "source": "https://flisol.info/FLISOL2023/Colombia/Pereira"
+      "description": "Participé como miembro del staff y ponente."
     },
     "flisol-2": {
       "title": "FLISOL 2024",
       "date": "Mayo 16, 2024",
       "location": "Pereira - Ibague - Bogotá, Colombia",
-      "description": "Participé como miembro del staff y ponente.",
-      "source": "https://flisol.info/FLISOL2024/Colombia"
+      "description": "Participé como miembro del staff y ponente."
     },
     "flisol-3": {
       "title": "FLISOL 2025",
       "date": "Mayo 8, 2025",
       "location": "Pereira, Colombia",
-      "description": "Participé como coordinador del staff y host del evento.",
-      "source": "https://flisolpereira.vercel.app/"
+      "description": "Participé como coordinador del staff y host del evento."
     },
     "sfd-1": {
       "title": "Software Freedom Day 2023",
       "date": "Septiembre 7, 2023",
       "location": "Pereira, Colombia",
-      "description": "Participé como miembro del staff.",
-      "source": "https://cidt.utp.edu.co/noticias-y-eventos/preparate-para-el-software-freedom-day/"
+      "description": "Participé como miembro del staff."
     },
     "sfd-2": {
       "title": "Software Freedom Day 2024",
       "date": "Octubre 10, 2024",
       "location": "Pereira, Colombia",
-      "description": "Participé como moderador de panel.",
-      "source": "https://backboneutp.com/events/software-freedom-day-2024"
+      "description": "Participé como moderador de panel."
+    },
+    "sfd-3": {
+      "title": "Software Freedom Day 2025",
+      "date": "octubre 10, 2025",
+      "location": "Pereira, Colombia",
+      "description": "Participé como encargado de logística y ponente."
     },
     "qaconf-1": {
       "title": "QAConf Pereira 2024",
       "date": "Septiembre 5-6, 2024",
       "location": "Pereira, Colombia",
-      "description": "Fundador y organizador del evento.",
-      "source": "https://www.qaconf.co/qaconfpereira"
+      "description": "Fundador y organizador del evento."
     },
     "qaconf-2": {
       "title": "QAConf Pereira 2025",
       "date": "Septiembre 11-12, 2025",
       "location": "Pereira, Colombia",
-      "description": "Fundador y organizador del evento.",
-      "source": "https://www.qaconf.co"
+      "description": "Fundador y organizador del evento."
     },
     "pertt": {
       "title": "Pereira Tech Talks",
       "date": "Desde 2024",
       "location": "Pereira, Colombia",
-      "description": "Participé como miembro del staff y buscador de ponentes.",
-      "source": "https://www.pereiratechtalks.com/"
+      "description": "Participo como miembro del staff y buscador de ponentes."
+    },
+    "oth": {
+      "title": "Open Tech Hackathon",
+      "date": "Octubre 6-11, 2025",
+      "location": "Virtual + Pereira, Colombia",
+      "description": "Participé como miembro del staff."
     },
     "viewMore": "Ver más información"
   },
