@@ -1,8 +1,8 @@
 .projects-section {
   padding: 6rem 0 4rem 0;
-  background: #256c8d;
+  background: var(--color-background-projects);
   min-height: 100vh;
-  color: white;
+  color: var(--color-text-inverse);
   position: relative;
 }
 
@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: #64748b;
+  background: var(--color-background-projects);
   box-shadow: 0 2px 10px rgba(100, 116, 139, 0.3);
 }
 
@@ -50,7 +50,7 @@
 .project-title {
   font-size: 1.5rem;
   margin: 0;
-  color: #ffffff;
+  color: var(--color-text-inverse);
   font-weight: 600;
 }
 
@@ -58,7 +58,7 @@
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
-  color: white;
+  color: var(--color-text-inverse);
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -66,7 +66,7 @@
 .project-description {
   margin-bottom: 1.5rem;
   line-height: 1.6;
-  color: #f1f5f9;
+  color: var(--color-secondary-100);
   font-weight: 400;
 }
 
@@ -100,31 +100,31 @@
 }
 
 .github-link {
-  background: #0f172a;
-  color: white;
-  border-color: #0f172a;
+  background: var(--color-primary-900);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary-900);
 }
 
 .github-link:hover {
-  background: #1e293b;
-  border-color: #1e293b;
+  background: var(--color-primary-800);
+  border-color: var(--color-primary-800);
 }
 
 .demo-link {
   background: transparent;
-  color: white;
-  border-color: white;
+  color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
 }
 
 .demo-link:hover {
-  background: white;
-  color: #0284c7;
+  background: var(--color-text-inverse);
+  color: var(--color-accent-cyan);
 }
 
 .section-title {
   font-size: 2.8rem;
   text-align: center;
-  color: #ffffff;
+  color: var(--color-text-inverse);
   margin-bottom: 3rem;
   font-weight: 800;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -162,7 +162,7 @@
   
   .section-title {
     font-size: 2.2rem;
-    color: #ffffff;
+    color: var(--color-text-inverse);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
 }

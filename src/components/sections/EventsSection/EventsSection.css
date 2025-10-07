@@ -1,8 +1,8 @@
 .events-section {
   padding: 6rem 0 4rem 0;
-  background: #2d3748;
+  background: var(--color-primary-700);
   min-height: 100vh;
-  color: white;
+  color: var(--color-text-inverse);
   position: relative;
 }
 
@@ -14,14 +14,14 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: #64748b;
+  background: var(--color-background-projects);
   box-shadow: 0 2px 10px rgba(100, 116, 139, 0.3);
 }
 
 .section-description {
   text-align: center;
   font-size: 1.1rem;
-  color: #cbd5e0;
+  color: var(--color-secondary-300);
   margin: 1rem auto 3rem auto;
   max-width: 600px;
   line-height: 1.6;
@@ -53,7 +53,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ef4444);
+  background: var(--color-primary-400);
   border-radius: 20px 20px 0 0;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .event-title {
-  color: #ffffff;
+  color: var(--color-text-inverse);
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0;
@@ -81,7 +81,7 @@
 
 .event-date {
   background: rgba(59, 130, 246, 0.2);
-  color: #93c5fd;
+  color: var(--color-accent-blue-light);
   padding: 0.5rem 1rem;
   border-radius: 12px;
   font-size: 0.875rem;
@@ -95,7 +95,7 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  color: #e2e8f0;
+  color: var(--color-secondary-200);
 }
 
 .location-icon {
@@ -108,7 +108,7 @@
 }
 
 .event-description {
-  color: #cbd5e0;
+  color: var(--color-secondary-300);
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -122,7 +122,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #60a5fa;
+  color: var(--color-accent-blue);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;

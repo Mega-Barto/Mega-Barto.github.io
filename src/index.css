@@ -1,11 +1,62 @@
 :root {
+  /* Colores principales */
+  --color-primary-50: #f9fafb;
+  --color-primary-100: #f3f4f6;
+  --color-primary-200: #e5e7eb;
+  --color-primary-300: #d1d5db;
+  --color-primary-400: #9ca3af;
+  --color-primary-500: #6b7280;
+  --color-primary-600: #4b5563;
+  --color-primary-700: #374151;
+  --color-primary-800: #1f2937;
+  --color-primary-900: #111827;
+
+  /* Colores secundarios */
+  --color-secondary-50: #fafafa;
+  --color-secondary-100: #f4f4f5;
+  --color-secondary-200: #e4e4e7;
+  --color-secondary-300: #d4d4d8;
+  --color-secondary-400: #a1a1aa;
+  --color-secondary-500: #71717a;
+  --color-secondary-600: #52525b;
+  --color-secondary-700: #3f3f46;
+  --color-secondary-800: #27272a;
+  --color-secondary-900: #18181b;
+
+  /* Backgrounds */
+  --color-background-light: #ffffff;
+  --color-background-muted: #f4f4f5;
+  --color-background-dark: #18181b;
+  --color-background-darker: #0a0a0a;
+  --color-background-hero: #1f2937;
+  --color-background-autobiography: #dcdcdc;
+  --color-background-projects: #6b7280;
+
+  /* Texto */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #ffffff;
+
+  /* Estados */
+  --color-status-success: #22c55e;
+  --color-status-warning: #eab308;
+  --color-status-error: #ef4444;
+  --color-status-info: #3b82f6;
+
+  /* Acentos y efectos */
+  --color-accent-blue: #60a5fa;
+  --color-accent-blue-light: #93c5fd;
+  --color-accent-cyan: #38bdf8;
+  --color-accent-cyan-light: #0ea5e9;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--color-text-inverse, rgba(255, 255, 255, 0.87));
-  background-color: var(--color-background-dark, #242424);
+  color: var(--color-text-inverse);
+  background-color: var(--color-background-dark);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,11 +74,11 @@ html {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-accent-blue);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--color-accent-blue-light);
 }
 
 body {
@@ -38,8 +89,8 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: var(--color-text-inverse, rgba(255, 255, 255, 0.87));
-  background-color: var(--color-background-dark, #242424);
+  color: var(--color-text-inverse);
+  background-color: var(--color-background-dark);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -58,12 +109,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-primary-800);
   cursor: pointer;
   transition: border-color 0.25s;
+  color: var(--color-text-inverse);
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--color-accent-blue);
 }
 button:focus,
 button:focus-visible {
@@ -72,13 +124,14 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--color-text-primary);
+    background-color: var(--color-background-light);
   }
   a:hover {
-    color: #747bff;
+    color: var(--color-accent-blue-light);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--color-background-muted);
+    color: var(--color-text-primary);
   }
 }

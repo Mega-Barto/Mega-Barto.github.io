@@ -1,7 +1,7 @@
 /* Footer Styles */
 .footer {
-  background-color: rgba(17, 24, 39, 1);
-  border-top: 1px solid rgba(75, 85, 99, 0.5);
+  background-color: var(--color-primary-900);
+  border-top: 1px solid var(--color-primary-600);
   margin-top: auto;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .footer-description {
-  color: rgba(156, 163, 175, 1);
+  color: var(--color-primary-400);
   font-size: 0.875rem;
   line-height: 1.6;
   max-width: 24rem;
@@ -60,15 +60,15 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: rgba(31, 41, 55, 1);
-  color: rgba(156, 163, 175, 1);
+  background-color: var(--color-primary-700);
+  color: var(--color-primary-400);
   text-decoration: none;
   transition: all 0.3s;
 }
 
 .footer-social .social-link:hover {
-  background-color: #2563eb;
-  color: white;
+  background-color: var(--color-status-info);
+  color: var(--color-text-inverse);
 }
 
 /* Footer Sections */
@@ -87,7 +87,7 @@
 .footer-section h3 {
   font-size: 0.875rem;
   font-weight: 600;
-  color: white;
+  color: var(--color-text-inverse);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.75rem;
@@ -103,20 +103,20 @@
 }
 
 .footer-section a {
-  color: rgba(156, 163, 175, 1);
+  color: var(--color-primary-400);
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.3s;
 }
 
 .footer-section a:hover {
-  color: #60a5fa;
+  color: var(--color-accent-blue);
 }
 
 /* Footer Bottom */
 .footer-bottom {
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(75, 85, 99, 0.5);
+  border-top: 1px solid var(--color-primary-600);
 }
 
 .footer-bottom-content {
@@ -125,7 +125,7 @@
   align-items: center;
   gap: 1rem;
   font-size: 0.875rem;
-  color: rgba(107, 114, 128, 1);
+  color: var(--color-text-muted);
 }
 
 @media (min-width: 640px) {
@@ -146,36 +146,36 @@
 }
 
 .footer-bottom-links a {
-  color: rgba(107, 114, 128, 1);
+  color: var(--color-text-muted);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer-bottom-links a:hover {
-  color: rgba(156, 163, 175, 1);
+  color: var(--color-primary-400);
 }
 
 .footer-bottom-links .separator {
-  color: rgba(75, 85, 99, 1);
+  color: var(--color-primary-600);
 }
 
 /* Footer Love Message */
 .footer-love {
-  color: rgba(156, 163, 175, 1);
+  color: var(--color-primary-400);
   text-align: center;
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
 
 .footer-love .source-link {
-  color: #60a5fa;
+  color: var(--color-accent-blue);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .footer-love .source-link:hover {
-  color: #3b82f6;
+  color: var(--color-status-info);
   text-decoration: underline;
 }
 

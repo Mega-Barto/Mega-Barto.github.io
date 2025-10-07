@@ -50,6 +50,13 @@ export const COLORS = {
         warning: '#eab308',  // amarillo apagado
         error: '#ef4444',  // rojo apagado
         info: '#3b82f6'   // azul grisáceo
+    },
+
+    accent: {
+        blue: '#60a5fa',
+        blueLight: '#93c5fd',
+        cyan: '#38bdf8',
+        cyanLight: '#0ea5e9'
     }
 
 } as const;

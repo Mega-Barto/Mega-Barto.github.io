@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: #1e293b;
+  background: var(--color-background-hero);
   position: relative;
 }
 
@@ -43,7 +43,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: #0ea5e9;
+  background: var(--color-accent-cyan-light);
   box-shadow: 0 2px 10px rgba(14, 165, 233, 0.3);
 }
 
@@ -51,14 +51,14 @@
   font-size: 4rem;
   font-weight: 800;
   margin: 0;
-  color: #38bdf8;
+  color: var(--color-accent-cyan);
   line-height: 1.2;
   text-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
 }
 
 .hero-section p {
   font-size: 1.4rem;
-  color: #e2e8f0;
+  color: var(--color-secondary-200);
   margin: 0;
   max-width: 700px;
   line-height: 1.7;
@@ -88,7 +88,7 @@ html {
 /* Section separators */
 .section-separator {
   height: 8px;
-  background: #cbd5e1;
+  background: var(--color-primary-300);
   margin: 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -144,11 +144,11 @@ html {
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em var(--color-accent-blue));
 }
 
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em var(--color-accent-cyan));
 }
 
 @keyframes logo-spin {
@@ -171,7 +171,7 @@ html {
 }
 
 .read-the-docs {
-  color: #888;
+  color: var(--color-text-muted);
 }
 
 /* Responsive Design */
@@ -207,6 +207,6 @@ html {
 /* Light mode support */
 @media (prefers-color-scheme: light) {
   .hero-section p {
-    color: rgba(33, 53, 71, 0.7);
+    color: var(--color-text-secondary);
   }
 }

@@ -32,7 +32,7 @@
 /* Logo Text Styles */
 .logo-text {
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--color-accent-blue);
   white-space: nowrap;
 }
 

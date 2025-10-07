@@ -8,7 +8,7 @@
   padding: 0.5rem 0.75rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-inverse);
   font-size: 0.9rem;
   font-weight: 500;
   min-width: 3rem;
@@ -17,7 +17,7 @@
 .language-toggle:hover {
   background-color: rgba(100, 108, 255, 0.2);
   border-color: rgba(100, 108, 255, 0.5);
-  color: #61dafb;
+  color: var(--color-accent-cyan);
   transform: translateY(-1px);
 }
 
@@ -64,13 +64,13 @@
   .language-toggle {
     background-color: rgba(0, 0, 0, 0.05);
     border-color: rgba(0, 0, 0, 0.1);
-    color: rgba(33, 53, 71, 0.8);
+    color: var(--color-text-primary);
   }
   
   .language-toggle:hover {
     background-color: rgba(100, 108, 255, 0.2);
     border-color: rgba(100, 108, 255, 0.5);
-    color: #646cff;
+    color: var(--color-accent-blue);
   }
 }
 
