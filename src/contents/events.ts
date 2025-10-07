@@ -80,7 +80,7 @@ export const getEvents = (t: TFunction): Event[] => [
     date: t('events.oth.date'),
     location: t('events.oth.location'),
     description: t('events.oth.description'),
-    source: 'https://www.pereiratechtalks.com/'
+    source: 'https://opentechhackathon.com/'
   },
   {
     id: 'pertt',
