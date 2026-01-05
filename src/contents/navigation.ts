@@ -41,7 +41,7 @@ export const getNavigationItems = (t: TFunction): NavigationItem[] => [
   },
   { 
     label: t('header.navigation.cv'), 
-    href: 'https://www.canva.com/design/DAFNPRdvE5Y/view',
+    href: 'https://drive.google.com/file/d/1wB5PpQBgcDtrGFuMkZTSBCBs4bIXHRDK/view',
     id: 'cv',
     isExternal: true
   }
