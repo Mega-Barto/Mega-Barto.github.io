@@ -21,20 +21,28 @@ export const getProjects = (t: TFunction): Project[] => [
   },
   {
     id: '2',
+    title: t('projects.pr-extractor.title'),
+    description: t('projects.pr-extractor.description'),
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Electron'],
+    github: 'https://github.com/Mega-Barto/PR-Extractor',
+    status: 'in-progress'
+  },
+  {
+    id: '3',
     title: t('projects.project2.title'),
     description: t('projects.project2.description'),
     technologies: ['Node.js', 'Express', 'MongoDB'],
     status: 'planned'
   },
   {
-    id: '3',
+    id: '4',
     title: t('projects.project3.title'),
     description: t('projects.project3.description'),
     technologies: ['Python', 'Django', 'PostgreSQL'],
     status: 'planned'
   },
   {
-    id: '4',
+    id: '5',
     title: t('projects.legendary-pokedex.title'),
     description: t('projects.legendary-pokedex.description'),
     technologies: ['Flutter', 'Dart', 'Flask', 'Python'],

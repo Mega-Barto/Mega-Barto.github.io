@@ -91,6 +91,10 @@
       "title": "Legendary Pokedex",
       "description": "A simple mobile application to search and view information about legendary Pokémon. Part of a learning project to master Flutter and briefly experiment with Flask."
     },
+    "pr-extractor": {
+      "title": "PR Extractor",
+      "description": "Desktop application built with Electron to extract Pull Requests from GitHub and generate professional billing statements in PDF format."
+    },
     "status": {
       "completed": "Completed",
       "in-progress": "In Progress",
