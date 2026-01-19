@@ -21,7 +21,6 @@ const EventsSection: React.FC = () => {
                 <span className="event-date">{event.date}</span>
               </div>
               <div className="event-location">
-                <span className="location-icon">📍</span>
                 <span className="location-text">{event.location}</span>
               </div>
               <p className="event-description">{event.description}</p>
