@@ -66,14 +66,14 @@
   
   .section-title {
     font-size: 2.2rem;
-    color: var(--color-primary-900);
+    color: var(--color-text-inverse);
   }
   
   .autobiography-text {
-    color: var(--color-text-primary);
+    color: var(--color-text-inverse);
   }
   
   .autobiography-text p {
-    color: var(--color-text-secondary);
+    color: var(--color-text-inverse);
   }
 }
