@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       <div className="header-container">
         {/* Logo Section */}
         <div className="logo-section">
-          <Logo onClick={closeMobileMenu} />
+          <Logo onClick={closeMobileMenu} showIcon={false} />
         </div>
 
         {/* Navigation Menu - Desktop */}

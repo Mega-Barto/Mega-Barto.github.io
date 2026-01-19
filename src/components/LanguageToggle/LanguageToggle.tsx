@@ -22,7 +22,7 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({
   };
 
   const getLanguageText = () => {
-    return currentLanguage === 'es' ? 'EN' : 'ES';
+    return currentLanguage === 'es' ? 'ES' : 'EN';
   };
 
   const getLanguageName = () => {
