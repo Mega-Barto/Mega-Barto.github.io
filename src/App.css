@@ -7,15 +7,14 @@
 
 .main-content {
   flex: 1;
-  padding-top: 80px; /* Account for fixed header */
 }
 
 /* Hero Section */
 .hero-section {
   width: 100%;
-  padding: 6rem 2rem;
+  padding: 10rem 2rem 6rem 2rem;
   text-align: center;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,8 +83,8 @@ html {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 4rem 1rem;
-    min-height: calc(100vh - 70px);
+    padding: 8rem 1rem 4rem 1rem;
+    min-height: 100vh;
   }
   
   .hero-section h1 {
@@ -103,8 +102,8 @@ html {
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 3rem 1rem;
-    min-height: calc(100vh - 70px);
+    padding: 7rem 1rem 3rem 1rem;
+    min-height: 100vh;
   }
   
   .hero-section h1 {
@@ -164,15 +163,6 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .main-content {
-    padding-top: 70px;
-  }
-  
-  .hero-section {
-    padding: 2rem 1rem;
-    min-height: calc(100vh - 70px);
-  }
-  
   .hero-section h1 {
     font-size: 2.5rem;
   }
