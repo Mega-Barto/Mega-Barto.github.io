@@ -2,8 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Footer.css';
 import { getActiveSocialLinks } from '../../config';
-import { getFooterSections } from '../../contents';
-import Logo from '../Logo';
 
 interface FooterProps {
   className?: string;
@@ -12,8 +10,6 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ className = '' }) => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
-  
-  const footerSections = getFooterSections(t);
 
   // Obtener enlaces sociales activos desde la configuración centralizada
   const socialLinks = getActiveSocialLinks();
@@ -25,12 +21,6 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
         <div className="footer-main">
           {/* Brand Section */}
           <div className="footer-brand">
-            <div className="footer-logo">
-              <Logo href={null} size="medium" />
-            </div>
-            <p className="footer-description">
-              {t('personal.description')}
-            </p>
             <div className="footer-social">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
@@ -48,28 +38,6 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 );
               })}
             </div>
-          </div>
-
-          {/* Footer Sections */}
-          <div className="footer-sections">
-            {footerSections.map((section) => (
-              <div key={section.title} className="footer-section">
-                <h3>{section.title}</h3>
-                <ul>
-                  {section.links.map((link) => (
-                    <li key={link.label}>
-                      <a 
-                        href={link.href}
-                        target={link.href.startsWith('http') ? '_blank' : undefined}
-                        rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
         </div>
 
