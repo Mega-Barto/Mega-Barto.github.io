@@ -1,6 +1,7 @@
 .work-experience-section {
   padding: 6rem 0 4rem 0;
   background: var(--color-background-projects);
+  min-height: 60vh;
   color: var(--color-text-inverse);
   position: relative;
 }
