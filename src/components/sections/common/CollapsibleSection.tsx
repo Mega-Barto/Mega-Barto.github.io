@@ -23,14 +23,22 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
   return (
     <section id={id} className="collapsible-section">
       <div className="container">
-        <div className="section-header-wrapper">
+        <div 
+          className="section-header-wrapper"
+          onClick={toggleExpanded}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleExpanded();
+            }
+          }}
+          aria-expanded={isExpanded}
+          aria-label={`${title} - ${isExpanded ? 'Colapsar sección' : 'Expandir sección'}`}
+        >
           <h2 className="section-title">{title}</h2>
-          <button
-            className={`collapse-button ${isExpanded ? 'expanded' : ''}`}
-            onClick={toggleExpanded}
-            aria-expanded={isExpanded}
-            aria-label={isExpanded ? 'Colapsar sección' : 'Expandir sección'}
-          >
+          <div className={`collapse-button ${isExpanded ? 'expanded' : ''}`}>
             <svg
               className="collapse-icon"
               width="24"
@@ -44,7 +52,7 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
             >
               <polyline points="6 9 12 15 18 9" />
             </svg>
-          </button>
+          </div>
         </div>
         <div className={`collapsible-content ${isExpanded ? 'expanded' : ''}`}>
           {children}

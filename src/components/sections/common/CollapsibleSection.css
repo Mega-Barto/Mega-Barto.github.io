@@ -1,30 +1,47 @@
 .collapsible-section {
   padding: 4rem 0;
+  background: var(--color-background-projects);
+  color: var(--color-text-inverse);
 }
 
 .section-header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem 1.5rem;
   margin-bottom: 2rem;
   cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.section-header-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.section-header-wrapper:active {
+  transform: scale(0.98);
 }
 
 .collapse-button {
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-  color: var(--text-color);
+  transition: all 0.3s ease;
+  color: var(--color-text-inverse);
   border-radius: 50%;
+  min-width: 44px;
+  min-height: 44px;
 }
 
-.collapse-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+.section-header-wrapper:hover .collapse-button {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
 }
 
 .collapse-button.expanded .collapse-icon {
@@ -33,6 +50,8 @@
 
 .collapse-icon {
   transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
 }
 
 .collapsible-content {
