@@ -25,7 +25,7 @@ export const getProjects = (t: TFunction): Project[] => [
     description: t('projects.pr-extractor.description'),
     technologies: ['HTML', 'CSS', 'JavaScript', 'Electron'],
     github: 'https://github.com/Mega-Barto/PR-Extractor',
-    status: 'in-progress'
+    status: 'completed'
   },
   {
     id: '3',
