@@ -1,0 +1,48 @@
+.collapsible-section {
+  padding: 4rem 0;
+}
+
+.section-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.collapse-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  color: var(--text-color);
+  border-radius: 50%;
+}
+
+.collapse-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.collapse-button.expanded .collapse-icon {
+  transform: rotate(180deg);
+}
+
+.collapse-icon {
+  transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.collapsible-content.expanded {
+  max-height: 10000px;
+  opacity: 1;
+}
