@@ -14,13 +14,6 @@ const AutobiographySection: React.FC = () => {
             <div className="text-block text-intro">
               <p>{t('autobiography.introduction')}</p>
             </div>
-            <div className="autobiography-image">
-              <img 
-                src="https://i.imgur.com/kBWOFBL.png" 
-                alt={t('personal.displayName')} 
-                className="profile-image"
-              />
-            </div>
             <div className="text-block text-background">
               <p>{t('autobiography.background')}</p>
             </div>
