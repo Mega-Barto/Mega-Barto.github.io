@@ -14,22 +14,27 @@ interface LogoProps {
   size?: 'small' | 'medium' | 'large';
   /** Si se debe mostrar el texto junto al icono */
   showText?: boolean;
+  /** Si se debe mostrar el icono */
+  showIcon?: boolean;
 }
 
 const Logo: React.FC<LogoProps> = ({ 
   className = '', 
-  href = '#home',
+  href = '/',
   onClick,
   size = 'medium',
-  showText = true 
+  showText = true,
+  showIcon = true
 }) => {
   const { t } = useTranslation();
 
   const logoContent = (
     <>
-      <div className={`logo-icon logo-icon--${size}`}>
-        <img src={viteIcon} alt="Vite Logo" />
-      </div>
+      {showIcon && (
+        <div className={`logo-icon logo-icon--${size}`}>
+          <img src={viteIcon} alt="Vite Logo" />
+        </div>
+      )}
       {showText && (
         <span className={`logo-text logo-text--${size}`}>
           {t('personal.displayName')}
