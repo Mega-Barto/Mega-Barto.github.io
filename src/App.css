@@ -15,7 +15,7 @@
   width: 100%;
   padding: 6rem 2rem;
   text-align: center;
-  min-height: 60vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,7 +85,7 @@ html {
 @media (max-width: 768px) {
   .hero-section {
     padding: 4rem 1rem;
-    min-height: 70vh;
+    min-height: calc(100vh - 70px);
   }
   
   .hero-section h1 {
@@ -104,7 +104,7 @@ html {
 @media (max-width: 480px) {
   .hero-section {
     padding: 3rem 1rem;
-    min-height: 60vh;
+    min-height: calc(100vh - 70px);
   }
   
   .hero-section h1 {
@@ -170,7 +170,7 @@ html {
   
   .hero-section {
     padding: 2rem 1rem;
-    min-height: 50vh;
+    min-height: calc(100vh - 70px);
   }
   
   .hero-section h1 {
