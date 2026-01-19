@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CollapsibleSection.css';
 
 interface CollapsibleSectionProps {
@@ -15,6 +15,36 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
   defaultExpanded = false,
 }) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+
+  useEffect(() => {
+    // Función para expandir la sección si el hash coincide
+    const handleHashChange = () => {
+      if (window.location.hash === `#${id}`) {
+        setIsExpanded(true);
+        
+        // Hacer scroll a la sección después de un breve delay para la animación
+        setTimeout(() => {
+          const section = document.querySelector(`#${id}.collapsible-section`);
+          if (section) {
+            section.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'start' 
+            });
+          }
+        }, 100);
+      }
+    };
+
+    // Verificar al montar el componente
+    handleHashChange();
+
+    // Escuchar cambios en el hash
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [id]);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
