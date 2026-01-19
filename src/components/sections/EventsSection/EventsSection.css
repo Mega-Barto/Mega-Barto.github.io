@@ -17,7 +17,7 @@
 
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2.5rem;
   margin-top: 4rem;
   margin-bottom: 2rem;
@@ -174,7 +174,7 @@
   }
 
   .event-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .section-description {
