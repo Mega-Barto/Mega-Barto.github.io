@@ -1,32 +1,10 @@
 .autobiography-section {
   padding: 6rem 0;
-  background: var(--color-background-autobiography);
+  background: var(--color-background-projects);
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-}
-
-/* Separador visual antes de la sección */
-.autobiography-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-}
-
-/* Separador visual después de la sección */
-.autobiography-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--color-background-projects);
-  box-shadow: 0 2px 10px rgba(100, 116, 139, 0.3);
 }
 
 .autobiography-content {
@@ -37,16 +15,10 @@
   margin-top: 2rem;
 }
 
-.autobiography-text {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: var(--color-text-primary);
-}
-
 .autobiography-text p {
   margin-bottom: 2rem;
   font-weight: 400;
-  color: var(--color-text-secondary);
+  color: var(--color-text-inverse);
 }
 
 .autobiography-image {
@@ -69,10 +41,10 @@
 .section-title {
   font-size: 2.8rem;
   text-align: center;
-  color: var(--color-primary-900);
+  color: var(--color-text-inverse);
   margin-bottom: 3rem;
   font-weight: 800;
-  text-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .container {
