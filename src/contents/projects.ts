@@ -40,7 +40,7 @@ export const getProjects = (t: TFunction): Project[] => [
   {
     id: '6',
     title: 'Chess games API',
-    description: t('projects.project2.description'),
+    description: t('projects.chess_api.description'),
     technologies: ['Python', 'Django'],
     status: 'completed',
     github: 'https://github.com/Mega-Barto/Chess-Games-Api'
