@@ -7,6 +7,7 @@ export interface Project {
   technologies: string[];
   link?: string;
   github?: string;
+  demo?: string;
   status: 'completed' | 'in-progress' | 'planned';
 }
 
@@ -28,26 +29,29 @@ export const getProjects = (t: TFunction): Project[] => [
     status: 'completed'
   },
   {
+    id: '5',
+    title: 'Legendary Pokedex API',
+    description: t('projects.legendary_pokedex_api.description'),
+    technologies: ['Python', 'Flask', 'MySQL', 'PythonAnywhere'],
+    github: 'https://github.com/Mega-Barto/legendary-pokemon-api',
+    demo: 'https://megabarto.pythonanywhere.com/',
+    status: 'completed'
+  },
+  {
+    id: '6',
+    title: 'Chess games API',
+    description: t('projects.chess_api.description'),
+    technologies: ['Python', 'Django'],
+    status: 'completed',
+    github: 'https://github.com/Mega-Barto/Chess-Games-Api'
+  },
+  {
     id: '3',
     title: t('projects.project2.title'),
     description: t('projects.project2.description'),
-    technologies: ['Node.js', 'Express', 'MongoDB'],
+    technologies: ['Next.JS', 'MongoDB'],
     status: 'planned'
   },
-  {
-    id: '4',
-    title: t('projects.project3.title'),
-    description: t('projects.project3.description'),
-    technologies: ['Python', 'Django', 'PostgreSQL'],
-    status: 'planned'
-  },
-  {
-    id: '5',
-    title: t('projects.legendary-pokedex.title'),
-    description: t('projects.legendary-pokedex.description'),
-    technologies: ['Flutter', 'Dart', 'Flask', 'Python'],
-    status: 'in-progress',
-  }
 ];
 
 // Función para obtener colores de estado

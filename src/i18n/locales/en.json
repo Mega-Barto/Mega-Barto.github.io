@@ -87,13 +87,15 @@
       "title": "API Service",
       "description": "A robust REST API service with comprehensive documentation and scalable architecture."
     },
-    "legendary-pokedex": {
-      "title": "Legendary Pokedex",
-      "description": "A simple mobile application to search and view information about legendary Pokémon. Part of a learning project to master Flutter and briefly experiment with Flask."
-    },
     "pr-extractor": {
       "title": "PR Extractor",
       "description": "Desktop application built with Electron to extract Pull Requests from GitHub and generate professional billing statements in PDF format."
+    },
+    "legendary_pokedex_api": {
+      "description": "A production-ready Flask REST API for managing legendary and mythical Pokémon data."
+    },
+    "chess_api": {
+      "description": "A REST API (first approach to Django Rest Framework) that allows storing detailed information about chess games, including players with their respective ELO and color in the game, moves, location, and date of the competition."
     },
     "status": {
       "completed": "Completed",

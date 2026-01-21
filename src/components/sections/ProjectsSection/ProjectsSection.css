@@ -98,15 +98,16 @@
   border-color: var(--color-primary-800);
 }
 
+
 .demo-link {
-  background: transparent;
+  background: var(--color-primary-900);
   color: var(--color-text-inverse);
-  border-color: var(--color-text-inverse);
+  border-color: var(--color-primary-900);
 }
 
 .demo-link:hover {
-  background: var(--color-text-inverse);
-  color: var(--color-accent-cyan);
+  background: var(--color-primary-800);
+  border-color: var(--color-primary-800);
 }
 
 .section-title {

@@ -54,6 +54,16 @@ const ProjectsSection: React.FC = () => {
                   {t('projects.links.demo')}
                 </a>
               )}
+                {project.demo && (
+                  <a 
+                    href={project.demo} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link demo-link"
+                  >
+                    {t('projects.links.demo')}
+                  </a>
+                )}
             </div>
           </div>
         ))}
