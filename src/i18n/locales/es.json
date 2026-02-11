@@ -107,6 +107,9 @@
       "demo": "Demo en Vivo"
     }
   },
+  "carousel" : {
+    "title": "Tecnologías más usadas"
+  },
   "certificates": {
     "academyLabel": "Academia",
     "verificationCode": "Código de Verificación",
