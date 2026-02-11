@@ -2,6 +2,7 @@ import './App.css'
 import { useTranslation } from 'react-i18next'
 import { Header, Footer } from './components'
 import { AutobiographySection, ProjectsSection, CertificatesSection, EventsSection, WorkExperienceSection } from './components/sections'
+import CarouselSection from './components/sections/Carousel/CarouselSection';
 
 function App() {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ function App() {
           </div>
         </section>
         <AutobiographySection />
+        <CarouselSection />
         <WorkExperienceSection />
         <ProjectsSection />
         <CertificatesSection />
