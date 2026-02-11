@@ -1,0 +1,112 @@
+.carousel-background {
+  padding: 6rem 0;
+  background: var(--color-background-projects);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  position: relative;
+  color: var(--color-text-inverse);
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 50%;
+  padding: 2rem 0;
+  position: relative;
+  --carousel-speed: 12s;
+  --carousel-gap: 0.65em;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.carousel-track {
+  display: flex;
+  animation: spin var(--carousel-speed) linear infinite;
+  width: max-content;
+}
+
+.carousel-reverse .carousel-track {
+  animation: spin-reverse var(--carousel-speed) linear infinite;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes spin {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.carousel-section-title {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: var(--color-text-inverse);
+  font-weight: 800;
+  text-align: center;
+}
+
+.group {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--carousel-gap, 0.65em);
+  padding-right: var(--carousel-gap, 0.65em);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-background {
+    gap: 2rem;
+    padding: 4rem 0;
+  }
+
+  .carousel {
+    padding: 1.5rem 0;
+    width: 70%;
+    /* En tablets, reducir gap proporcionalmente */
+    --carousel-gap: calc(var(--carousel-gap, 0.65em) * 0.85);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-background {
+    gap: 1.5rem;
+  }
+
+  .carousel {
+    width: 85%;
+    padding: 1rem 0;
+    /* En móviles, reducir gap aún más */
+    --carousel-gap: calc(var(--carousel-gap, 0.65em) * 0.7);
+  }
+}
+
