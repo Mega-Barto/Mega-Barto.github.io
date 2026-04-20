@@ -11,11 +11,18 @@ interface Props {
 }
 
 const { variant, viewAllHref } = Astro.props;
-const defs = variant === 'summary' ? EVENT_DEFS.slice(0, 3) : EVENT_DEFS;
+const isSummary = variant === 'summary';
+const defs = isSummary ? EVENT_DEFS.slice(0, 3) : EVENT_DEFS;
 ---
 
 <Section id="events" titleKey="events.name">
-  <p class="section-description" data-i18n-key="events.description">{t('events.description')}</p>
+  {
+    !isSummary && (
+      <p class="section-description" data-i18n-key="events.description">
+        {t('events.description')}
+      </p>
+    )
+  }
   <div class="events-grid">
     {
       defs.map((event) => (
@@ -33,9 +40,11 @@ const defs = variant === 'summary' ? EVENT_DEFS.slice(0, 3) : EVENT_DEFS;
               {t(event.locationKey)}
             </span>
           </div>
-          <p class="event-description" data-i18n-key={event.descriptionKey}>
-            {t(event.descriptionKey)}
-          </p>
+          {!isSummary && (
+            <p class="event-description" data-i18n-key={event.descriptionKey}>
+              {t(event.descriptionKey)}
+            </p>
+          )}
           {event.source && (
             <div class="event-link">
               <a

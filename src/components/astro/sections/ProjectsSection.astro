@@ -12,7 +12,8 @@ interface Props {
 }
 
 const { variant, viewAllHref } = Astro.props;
-const defs: ProjectDef[] = variant === 'summary' ? PROJECT_DEFS.slice(0, 3) : PROJECT_DEFS;
+const isSummary = variant === 'summary';
+const defs: ProjectDef[] = isSummary ? PROJECT_DEFS.slice(0, 3) : PROJECT_DEFS;
 
 function projectTitle(p: ProjectDef): { text: string; key?: string } {
   if (p.titleLiteral) return { text: p.titleLiteral };
@@ -44,9 +45,11 @@ function projectTitle(p: ProjectDef): { text: string; key?: string } {
                 {t(`projects.status.${project.status}`)}
               </span>
             </div>
-            <p class="project-description" data-i18n-key={project.descriptionKey}>
-              {t(project.descriptionKey)}
-            </p>
+            {!isSummary && (
+              <p class="project-description" data-i18n-key={project.descriptionKey}>
+                {t(project.descriptionKey)}
+              </p>
+            )}
             <div class="project-technologies">
               {project.technologies.map((tech) => (
                 <span class="tech-tag">{tech}</span>

@@ -55,9 +55,8 @@ export function isLandingPath(pathname: string, base: string): boolean {
   return p === b || p === `${b}/index.html`;
 }
 
-export function resolveNavHref(def: NavDef, pathname: string, base: string): string {
+export function resolveNavHref(def: NavDef, _pathname: string, base: string): string {
   if (def.isExternal && def.externalHref) return def.externalHref;
-  if (isLandingPath(pathname, base)) return def.hrefHome;
   const baseNorm = base.endsWith('/') ? base.slice(0, -1) : base;
   const page = def.pathPage.startsWith('/') ? def.pathPage : `/${def.pathPage}`;
   return `${baseNorm}${page}`;

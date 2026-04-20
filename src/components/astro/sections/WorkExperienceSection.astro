@@ -11,7 +11,8 @@ interface Props {
 }
 
 const { variant, viewAllHref } = Astro.props;
-const defs = variant === 'summary' ? WORK_DEFS.slice(0, 2) : WORK_DEFS;
+const isSummary = variant === 'summary';
+const defs = isSummary ? WORK_DEFS.slice(0, 2) : WORK_DEFS;
 ---
 
 <Section id="work-experience" titleKey="header.navigation.workExperience">
@@ -50,12 +51,14 @@ const defs = variant === 'summary' ? WORK_DEFS.slice(0, 2) : WORK_DEFS;
               </span>
             )}
           </div>
-          <p
-            class="work-description"
-            data-i18n-key={`workExperience.descriptions.${work.id}`}
-          >
-            {t(`workExperience.descriptions.${work.id}`)}
-          </p>
+          {!isSummary && (
+            <p
+              class="work-description"
+              data-i18n-key={`workExperience.descriptions.${work.id}`}
+            >
+              {t(`workExperience.descriptions.${work.id}`)}
+            </p>
+          )}
         </div>
       ))
     }

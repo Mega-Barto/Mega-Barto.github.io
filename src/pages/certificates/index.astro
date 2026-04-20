@@ -13,18 +13,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <div class="app">
     <SiteHeader />
     <main class="main-content page-detail">
-      <h1 class="page-title" data-i18n-key="header.navigation.certificates">
-        {t('header.navigation.certificates')}
-      </h1>
       <CertificatesSection variant="full" />
     </main>
     <SiteFooter />
   </div>
 </BaseLayout>
 
-<style>
-  .page-title {
-    color: var(--color-text-inverse);
-    margin-bottom: 1rem;
-  }
-</style>
