@@ -4,10 +4,10 @@ import heroProfile from '../assets/ProfileImages/github_profile.jpeg';
 import SiteFooter from '../components/astro/SiteFooter.astro';
 import SiteHeader from '../components/astro/SiteHeader.astro';
 import Carousel from '../components/astro/Carousel.astro';
-import CertificatesSectionIsland from '../components/islands/CertificatesSectionIsland';
-import EventsSectionIsland from '../components/islands/EventsSectionIsland';
-import ProjectsSectionIsland from '../components/islands/ProjectsSectionIsland';
-import WorkExperienceSectionIsland from '../components/islands/WorkExperienceSectionIsland';
+import CertificatesSection from '../components/astro/sections/CertificatesSection.astro';
+import EventsSection from '../components/astro/sections/EventsSection.astro';
+import ProjectsSection from '../components/astro/sections/ProjectsSection.astro';
+import WorkExperienceSection from '../components/astro/sections/WorkExperienceSection.astro';
 import { t } from '../i18n/t';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../utils/baseUrl';
@@ -62,10 +62,10 @@ const description = t('personal.description');
         <h2 class="carousel-section-title" data-i18n-key="carousel.title">{t('carousel.title')}</h2>
         <Carousel />
       </section>
-      <WorkExperienceSectionIsland client:visible variant="summary" viewAllHref={withBase('/work-experience/')} />
-      <ProjectsSectionIsland client:visible variant="summary" viewAllHref={withBase('/projects/')} />
-      <CertificatesSectionIsland client:visible variant="summary" viewAllHref={withBase('/certificates/')} />
-      <EventsSectionIsland client:visible variant="summary" viewAllHref={withBase('/events/')} />
+      <WorkExperienceSection variant="summary" viewAllHref={withBase('/work-experience/')} />
+      <ProjectsSection variant="summary" viewAllHref={withBase('/projects/')} />
+      <CertificatesSection variant="summary" viewAllHref={withBase('/certificates/')} />
+      <EventsSection variant="summary" viewAllHref={withBase('/events/')} />
     </main>
     <SiteFooter />
   </div>

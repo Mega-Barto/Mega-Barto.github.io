@@ -1,7 +1,7 @@
 ---
 import SiteFooter from '../../components/astro/SiteFooter.astro';
 import SiteHeader from '../../components/astro/SiteHeader.astro';
-import WorkExperienceSectionIsland from '../../components/islands/WorkExperienceSectionIsland';
+import WorkExperienceSection from '../../components/astro/sections/WorkExperienceSection.astro';
 import { t } from '../../i18n/t';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
@@ -16,7 +16,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <h1 class="page-title" data-i18n-key="header.navigation.workExperience">
         {t('header.navigation.workExperience')}
       </h1>
-      <WorkExperienceSectionIsland client:load variant="full" />
+      <WorkExperienceSection variant="full" />
     </main>
     <SiteFooter />
   </div>

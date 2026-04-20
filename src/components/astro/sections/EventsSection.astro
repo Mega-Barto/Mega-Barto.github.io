@@ -1,0 +1,64 @@
+---
+import { EVENT_DEFS } from '../../../content/events';
+import { t } from '../../../i18n/t';
+import Section from '../Section.astro';
+
+import '../../sections/EventsSection/EventsSection.css';
+
+interface Props {
+  variant: 'summary' | 'full';
+  viewAllHref?: string;
+}
+
+const { variant, viewAllHref } = Astro.props;
+const defs = variant === 'summary' ? EVENT_DEFS.slice(0, 3) : EVENT_DEFS;
+---
+
+<Section id="events" titleKey="events.name">
+  <p class="section-description" data-i18n-key="events.description">{t('events.description')}</p>
+  <div class="events-grid">
+    {
+      defs.map((event) => (
+        <div class="event-card">
+          <div class="event-header">
+            <h3 class="event-title" data-i18n-key={event.titleKey}>
+              {t(event.titleKey)}
+            </h3>
+            <span class="event-date" data-i18n-key={event.dateKey}>
+              {t(event.dateKey)}
+            </span>
+          </div>
+          <div class="event-location">
+            <span class="location-text" data-i18n-key={event.locationKey}>
+              {t(event.locationKey)}
+            </span>
+          </div>
+          <p class="event-description" data-i18n-key={event.descriptionKey}>
+            {t(event.descriptionKey)}
+          </p>
+          {event.source && (
+            <div class="event-link">
+              <a
+                href={event.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="event-source-link"
+              >
+                <span data-i18n-key="events.viewMore">{t('events.viewMore')}</span>
+              </a>
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </div>
+  {
+    variant === 'summary' && viewAllHref && (
+      <p class="section-view-all">
+        <a href={viewAllHref} class="view-all-link" data-i18n-key="common.viewAll">
+          {t('common.viewAll')}
+        </a>
+      </p>
+    )
+  }
+</Section>
