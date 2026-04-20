@@ -40,6 +40,14 @@ export const CERTIFICATE_DEFS: CertificateDef[] = [
     verificationCode: 'a312dc9b-2112-447e-9d12-9fe384778f49',
     sortDate: '2025-09-01',
   },
+  {
+    id: '6',
+    titleKey: 'certificates.scrum.title',
+    academyKey: 'certificates.scrum.academy',
+    dateObtainedKey: 'certificates.scrum.dateObtained',
+    verificationCode: 'b6c46be4-1ebe-4e75-bae0-39298aba4feO',
+    sortDate: '2026-03-01',
+  },
 ];
 
 /**
