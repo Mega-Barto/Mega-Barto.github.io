@@ -9,7 +9,9 @@ lerna-debug.log*
 
 node_modules
 dist
+dist-astro
 dist-ssr
+.astro
 *.local
 
 # Editor directories and files
@@ -22,3 +24,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Bitácora
+bitacora.md
