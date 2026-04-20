@@ -62,6 +62,9 @@
       "description": "{{description}}"
     }
   },
+  "common": {
+    "viewAll": "View all →"
+  },
   "personal": {
     "name": "MegaBarto",
     "displayName": "MegaBarto",
@@ -69,10 +72,13 @@
     "description": "Systems and Computer Engineer.",
     "domain": "megabarto.rocks"
   },
+  "about": {
+    "detailLead": "Extended version of “Who is Barto?” with the same core story; you can grow this page later with milestones and links."
+  },
   "autobiography": {
-  "introduction": "Hello! I’m Juan Alejandro Pérez Bermúdez (or Barto, as friends call me), a Systems and Computing Engineer eager to gain professional experience in software projects.",
-  "background": "I have experience in web development, working with technologies such as React, FastAPI and BaaS as Supabase. Now, I'm working in a new project using the Flutter + Firebase stack to create mobile cross-platform applications.",
-  "current": "At present, I work in mobile development, software quality, and building tech community engagement."
+    "introduction": "Hello! I’m Juan Alejandro Pérez Bermúdez (or Barto, as friends call me), a Systems and Computing Engineer eager to gain professional experience in software projects.",
+    "background": "I have experience in web development, working with technologies such as React, FastAPI and BaaS as Supabase. Now, I'm working in a new project using the Flutter + Firebase stack to create mobile cross-platform applications.",
+    "current": "At present, I work in mobile development, software quality, and building tech community engagement."
   },
   "projects": {
     "portfolio": {
@@ -105,9 +111,14 @@
     "links": {
       "github": "View Code",
       "demo": "Live Demo"
+    },
+    "filter": {
+      "status": "Status",
+      "technology": "Technology",
+      "all": "All"
     }
   },
-  "carousel" : {
+  "carousel": {
     "title": "Most Used Technologies"
   },
   "certificates": {

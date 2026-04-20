@@ -62,12 +62,18 @@
       "description": "{{description}}"
     }
   },
+  "common": {
+    "viewAll": "Ver todos →"
+  },
   "personal": {
     "name": "MegaBarto",
     "displayName": "MegaBarto",
     "companyName": "Bartland Labs",
     "description": "Ingeniero en sistemas y computación.",
     "domain": "megabarto.rocks"
+  },
+  "about": {
+    "detailLead": "Versión ampliada de la sección «¿Quién es Barto?» con el mismo contenido base; aquí puedes ampliar en el futuro con más hitos y enlaces."
   },
   "autobiography": {
     "introduction": "¡Hola! Soy Juan Alejandro Pérez Bermúdez (o Barto, como me llaman mis amigos), un Ingeniero en Sistemas y Computación con ganas de adquirir experiencia profesional en proyectos de software.",
@@ -105,9 +111,14 @@
     "links": {
       "github": "Ver Código",
       "demo": "Demo en Vivo"
+    },
+    "filter": {
+      "status": "Estado",
+      "technology": "Tecnología",
+      "all": "Todos"
     }
   },
-  "carousel" : {
+  "carousel": {
     "title": "Tecnologías más usadas"
   },
   "certificates": {
