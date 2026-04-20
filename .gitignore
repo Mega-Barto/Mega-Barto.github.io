@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Astro
+.astro/
+dist-astro/
+
+# Bitácora local de migración (se versiona solo en la rama de release)
+bitacora.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
