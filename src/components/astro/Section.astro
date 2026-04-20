@@ -1,4 +1,6 @@
 ---
+import { t } from '../../i18n/t';
+
 interface Props {
   id: string;
   titleKey: string;
@@ -6,17 +8,11 @@ interface Props {
 }
 
 const { id, titleKey, class: className = '' } = Astro.props;
-
-import { t } from '../../i18n/t';
 ---
 
-<section id={id} class={`collapsible-section ${className}`.trim()}>
-  <div class="container">
-    <div class="section-header-wrapper static">
-      <h2 class="section-title" data-i18n-key={titleKey}>{t(titleKey)}</h2>
-    </div>
-    <div class="collapsible-content expanded">
-      <slot />
-    </div>
+<section id={id} class={`page-section ${className}`.trim()}>
+  <div class="page-section-inner">
+    <h2 class="section-title" data-i18n-key={titleKey}>{t(titleKey)}</h2>
+    <slot />
   </div>
 </section>
