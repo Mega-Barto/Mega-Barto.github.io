@@ -90,10 +90,19 @@ export const EVENT_DEFS: EventDef[] = [
     descriptionKey: 'events.pertt.description',
     source: 'https://www.pereiratechtalks.com/',
     sortDate: '2024-01-01',
+    ongoing: true,
   },
 ];
 
-/** Sort events by closest-to-today first (sortDate descending). */
+/**
+ * Orden para la landing: primero los "desde/since" (ongoing) y luego por fecha
+ * descendente (los más cercanos a hoy primero).
+ */
 export function sortEventsByRecency(events: EventDef[]): EventDef[] {
-  return [...events].sort((a, b) => (b.sortDate ?? '').localeCompare(a.sortDate ?? ''));
+  return [...events].sort((a, b) => {
+    const aOn = a.ongoing ? 1 : 0;
+    const bOn = b.ongoing ? 1 : 0;
+    if (aOn !== bOn) return bOn - aOn;
+    return (b.sortDate ?? '').localeCompare(a.sortDate ?? '');
+  });
 }

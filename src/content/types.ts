@@ -21,6 +21,8 @@ export interface EventDef {
   source?: string;
   /** ISO date (YYYY-MM-DD) used to sort entries; falls back to a very old date if missing. */
   sortDate?: string;
+  /** Marca ítems "desde/since" (actividad continuada) para priorizarlos sobre fechas puntuales. */
+  ongoing?: boolean;
 }
 
 export interface CertificateDef {
@@ -31,6 +33,8 @@ export interface CertificateDef {
   verificationCode?: string;
   /** ISO date (YYYY-MM-DD) used to sort entries. */
   sortDate?: string;
+  /** Marca certificaciones vigentes/en curso para priorizarlas. */
+  ongoing?: boolean;
 }
 
 export interface WorkDef {

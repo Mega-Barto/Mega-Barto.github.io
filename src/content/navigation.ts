@@ -42,10 +42,10 @@ export const NAV_DEFS: NavDef[] = [
   {
     id: 'cv',
     labelKey: 'header.navigation.cv',
-    hrefHome: 'https://drive.google.com/file/d/1wB5PpQBgcDtrGFuMkZTSBCBs4bIXHRDK/view',
-    pathPage: '/',
+    hrefHome: '/cv.pdf',
+    pathPage: '/cv.pdf',
     isExternal: true,
-    externalHref: 'https://drive.google.com/file/d/1wB5PpQBgcDtrGFuMkZTSBCBs4bIXHRDK/view',
+    externalHref: '/cv.pdf',
   },
 ];
 
@@ -56,8 +56,13 @@ export function isLandingPath(pathname: string, base: string): boolean {
 }
 
 export function resolveNavHref(def: NavDef, _pathname: string, base: string): string {
-  if (def.isExternal && def.externalHref) return def.externalHref;
   const baseNorm = base.endsWith('/') ? base.slice(0, -1) : base;
+  if (def.isExternal && def.externalHref) {
+    // Los externalHref relativos (ej. un PDF dentro de /public) se prefijan
+    // con la base del sitio para que funcionen también en GitHub Pages.
+    if (def.externalHref.startsWith('/')) return `${baseNorm}${def.externalHref}`;
+    return def.externalHref;
+  }
   const page = def.pathPage.startsWith('/') ? def.pathPage : `/${def.pathPage}`;
   return `${baseNorm}${page}`;
 }

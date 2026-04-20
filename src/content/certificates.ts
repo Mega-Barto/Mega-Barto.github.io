@@ -42,7 +42,15 @@ export const CERTIFICATE_DEFS: CertificateDef[] = [
   },
 ];
 
-/** Sort certificates by closest-to-today first (sortDate descending). */
+/**
+ * Orden para la landing: primero los "desde/since" (ongoing) y luego por fecha
+ * descendente (los más cercanos a hoy primero).
+ */
 export function sortCertificatesByRecency(defs: CertificateDef[]): CertificateDef[] {
-  return [...defs].sort((a, b) => (b.sortDate ?? '').localeCompare(a.sortDate ?? ''));
+  return [...defs].sort((a, b) => {
+    const aOn = a.ongoing ? 1 : 0;
+    const bOn = b.ongoing ? 1 : 0;
+    if (aOn !== bOn) return bOn - aOn;
+    return (b.sortDate ?? '').localeCompare(a.sortDate ?? '');
+  });
 }
