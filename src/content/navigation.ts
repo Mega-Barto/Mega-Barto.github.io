@@ -42,10 +42,10 @@ export const NAV_DEFS: NavDef[] = [
   {
     id: 'cv',
     labelKey: 'header.navigation.cv',
-    hrefHome: '/cv.pdf',
-    pathPage: '/cv.pdf',
+    hrefHome: '/Juan_Alejandro_Pérez_Bermúdez_CV.pdf',
+    pathPage: '/Juan_Alejandro_Pérez_Bermúdez_CV.pdf',
     isExternal: true,
-    externalHref: '/cv.pdf',
+    externalHref: '/Juan_Alejandro_Pérez_Bermúdez_CV.pdf',
   },
 ];
 
