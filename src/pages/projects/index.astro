@@ -1,17 +1,24 @@
 ---
+import ProjectsFilters from '../../components/astro/ProjectsFilters.astro';
+import ProjectsSection from '../../components/astro/sections/ProjectsSection.astro';
 import SiteFooter from '../../components/astro/SiteFooter.astro';
 import SiteHeader from '../../components/astro/SiteHeader.astro';
-import ProjectsPageClient from '../../components/islands/ProjectsPageClient';
 import { t } from '../../i18n/t';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title={`${t('header.navigation.projects')} — ${t('personal.displayName')}`} description={t('projects.portfolio.description')}>
+<BaseLayout
+  title={`${t('header.navigation.projects')} — ${t('personal.displayName')}`}
+  description={t('projects.portfolio.description')}
+>
   <div class="app">
     <SiteHeader />
     <main class="main-content page-detail">
-      <h1 class="page-title" data-i18n-key="header.navigation.projects">{t('header.navigation.projects')}</h1>
-      <ProjectsPageClient client:load />
+      <h1 class="page-title" data-i18n-key="header.navigation.projects">
+        {t('header.navigation.projects')}
+      </h1>
+      <ProjectsFilters />
+      <ProjectsSection variant="full" />
     </main>
     <SiteFooter />
   </div>
