@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import heroProfile from '../assets/ProfileImages/github_profile.jpeg';
 import SiteFooter from '../components/astro/SiteFooter.astro';
 import SiteHeader from '../components/astro/SiteHeader.astro';
-import CarouselIsland from '../components/islands/CarouselIsland';
+import Carousel from '../components/astro/Carousel.astro';
 import CertificatesSectionIsland from '../components/islands/CertificatesSectionIsland';
 import EventsSectionIsland from '../components/islands/EventsSectionIsland';
 import ProjectsSectionIsland from '../components/islands/ProjectsSectionIsland';
@@ -60,7 +60,7 @@ const description = t('personal.description');
       </section>
       <section class="carousel-section-wrap">
         <h2 class="carousel-section-title" data-i18n-key="carousel.title">{t('carousel.title')}</h2>
-        <CarouselIsland client:visible />
+        <Carousel />
       </section>
       <WorkExperienceSectionIsland client:visible variant="summary" viewAllHref={withBase('/work-experience/')} />
       <ProjectsSectionIsland client:visible variant="summary" viewAllHref={withBase('/projects/')} />
