@@ -3,15 +3,13 @@ import '../Header/Header.css';
 import { resolveNavItems } from '../../content/navigation';
 import { t } from '../../i18n/t';
 import { withBase } from '../../utils/baseUrl';
-import LanguageToggle from '../islands/LanguageToggle';
-import MobileMenuDrawer from '../islands/MobileMenuDrawer';
-import MobileMenuTrigger from '../islands/MobileMenuTrigger';
+import LanguageToggle from './LanguageToggle.astro';
+import MobileMenu from './MobileMenu.astro';
 import SocialLinks from './SocialLinks.astro';
 
 const base = import.meta.env.BASE_URL;
 const pathname = Astro.url.pathname;
 const navItems = resolveNavItems(pathname, base);
-const labelsEs = Object.fromEntries(navItems.map((i) => [i.labelKey, t(i.labelKey)]));
 ---
 
 <header class="header">
@@ -45,11 +43,10 @@ const labelsEs = Object.fromEntries(navItems.map((i) => [i.labelKey, t(i.labelKe
       <SocialLinks />
     </div>
     <div class="header-right">
-      <div class="language-toggle">
-        <LanguageToggle client:load />
+      <div class="language-toggle-wrap">
+        <LanguageToggle />
       </div>
-      <MobileMenuTrigger client:load />
+      <MobileMenu items={navItems} />
     </div>
   </div>
-  <MobileMenuDrawer client:load items={navItems} labelsEs={labelsEs} />
 </header>

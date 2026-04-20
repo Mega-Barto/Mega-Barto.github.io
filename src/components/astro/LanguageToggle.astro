@@ -1,0 +1,66 @@
+---
+import '../LanguageToggle/LanguageToggle.css';
+
+interface Props {
+  showText?: boolean;
+  compact?: boolean;
+}
+
+const { showText = true, compact = false } = Astro.props;
+---
+
+<button
+  type="button"
+  class={`language-toggle ${compact ? 'compact' : ''}`.trim()}
+  data-language-toggle
+  title="Toggle language"
+  aria-label="Toggle language"
+>
+  <span class="language-icon" aria-hidden="true">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="1em"
+      height="1em"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="2" y1="12" x2="22" y2="12"></line>
+      <path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"></path>
+    </svg>
+  </span>
+  {showText && <span class="language-text" data-language-label>ES</span>}
+</button>
+
+<script>
+  import { $language, setLanguage } from '../../stores/i18n';
+
+  const render = (lang: 'es' | 'en') => {
+    const labels = document.querySelectorAll<HTMLElement>('[data-language-label]');
+    for (const el of labels) {
+      el.textContent = lang === 'es' ? 'ES' : 'EN';
+    }
+  };
+
+  render($language.get());
+  $language.listen((lang) => render(lang));
+
+  const bindToggles = () => {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('[data-language-toggle]');
+    for (const btn of buttons) {
+      if (btn.dataset.bound === 'true') continue;
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', () => {
+        const next = $language.get() === 'es' ? 'en' : 'es';
+        setLanguage(next);
+      });
+    }
+  };
+
+  bindToggles();
+  document.addEventListener('DOMContentLoaded', bindToggles);
+</script>
