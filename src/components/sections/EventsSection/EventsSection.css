@@ -29,13 +29,15 @@
   border-radius: 20px;
   padding: 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
 .event-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -128,7 +130,7 @@
 }
 
 .event-source-link::after {
-  content: '↗';
+  content: "↗";
   font-size: 1rem;
   transition: transform 0.3s ease;
 }

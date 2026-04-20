@@ -1,0 +1,25 @@
+---
+import SiteFooter from '../../components/astro/SiteFooter.astro';
+import SiteHeader from '../../components/astro/SiteHeader.astro';
+import ProjectsPageClient from '../../components/islands/ProjectsPageClient';
+import { t } from '../../i18n/t';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title={`${t('header.navigation.projects')} — ${t('personal.displayName')}`} description={t('projects.portfolio.description')}>
+  <div class="app">
+    <SiteHeader />
+    <main class="main-content page-detail">
+      <h1 class="page-title" data-i18n-key="header.navigation.projects">{t('header.navigation.projects')}</h1>
+      <ProjectsPageClient client:load />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .page-title {
+    color: var(--color-text-inverse);
+    margin-bottom: 1rem;
+  }
+</style>

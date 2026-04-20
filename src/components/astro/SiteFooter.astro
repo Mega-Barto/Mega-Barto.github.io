@@ -1,0 +1,34 @@
+---
+import '../Footer/Footer.css';
+import { t } from '../../i18n/t';
+import SocialLinksIsland from '../islands/SocialLinksIsland';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p class="footer-copyright">
+        © {year}{' '}
+        <span data-i18n-key="personal.companyName">{t('personal.companyName')}</span>.{' '}
+        <span data-i18n-key="footer.copyright">{t('footer.copyright')}</span>
+      </p>
+      <div class="footer-social">
+        <SocialLinksIsland client:load />
+      </div>
+      <p class="footer-love">
+        <span data-i18n-key="footer.madeWithLove">{t('footer.madeWithLove')}</span>
+        {' '}•{' '}
+        <a
+          href="https://github.com/Mega-Barto/Mega-Barto.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="source-link"
+        >
+          <span data-i18n-key="footer.sourceCode">{t('footer.sourceCode')}</span>
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

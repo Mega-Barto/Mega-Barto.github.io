@@ -1,11 +1,5 @@
 import type { IconType } from 'react-icons';
-import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaTwitter, 
-  FaEnvelope,
-  FaTelegram
-} from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaTelegram, FaTwitter } from 'react-icons/fa';
 
 export interface SocialLink {
   name: string;
@@ -22,28 +16,28 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: 'https://github.com/Mega-Barto',
     icon: FaGithub,
     description: 'Sígueme en GitHub',
-    isActive: true
+    isActive: true,
   },
   {
     name: 'LinkedIn',
     url: 'https://linkedin.com/in/Mega-Barto',
     icon: FaLinkedin,
     description: 'Conecta conmigo en LinkedIn',
-    isActive: true
+    isActive: true,
   },
   {
     name: 'Twitter',
     url: 'https://twitter.com/Mega-Barto',
     icon: FaTwitter,
     description: 'Sígueme en Twitter',
-    isActive: true
+    isActive: true,
   },
   {
     name: 'Email',
     url: 'mailto:personal.jperez@gmail.com',
     icon: FaEnvelope,
     description: 'Envíame un email',
-    isActive: true
+    isActive: true,
   },
 
   {
@@ -51,18 +45,18 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: 'https://t.me/MegaBarto',
     icon: FaTelegram,
     description: 'Contáctame en Telegram',
-    isActive: true
-  }
+    isActive: true,
+  },
 ];
 
 // Función para obtener solo los enlaces activos
 export const getActiveSocialLinks = (): SocialLink[] => {
-  return SOCIAL_LINKS.filter(link => link.isActive);
+  return SOCIAL_LINKS.filter((link) => link.isActive);
 };
 
 // Función para obtener un enlace específico por nombre
 export const getSocialLinkByName = (name: string): SocialLink | undefined => {
-  return SOCIAL_LINKS.find(link => link.name.toLowerCase() === name.toLowerCase());
+  return SOCIAL_LINKS.find((link) => link.name.toLowerCase() === name.toLowerCase());
 };
 
 // Configuración de información personal (para reutilizar en diferentes componentes)
@@ -72,5 +66,5 @@ export const PERSONAL_INFO = {
   companyName: 'Bartland Labs.',
   logoUrl: 'https://i.imgur.com/kBWOFBL.png',
   description: 'Ingeniero en sistemas y computación.',
-  domain: 'megabarto.rocks'
+  domain: 'megabarto.rocks',
 } as const;

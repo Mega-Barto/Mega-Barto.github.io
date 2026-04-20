@@ -1,0 +1,55 @@
+---
+import '../Header/Header.css';
+import { resolveNavItems } from '../../content/navigation';
+import { t } from '../../i18n/t';
+import { withBase } from '../../utils/baseUrl';
+import LanguageToggle from '../islands/LanguageToggle';
+import MobileMenuDrawer from '../islands/MobileMenuDrawer';
+import MobileMenuTrigger from '../islands/MobileMenuTrigger';
+import SocialLinksIsland from '../islands/SocialLinksIsland';
+
+const base = import.meta.env.BASE_URL;
+const pathname = Astro.url.pathname;
+const navItems = resolveNavItems(pathname, base);
+const labelsEs = Object.fromEntries(navItems.map((i) => [i.labelKey, t(i.labelKey)]));
+---
+
+<header class="header">
+  <div class="header-container">
+    <div class="logo-section">
+      <a href={withBase('/')} class="logo logo--medium logo-link">
+        <span class="logo-text logo-text--medium" data-i18n-key="personal.displayName">
+          {t('personal.displayName')}
+        </span>
+      </a>
+    </div>
+    <nav class="nav-desktop">
+      <ul class="nav-list">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="nav-link"
+                target={item.isExternal ? '_blank' : undefined}
+                rel={item.isExternal ? 'noopener noreferrer' : undefined}
+              >
+                <span data-i18n-key={item.labelKey}>{t(item.labelKey)}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="social-desktop">
+      <SocialLinksIsland client:load />
+    </div>
+    <div class="header-right">
+      <div class="language-toggle">
+        <LanguageToggle client:load />
+      </div>
+      <MobileMenuTrigger client:load />
+    </div>
+  </div>
+  <MobileMenuDrawer client:load items={navItems} labelsEs={labelsEs} />
+</header>

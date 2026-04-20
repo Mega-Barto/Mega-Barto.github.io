@@ -20,7 +20,9 @@
   border-radius: 20px;
   padding: 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -98,7 +100,6 @@
   border-color: var(--color-primary-800);
 }
 
-
 .demo-link {
   background: var(--color-primary-900);
   color: var(--color-text-inverse);
@@ -129,26 +130,26 @@
   .projects-section {
     padding: 4rem 0 3rem 0;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
   }
-  
+
   .container {
     padding: 0 1.5rem;
   }
-  
+
   .project-header {
     flex-direction: column;
     gap: 0.75rem;
   }
-  
+
   .project-links {
     flex-direction: column;
   }
-  
+
   .section-title {
     font-size: 2.2rem;
     color: var(--color-text-inverse);

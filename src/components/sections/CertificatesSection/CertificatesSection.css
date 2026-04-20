@@ -20,7 +20,9 @@
   border-radius: 20px;
   padding: 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .certificate-card:hover {
@@ -96,7 +98,7 @@
 }
 
 .verification-code {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-size: 0.9rem;
   color: var(--color-status-success);
   background: rgba(0, 0, 0, 0.2);

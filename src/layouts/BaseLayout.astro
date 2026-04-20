@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import I18nHydrator from '../components/islands/I18nHydrator';
+import { withBase } from '../utils/baseUrl';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Idioma inicial del documento (SSR); el script inline ajusta en cliente antes de hidratar. */
+  lang?: 'es' | 'en';
+  /** Ruta o URL absoluta de imagen OG; si se omite, se usa el favicon. */
+  ogImage?: string;
+  /** Sin indexar (páginas de borrador). */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'Portfolio, proyectos y eventos de MegaBarto.',
+  lang = 'es',
+  ogImage,
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const defaultOg = new URL(withBase('/favicon.svg'), Astro.site).href;
+const ogUrl = ogImage ?? defaultOg;
+const manifestHref = withBase('/site.webmanifest');
+const faviconHref = withBase('/favicon.svg');
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {!noindex && <meta name="robots" content="index, follow" />}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="icon" type="image/svg+xml" href={faviconHref} />
+    <link rel="manifest" href={manifestHref} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogUrl} />
+    <!-- hreflang completo con /en/* requeriría rutas distintas; por ahora solo default + español. -->
+    <link rel="alternate" hreflang="x-default" href={canonicalURL.href} />
+    <link rel="alternate" hreflang="es" href={canonicalURL.href} />
+    <script is:inline>
+      (function () {
+        try {
+          var k = localStorage.getItem('i18nextLng');
+          var lang =
+            k === 'en' || k === 'es'
+              ? k
+              : navigator.language.slice(0, 2) === 'en'
+                ? 'en'
+                : 'es';
+          if (document.documentElement) {
+            document.documentElement.lang = lang;
+            document.documentElement.setAttribute('data-lang', lang);
+          }
+        } catch (e) {
+          /* private mode / no storage */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <I18nHydrator client:load />
+    <slot />
+  </body>
+</html>
