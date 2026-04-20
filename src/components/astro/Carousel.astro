@@ -1,6 +1,6 @@
 ---
-import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import {
   calculateGap,
   calculateRepetitions,
@@ -13,10 +13,9 @@ import type { CarouselItemDef } from '../../content/types';
 import '../sections/Carousel/CarouselSection.css';
 import '../sections/common/CarouselCard.css';
 
-const imageModules = import.meta.glob<{ default: ImageMetadata }>(
-  '../../assets/CarouselImages/*',
-  { eager: true },
-);
+const imageModules = import.meta.glob<{ default: ImageMetadata }>('../../assets/CarouselImages/*', {
+  eager: true,
+});
 const imageMap: Record<string, ImageMetadata> = {};
 for (const path in imageModules) {
   const fileName = path.split('/').pop();
