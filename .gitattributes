@@ -1,0 +1,24 @@
+# Default: let Git handle line endings for text files
+* text=auto eol=lf
+
+# Windows-friendly line endings for batch scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary assets: never diff as text, never touch line endings
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.svg text
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.mp4 binary
+*.webm binary
+*.zip binary
+*.gz binary

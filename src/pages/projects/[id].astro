@@ -1,0 +1,82 @@
+---
+import SiteFooter from '../../components/astro/SiteFooter.astro';
+import SiteHeader from '../../components/astro/SiteHeader.astro';
+import { getStatusColor, PROJECT_DEFS } from '../../content/projects';
+import type { ProjectDef } from '../../content/types';
+import { t } from '../../i18n/t';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../utils/baseUrl';
+import '../../components/sections/ProjectsSection/ProjectsSection.css';
+
+export function getStaticPaths() {
+  return PROJECT_DEFS.map((p) => ({ params: { id: p.id } }));
+}
+
+function titleOf(p: ProjectDef, lang: 'es' = 'es'): string {
+  if (p.titleLiteral) return p.titleLiteral;
+  if (p.titleKey) return t(p.titleKey, lang);
+  return p.id;
+}
+
+const { id } = Astro.params;
+const project = PROJECT_DEFS.find((p) => p.id === id);
+if (!project) {
+  return Astro.redirect(withBase('/projects/'));
+}
+
+const pageTitle = `${titleOf(project)} — ${t('header.navigation.projects')}`;
+const description = t(project.descriptionKey);
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <div class="app">
+    <SiteHeader />
+    <main class="main-content page-detail">
+      <article class="project-detail-card">
+        <header class="project-header">
+          <h1 class="project-title">{titleOf(project)}</h1>
+          <span
+            class="project-status"
+            style={{ backgroundColor: getStatusColor(project.status) }}
+            data-i18n-key={`projects.status.${project.status}`}
+          >
+            {t(`projects.status.${project.status}`)}
+          </span>
+        </header>
+        <p class="project-description" data-i18n-key={project.descriptionKey}>{t(project.descriptionKey)}</p>
+        <div class="project-technologies">
+          {project.technologies.map((tech) => (
+            <span class="tech-tag">{tech}</span>
+          ))}
+        </div>
+        <div class="project-links">
+          {project.github && (
+            <a href={project.github} target="_blank" rel="noopener noreferrer" class="project-link github-link">
+              <span data-i18n-key="projects.links.github">{t('projects.links.github')}</span>
+            </a>
+          )}
+          {project.link && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-link demo-link">
+              <span data-i18n-key="projects.links.demo">{t('projects.links.demo')}</span>
+            </a>
+          )}
+          {project.demo && (
+            <a href={project.demo} target="_blank" rel="noopener noreferrer" class="project-link demo-link">
+              <span data-i18n-key="projects.links.demo">{t('projects.links.demo')}</span>
+            </a>
+          )}
+        </div>
+      </article>
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .project-detail-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    color: var(--color-text-inverse);
+  }
+</style>

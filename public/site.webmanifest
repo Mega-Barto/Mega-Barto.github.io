@@ -1,0 +1,19 @@
+{
+  "name": "MegaBarto — portfolio",
+  "short_name": "MegaBarto",
+  "description": "Portfolio, proyectos y eventos.",
+  "start_url": "/Mega-Barto.github.io/",
+  "scope": "/Mega-Barto.github.io/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/Mega-Barto.github.io/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

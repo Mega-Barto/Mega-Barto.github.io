@@ -1,0 +1,70 @@
+---
+import '../Header/Header.css';
+import { resolveNavItems } from '../../content/navigation';
+import { t } from '../../i18n/t';
+import { withBase } from '../../utils/baseUrl';
+import LanguageToggle from './LanguageToggle.astro';
+import MobileMenu from './MobileMenu.astro';
+import SocialLinks from './SocialLinks.astro';
+
+const base = import.meta.env.BASE_URL;
+const pathname = Astro.url.pathname;
+const navItems = resolveNavItems(pathname, base);
+---
+
+<header class="header">
+  <div class="header-container">
+    <div class="logo-section">
+      <a href={withBase('/')} class="logo logo--medium logo-link">
+        <span class="logo-text logo-text--medium" data-i18n-key="personal.displayName">
+          {t('personal.displayName')}
+        </span>
+      </a>
+    </div>
+    <nav class="nav-desktop">
+      <ul class="nav-list">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={['nav-link', item.isOffsite && 'is-offsite']}
+                target={item.isExternal ? '_blank' : undefined}
+                rel={item.isExternal ? 'noopener noreferrer' : undefined}
+              >
+                <span data-i18n-key={item.labelKey}>{t(item.labelKey)}</span>
+                {item.isOffsite && (
+                  <svg
+                    class="nav-external-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="0.9em"
+                    height="0.9em"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 17 17 7" />
+                    <path d="M8 7h9v9" />
+                  </svg>
+                )}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="social-desktop">
+      <SocialLinks />
+    </div>
+    <div class="header-right">
+      <div class="language-toggle-wrap">
+        <LanguageToggle />
+      </div>
+      <MobileMenu items={navItems} />
+    </div>
+  </div>
+</header>

@@ -1,0 +1,76 @@
+---
+import { sortWorksByRecency, WORK_DEFS } from '../../../content/work-experiences';
+import { t } from '../../../i18n/t';
+import Section from '../Section.astro';
+
+import '../../sections/WorkExperienceSection/WorkExperienceSection.css';
+
+interface Props {
+  variant: 'summary' | 'full';
+  viewAllHref?: string;
+}
+
+const { variant, viewAllHref } = Astro.props;
+const isSummary = variant === 'summary';
+const sorted = sortWorksByRecency(WORK_DEFS);
+const defs = isSummary ? sorted.slice(0, 2) : sorted;
+---
+
+<Section id="work-experience" titleKey="header.navigation.workExperience">
+  <div class="work-experience-grid">
+    {
+      defs.map((work) => (
+        <div class="work-card">
+          <div class="work-header">
+            <h3 class="work-title">
+              <a
+                href={work.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="work-link"
+              >
+                <span data-i18n-key={work.labelKey}>{t(work.labelKey)}</span>
+              </a>
+            </h3>
+            {work.actual && (
+              <span class="work-current-badge" data-i18n-key="workExperience.current">
+                {t('workExperience.current')}
+              </span>
+            )}
+          </div>
+          <div class="work-info">
+            <span class="work-time" data-i18n-key={work.timeKey}>
+              {t(work.timeKey)}
+            </span>
+            {work.durationKey && (
+              <span class="work-duration">
+                <span data-i18n-key="workExperience.duration">
+                  {t('workExperience.duration')}
+                </span>
+                {': '}
+                <span data-i18n-key={work.durationKey}>{t(work.durationKey)}</span>
+              </span>
+            )}
+          </div>
+          {!isSummary && (
+            <p
+              class="work-description"
+              data-i18n-key={`workExperience.descriptions.${work.id}`}
+            >
+              {t(`workExperience.descriptions.${work.id}`)}
+            </p>
+          )}
+        </div>
+      ))
+    }
+  </div>
+  {
+    variant === 'summary' && viewAllHref && (
+      <p class="section-view-all">
+        <a href={viewAllHref} class="view-all-link" data-i18n-key="common.viewAll">
+          {t('common.viewAll')}
+        </a>
+      </p>
+    )
+  }
+</Section>

@@ -9,7 +9,9 @@ lerna-debug.log*
 
 node_modules
 dist
+dist-astro
 dist-ssr
+.astro
 *.local
 
 # Astro
@@ -29,3 +31,6 @@ bitacora.md
 *.njsproj
 *.sln
 *.sw?
+
+# Bitácora
+bitacora.md

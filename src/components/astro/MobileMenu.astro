@@ -1,0 +1,115 @@
+---
+import type { ResolvedNavItem } from '../../content/types';
+import { t } from '../../i18n/t';
+import LanguageToggle from './LanguageToggle.astro';
+import SocialLinks from './SocialLinks.astro';
+
+interface Props {
+  items: ResolvedNavItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<button
+  type="button"
+  class="mobile-toggle"
+  data-mobile-toggle
+  aria-label="Abrir menú"
+  aria-expanded="false"
+  aria-controls="mobile-menu-drawer"
+>
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+</button>
+
+<div id="mobile-menu-drawer" class="mobile-menu" data-mobile-menu>
+  <nav class="mobile-nav">
+    <ul class="mobile-nav-list">
+      {
+        items.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={['mobile-nav-link', item.isOffsite && 'is-offsite']}
+              data-mobile-close
+              target={item.isExternal ? '_blank' : undefined}
+              rel={item.isExternal ? 'noopener noreferrer' : undefined}
+            >
+              <span data-i18n-key={item.labelKey}>{t(item.labelKey)}</span>
+              {item.isOffsite && (
+                <svg
+                  class="nav-external-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="0.9em"
+                  height="0.9em"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mobile-social">
+      <SocialLinks />
+    </div>
+    <div class="mobile-language">
+      <LanguageToggle showText />
+    </div>
+  </nav>
+</div>
+
+<div class="mobile-overlay" data-mobile-overlay role="presentation"></div>
+
+<script>
+  import { $mobileMenuOpen, setMobileMenuOpen, toggleMobileMenu } from '../../stores/mobileNav';
+
+  const apply = (open: boolean) => {
+    for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-mobile-toggle]')) {
+      btn.classList.toggle('active', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    }
+    for (const menu of document.querySelectorAll<HTMLElement>('[data-mobile-menu]')) {
+      menu.classList.toggle('open', open);
+    }
+    for (const overlay of document.querySelectorAll<HTMLElement>('[data-mobile-overlay]')) {
+      overlay.classList.toggle('open', open);
+    }
+  };
+
+  apply($mobileMenuOpen.get());
+  $mobileMenuOpen.listen(apply);
+
+  const bind = () => {
+    for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-mobile-toggle]')) {
+      if (btn.dataset.bound === 'true') continue;
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', () => toggleMobileMenu());
+    }
+    for (const overlay of document.querySelectorAll<HTMLElement>('[data-mobile-overlay]')) {
+      if (overlay.dataset.bound === 'true') continue;
+      overlay.dataset.bound = 'true';
+      overlay.addEventListener('click', () => setMobileMenuOpen(false));
+    }
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-mobile-close]')) {
+      if (link.dataset.bound === 'true') continue;
+      link.dataset.bound = 'true';
+      link.addEventListener('click', () => setMobileMenuOpen(false));
+    }
+  };
+
+  bind();
+  document.addEventListener('DOMContentLoaded', bind);
+</script>

@@ -12,7 +12,9 @@
   margin-bottom: 2rem;
   cursor: pointer;
   border-radius: 12px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   user-select: none;
 }
 
@@ -57,7 +59,9 @@
 .collapsible-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
   opacity: 0;
 }
 

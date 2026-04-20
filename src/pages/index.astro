@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Carousel from '../components/astro/Carousel.astro';
+import SiteFooter from '../components/astro/SiteFooter.astro';
+import SiteHeader from '../components/astro/SiteHeader.astro';
+import CertificatesSection from '../components/astro/sections/CertificatesSection.astro';
+import EventsSection from '../components/astro/sections/EventsSection.astro';
+import ProjectsSection from '../components/astro/sections/ProjectsSection.astro';
+import WorkExperienceSection from '../components/astro/sections/WorkExperienceSection.astro';
+import { t } from '../i18n/t';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/baseUrl';
+
+import '../components/sections/AutobiographySection/AutobiographySection.css';
+
+const title = `${t('personal.displayName')} — ${t('personal.domain')}`;
+const description = t('personal.description');
+
+const profileImageModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/ProfileImages/*.{jpg,jpeg,png,webp}',
+  { eager: true },
+);
+const profileImages = Object.values(profileImageModules).map((mod) => mod.default);
+const heroProfile =
+  profileImages[Math.floor(Math.random() * profileImages.length)] ?? profileImages[0];
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="app">
+    <SiteHeader />
+    <main class="main-content">
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-image">
+            <Image
+              src={heroProfile}
+              alt={t('personal.displayName')}
+              class="hero-profile-image"
+              widths={[320, 480, 640]}
+              sizes="(max-width: 768px) 240px, 280px"
+              loading="eager"
+            />
+          </div>
+          <h1 data-i18n-key="home.hero.welcome">{t('home.hero.welcome')}</h1>
+          <p data-i18n-key="personal.description">{t('personal.description')}</p>
+        </div>
+      </section>
+      <section id="autobiography" class="autobiography-section">
+        <div class="container">
+          <h2 class="section-title" data-i18n-key="header.navigation.autobiography">
+            {t('header.navigation.autobiography')}
+          </h2>
+          <div class="autobiography-content">
+            <div class="autobiography-layout">
+              <div class="text-block text-intro">
+                <p data-i18n-key="autobiography.introduction">{t('autobiography.introduction')}</p>
+              </div>
+              <div class="text-block text-background">
+                <p data-i18n-key="autobiography.background">{t('autobiography.background')}</p>
+              </div>
+              <div class="text-block text-current">
+                <p data-i18n-key="autobiography.current">{t('autobiography.current')}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="carousel-section-wrap">
+        <h2 class="carousel-section-title" data-i18n-key="carousel.title">{t('carousel.title')}</h2>
+        <Carousel />
+      </section>
+      <WorkExperienceSection variant="summary" viewAllHref={withBase('/work-experience/')} />
+      <ProjectsSection variant="summary" viewAllHref={withBase('/projects/')} />
+      <CertificatesSection variant="summary" viewAllHref={withBase('/certificates/')} />
+      <EventsSection variant="summary" viewAllHref={withBase('/events/')} />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .carousel-section-wrap {
+    width: 100%;
+  }
+  .carousel-section-title {
+    text-align: center;
+    color: var(--color-text-inverse);
+    margin: 0 0 1rem;
+    padding-top: 1.5rem;
+  }
+</style>

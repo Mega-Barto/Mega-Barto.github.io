@@ -1,0 +1,60 @@
+---
+import { CERTIFICATE_DEFS, sortCertificatesByRecency } from '../../../content/certificates';
+import { t } from '../../../i18n/t';
+import Section from '../Section.astro';
+
+import '../../sections/CertificatesSection/CertificatesSection.css';
+
+interface Props {
+  variant: 'summary' | 'full';
+  viewAllHref?: string;
+}
+
+const { variant, viewAllHref } = Astro.props;
+const sorted = sortCertificatesByRecency(CERTIFICATE_DEFS);
+const defs = variant === 'summary' ? sorted.slice(0, 3) : sorted;
+---
+
+<Section id="certificates" titleKey="header.navigation.certificates">
+  <div class="certificates-grid">
+    {
+      defs.map((certificate) => (
+        <div class="certificate-card">
+          <div class="certificate-header">
+            <h3 class="certificate-title" data-i18n-key={certificate.titleKey}>
+              {t(certificate.titleKey)}
+            </h3>
+            <span class="certificate-date" data-i18n-key={certificate.dateObtainedKey}>
+              {t(certificate.dateObtainedKey)}
+            </span>
+          </div>
+          <div class="certificate-academy">
+            <span class="academy-label" data-i18n-key="certificates.academyLabel">
+              {t('certificates.academyLabel')}
+            </span>{' '}
+            <span class="academy-name" data-i18n-key={certificate.academyKey}>
+              {t(certificate.academyKey)}
+            </span>
+          </div>
+          {certificate.verificationCode && (
+            <div class="certificate-verification">
+              <span class="verification-label" data-i18n-key="certificates.verificationCode">
+                {t('certificates.verificationCode')}
+              </span>{' '}
+              <code class="verification-code">{certificate.verificationCode}</code>
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </div>
+  {
+    variant === 'summary' && viewAllHref && (
+      <p class="section-view-all">
+        <a href={viewAllHref} class="view-all-link" data-i18n-key="common.viewAll">
+          {t('common.viewAll')}
+        </a>
+      </p>
+    )
+  }
+</Section>
