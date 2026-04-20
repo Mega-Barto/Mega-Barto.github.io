@@ -2,10 +2,16 @@
 @import "../App.css";
 
 /* =============================================================
-   Layout base de página
+   Layout base
    ============================================================= */
+html,
+body {
+  background-color: var(--color-background-projects);
+}
+
 .page-detail {
-  padding: 0 0 4rem;
+  padding: 0;
+  background: var(--color-background-projects);
 }
 
 /* =============================================================
@@ -13,7 +19,7 @@
    ============================================================= */
 .page-section {
   width: 100%;
-  padding: clamp(2.5rem, 5vw, 5rem) 0 clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(2.5rem, 5vw, 5rem) 0 clamp(2.5rem, 5vw, 5rem);
   background: var(--color-background-projects);
   color: var(--color-text-inverse);
 }
@@ -53,7 +59,7 @@
 .work-experience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: clamp(1.25rem, 3vw, 2.5rem);
+  gap: clamp(1.25rem, 3vw, 2.25rem);
   justify-items: stretch;
   align-items: stretch;
 }
@@ -68,6 +74,28 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* =============================================================
+   Estética común de tarjetas: estática, borde sutil en hover
+   ============================================================= */
+.project-card,
+.event-card,
+.certificate-card,
+.work-card {
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.project-card:hover,
+.event-card:hover,
+.certificate-card:hover,
+.work-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 /* =============================================================
@@ -89,14 +117,12 @@
   background: rgba(255, 255, 255, 0.08);
   transition:
     background-color 0.2s ease,
-    transform 0.2s ease,
     border-color 0.2s ease;
 }
 
 .view-all-link:hover {
   background: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
 }
 
 /* =============================================================

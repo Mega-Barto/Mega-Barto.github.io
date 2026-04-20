@@ -1,5 +1,5 @@
 ---
-import { CERTIFICATE_DEFS } from '../../../content/certificates';
+import { CERTIFICATE_DEFS, sortCertificatesByRecency } from '../../../content/certificates';
 import { t } from '../../../i18n/t';
 import Section from '../Section.astro';
 
@@ -11,7 +11,8 @@ interface Props {
 }
 
 const { variant, viewAllHref } = Astro.props;
-const defs = variant === 'summary' ? CERTIFICATE_DEFS.slice(0, 3) : CERTIFICATE_DEFS;
+const sorted = sortCertificatesByRecency(CERTIFICATE_DEFS);
+const defs = variant === 'summary' ? sorted.slice(0, 3) : sorted;
 ---
 
 <Section id="certificates" titleKey="header.navigation.certificates">

@@ -19,6 +19,8 @@ export interface EventDef {
   locationKey: string;
   descriptionKey: string;
   source?: string;
+  /** ISO date (YYYY-MM-DD) used to sort entries; falls back to a very old date if missing. */
+  sortDate?: string;
 }
 
 export interface CertificateDef {
@@ -27,6 +29,8 @@ export interface CertificateDef {
   academyKey: string;
   dateObtainedKey: string;
   verificationCode?: string;
+  /** ISO date (YYYY-MM-DD) used to sort entries. */
+  sortDate?: string;
 }
 
 export interface WorkDef {
@@ -36,6 +40,8 @@ export interface WorkDef {
   timeKey: string;
   durationKey?: string;
   actual?: boolean;
+  /** ISO date (YYYY-MM-DD) marking the start of the role, used to sort. */
+  sortDate?: string;
 }
 
 export interface CarouselItemDef {

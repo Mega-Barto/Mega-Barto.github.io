@@ -1,5 +1,5 @@
 ---
-import { EVENT_DEFS } from '../../../content/events';
+import { EVENT_DEFS, sortEventsByRecency } from '../../../content/events';
 import { t } from '../../../i18n/t';
 import Section from '../Section.astro';
 
@@ -12,7 +12,8 @@ interface Props {
 
 const { variant, viewAllHref } = Astro.props;
 const isSummary = variant === 'summary';
-const defs = isSummary ? EVENT_DEFS.slice(0, 3) : EVENT_DEFS;
+const sorted = sortEventsByRecency(EVENT_DEFS);
+const defs = isSummary ? sorted.slice(0, 3) : sorted;
 ---
 
 <Section id="events" titleKey="events.name">

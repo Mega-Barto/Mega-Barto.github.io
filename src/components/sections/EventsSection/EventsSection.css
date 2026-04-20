@@ -9,14 +9,11 @@
 }
 
 .event-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: clamp(1.25rem, 3vw, 2.5rem);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -32,12 +29,7 @@
   right: 0;
   height: 4px;
   background: var(--color-primary-400);
-  border-radius: 20px 20px 0 0;
-}
-
-.event-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border-radius: 18px 18px 0 0;
 }
 
 .event-header {
@@ -118,8 +110,7 @@
 
 .event-source-link:hover {
   background: rgba(96, 165, 250, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+  border-color: rgba(96, 165, 250, 0.55);
 }
 
 .event-source-link::after {

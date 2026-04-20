@@ -1,5 +1,5 @@
 ---
-import { WORK_DEFS } from '../../../content/work-experiences';
+import { sortWorksByRecency, WORK_DEFS } from '../../../content/work-experiences';
 import { t } from '../../../i18n/t';
 import Section from '../Section.astro';
 
@@ -12,7 +12,8 @@ interface Props {
 
 const { variant, viewAllHref } = Astro.props;
 const isSummary = variant === 'summary';
-const defs = isSummary ? WORK_DEFS.slice(0, 2) : WORK_DEFS;
+const sorted = sortWorksByRecency(WORK_DEFS);
+const defs = isSummary ? sorted.slice(0, 2) : sorted;
 ---
 
 <Section id="work-experience" titleKey="header.navigation.workExperience">

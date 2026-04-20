@@ -1,5 +1,5 @@
 ---
-import { getStatusColor, PROJECT_DEFS } from '../../../content/projects';
+import { getStatusColor, PROJECT_DEFS, sortProjectsByRelevance } from '../../../content/projects';
 import type { ProjectDef } from '../../../content/types';
 import { t } from '../../../i18n/t';
 import Section from '../Section.astro';
@@ -13,7 +13,8 @@ interface Props {
 
 const { variant, viewAllHref } = Astro.props;
 const isSummary = variant === 'summary';
-const defs: ProjectDef[] = isSummary ? PROJECT_DEFS.slice(0, 3) : PROJECT_DEFS;
+const sorted: ProjectDef[] = sortProjectsByRelevance(PROJECT_DEFS);
+const defs: ProjectDef[] = isSummary ? sorted.slice(0, 3) : sorted;
 
 function projectTitle(p: ProjectDef): { text: string; key?: string } {
   if (p.titleLiteral) return { text: p.titleLiteral };

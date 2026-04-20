@@ -6,6 +6,7 @@ export const CERTIFICATE_DEFS: CertificateDef[] = [
     titleKey: 'certificates.automation.title',
     academyKey: 'certificates.automation.academy',
     dateObtainedKey: 'certificates.automation.dateObtained',
+    sortDate: '2023-11-01',
   },
   {
     id: '2',
@@ -13,6 +14,7 @@ export const CERTIFICATE_DEFS: CertificateDef[] = [
     academyKey: 'certificates.django.academy',
     dateObtainedKey: 'certificates.django.dateObtained',
     verificationCode: '948d36fc-3952-434f-a701-b023f649f832',
+    sortDate: '2024-12-01',
   },
   {
     id: '3',
@@ -20,6 +22,7 @@ export const CERTIFICATE_DEFS: CertificateDef[] = [
     academyKey: 'certificates.testing.academy',
     dateObtainedKey: 'certificates.testing.dateObtained',
     verificationCode: 'bcd89e6a-399d-4261-9a98-d52b9efc16ad',
+    sortDate: '2025-02-01',
   },
   {
     id: '4',
@@ -27,6 +30,7 @@ export const CERTIFICATE_DEFS: CertificateDef[] = [
     academyKey: 'certificates.docker.academy',
     dateObtainedKey: 'certificates.docker.dateObtained',
     verificationCode: 'e759659f-40dc-4560-a84e-881b7cacf6d5',
+    sortDate: '2025-06-01',
   },
   {
     id: '5',
@@ -34,5 +38,11 @@ export const CERTIFICATE_DEFS: CertificateDef[] = [
     academyKey: 'certificates.flutter.academy',
     dateObtainedKey: 'certificates.flutter.dateObtained',
     verificationCode: 'a312dc9b-2112-447e-9d12-9fe384778f49',
+    sortDate: '2025-09-01',
   },
 ];
+
+/** Sort certificates by closest-to-today first (sortDate descending). */
+export function sortCertificatesByRecency(defs: CertificateDef[]): CertificateDef[] {
+  return [...defs].sort((a, b) => (b.sortDate ?? '').localeCompare(a.sortDate ?? ''));
+}

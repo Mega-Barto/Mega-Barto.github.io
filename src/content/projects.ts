@@ -55,3 +55,14 @@ export function getStatusColor(status: ProjectStatus): string {
       return '#6c757d';
   }
 }
+
+const STATUS_PRIORITY: Record<ProjectStatus, number> = {
+  'in-progress': 0,
+  completed: 1,
+  planned: 2,
+};
+
+/** Sort projects so currently active items appear first on the landing page. */
+export function sortProjectsByRelevance(defs: ProjectDef[]): ProjectDef[] {
+  return [...defs].sort((a, b) => STATUS_PRIORITY[a.status] - STATUS_PRIORITY[b.status]);
+}
