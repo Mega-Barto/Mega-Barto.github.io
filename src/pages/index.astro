@@ -21,9 +21,8 @@ const profileImageModules = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/ProfileImages/*.{jpg,jpeg,png,webp}',
   { eager: true },
 );
+/** Todas las variantes se optimizan en build; la elección aleatoria ocurre en el cliente (cada refresh). */
 const profileImages = Object.values(profileImageModules).map((mod) => mod.default);
-const heroProfile =
-  profileImages[Math.floor(Math.random() * profileImages.length)] ?? profileImages[0];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -32,16 +31,37 @@ const heroProfile =
     <main class="main-content">
       <section class="hero-section">
         <div class="hero-content">
-          <div class="hero-image">
-            <Image
-              src={heroProfile}
-              alt={t('personal.displayName')}
-              class="hero-profile-image"
-              widths={[320, 480, 640]}
-              sizes="(max-width: 768px) 240px, 280px"
-              loading="eager"
-            />
+          <div class="hero-image hero-image-stack">
+            {
+              profileImages.map((src, i) => (
+                <Image
+                  src={src}
+                  alt={t('personal.displayName')}
+                  class:list={['hero-profile-image', 'hero-profile-slot', { 'is-active': i === 0 }]}
+                  widths={[320, 480, 640]}
+                  sizes="(max-width: 768px) 240px, 280px"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  fetchpriority={i === 0 ? 'high' : undefined}
+                  aria-hidden={i !== 0}
+                  data-hero-profile=""
+                />
+              ))
+            }
           </div>
+          <script is:inline>
+            (function () {
+              var slots = document.querySelectorAll('[data-hero-profile]');
+              if (slots.length <= 1) return;
+              var idx = Math.floor(Math.random() * slots.length);
+              slots.forEach(function (el, i) {
+                var on = i === idx;
+                el.classList.toggle('is-active', on);
+                el.setAttribute('aria-hidden', on ? 'false' : 'true');
+                if (on) el.setAttribute('loading', 'eager');
+              });
+            })();
+          </script>
           <h1 data-i18n-key="home.hero.welcome">{t('home.hero.welcome')}</h1>
           <p data-i18n-key="personal.description">{t('personal.description')}</p>
         </div>
@@ -80,6 +100,22 @@ const heroProfile =
 </BaseLayout>
 
 <style>
+  .hero-image-stack {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-image-stack .hero-profile-slot:not(.is-active) {
+    display: none;
+  }
+
+  .hero-image-stack .hero-profile-slot.is-active {
+    display: block;
+  }
+
   .carousel-section-wrap {
     width: 100%;
   }
