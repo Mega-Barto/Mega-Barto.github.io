@@ -67,11 +67,20 @@ export function resolveNavHref(def: NavDef, _pathname: string, base: string): st
   return `${baseNorm}${page}`;
 }
 
+/** Detecta si un href apunta a un dominio distinto al sitio (true off-site). */
+function isOffsiteHref(def: NavDef): boolean {
+  if (!def.isExternal || !def.externalHref) return false;
+  // Los externalHref que empiezan con "/" son assets locales (ej. /cv.pdf),
+  // no cuentan como off-site aunque se abran en nueva pestaña.
+  return !def.externalHref.startsWith('/');
+}
+
 export function resolveNavItems(pathname: string, base: string): ResolvedNavItem[] {
   return NAV_DEFS.map((d) => ({
     id: d.id,
     href: resolveNavHref(d, pathname, base),
     labelKey: d.labelKey,
     isExternal: d.isExternal,
+    isOffsite: isOffsiteHref(d),
   }));
 }

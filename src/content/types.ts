@@ -67,5 +67,8 @@ export interface ResolvedNavItem {
   id: string;
   href: string;
   labelKey: string;
+  /** Opens in a new tab (including local PDFs served from /public). */
   isExternal?: boolean;
+  /** Points to a different origin (true external); used to render the off-site icon. */
+  isOffsite?: boolean;
 }
