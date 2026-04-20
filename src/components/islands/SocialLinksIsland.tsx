@@ -8,21 +8,18 @@ export default function SocialLinksIsland({ className = '' }: SocialLinksIslandP
   const socialLinks = getActiveSocialLinks();
   return (
     <div className={className}>
-      {socialLinks.map((social) => {
-        const IconComponent = social.icon;
-        return (
-          <a
-            key={social.name}
-            href={social.url}
-            className="social-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            title={social.description}
-          >
-            <IconComponent />
-          </a>
-        );
-      })}
+      {socialLinks.map((social) => (
+        <a
+          key={social.name}
+          href={social.url}
+          className="social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          title={social.description}
+          aria-label={social.name}
+          data-icon={social.iconName}
+        />
+      ))}
     </div>
   );
 }

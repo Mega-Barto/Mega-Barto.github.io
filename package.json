@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "check": "astro check",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro:check": "astro check",
     "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "format": "biome format --write .",
-    "predeploy": "bun run build",
+    "verify": "bun run lint && bun run check && bun run build",
+    "predeploy": "bun run verify",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

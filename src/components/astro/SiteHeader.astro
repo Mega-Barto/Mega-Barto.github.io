@@ -6,7 +6,7 @@ import { withBase } from '../../utils/baseUrl';
 import LanguageToggle from '../islands/LanguageToggle';
 import MobileMenuDrawer from '../islands/MobileMenuDrawer';
 import MobileMenuTrigger from '../islands/MobileMenuTrigger';
-import SocialLinksIsland from '../islands/SocialLinksIsland';
+import SocialLinks from './SocialLinks.astro';
 
 const base = import.meta.env.BASE_URL;
 const pathname = Astro.url.pathname;
@@ -42,7 +42,7 @@ const labelsEs = Object.fromEntries(navItems.map((i) => [i.labelKey, t(i.labelKe
       </ul>
     </nav>
     <div class="social-desktop">
-      <SocialLinksIsland client:load />
+      <SocialLinks />
     </div>
     <div class="header-right">
       <div class="language-toggle">

@@ -25,6 +25,9 @@ jobs:
     - name: Lint (Biome)
       run: bun run lint
 
+    - name: Type-check (Astro)
+      run: bun run check
+
     - name: Build
       run: bun run build
 

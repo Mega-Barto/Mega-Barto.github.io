@@ -1,7 +1,7 @@
 ---
 import '../Footer/Footer.css';
 import { t } from '../../i18n/t';
-import SocialLinksIsland from '../islands/SocialLinksIsland';
+import SocialLinks from './SocialLinks.astro';
 
 const year = new Date().getFullYear();
 ---
@@ -15,7 +15,7 @@ const year = new Date().getFullYear();
         <span data-i18n-key="footer.copyright">{t('footer.copyright')}</span>
       </p>
       <div class="footer-social">
-        <SocialLinksIsland client:load />
+        <SocialLinks />
       </div>
       <p class="footer-love">
         <span data-i18n-key="footer.madeWithLove">{t('footer.madeWithLove')}</span>
