@@ -37,9 +37,13 @@ const defs = isSummary ? sorted.slice(0, 3) : sorted;
             </span>
           </div>
           <div class="event-location">
-            <span class="location-text" data-i18n-key={event.locationKey}>
-              {t(event.locationKey)}
-            </span>
+            {event.locationKey ? (
+              <span class="location-text" data-i18n-key={event.locationKey}>
+                {t(event.locationKey)}
+              </span>
+            ) : (
+              <span class="location-text">{event.location}</span>
+            )}
           </div>
           {!isSummary && (
             <p class="event-description" data-i18n-key={event.descriptionKey}>

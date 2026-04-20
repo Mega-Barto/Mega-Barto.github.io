@@ -182,62 +182,57 @@
     "flisol-1": {
       "title": "FLISOL 2023",
       "date": "April 27-28, 2023",
-      "location": "Pereira, Colombia",
       "description": "Participated as a staff member and speaker."
     },
     "flisol-2": {
       "title": "FLISOL 2024",
       "date": "May 16, 2024",
-      "location": "Pereira - Ibague - Bogotá, Colombia",
       "description": "Participated as a staff member and speaker."
     },
     "flisol-3": {
       "title": "FLISOL 2025",
       "date": "May 8, 2025",
-      "location": "Pereira, Colombia",
       "description": "Participated as a staff coordinator and event host."
     },
     "sfd-1": {
       "title": "Software Freedom Day 2023",
       "date": "September 7, 2023",
-      "location": "Pereira, Colombia",
       "description": "Participated as a staff member."
     },
     "sfd-2": {
       "title": "Software Freedom Day 2024",
       "date": "October 10, 2024",
-      "location": "Pereira, Colombia",
       "description": "Participated as Panel moderator."
     },
     "sfd-3": {
       "title": "Software Freedom Day 2025",
       "date": "October 10, 2025",
-      "location": "Pereira, Colombia",
       "description": "Participated as logistics manager and speaker."
     },
     "qaconf-1": {
       "title": "QAConf Pereira 2024",
       "date": "September 5-6, 2024",
-      "location": "Pereira, Colombia",
       "description": "Founder and organizer of the event."
     },
     "qaconf-2": {
       "title": "QAConf Pereira 2025",
       "date": "September 11-12, 2025",
-      "location": "Pereira, Colombia",
       "description": "Founder and organizer of the event."
     },
     "pertt": {
       "title": "Pereira Tech Talks",
       "date": "Since 2024",
-      "location": "Pereira, Colombia",
       "description": "Participate as a staff member and speakers finder."
     },
     "oth": {
       "title": "Open Tech Hackathon",
       "date": "October 6-11, 2025",
-      "location": "Virtual + Pereira, Colombia",
       "description": "Participated as a staff member."
+    },
+    "tribu-hackathon": {
+      "title": "Tribu Hackathon 2026",
+      "date": "April 17-18, 2026",
+      "description": "Competed with team 418: I'm a Teapot, earning third place."
     },
     "viewMore": "View More Information"
   },

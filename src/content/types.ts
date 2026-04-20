@@ -1,3 +1,4 @@
+// Definiciones de tipos para los contenidos estáticos del portafolio.
 export type ProjectStatus = 'completed' | 'in-progress' | 'planned';
 
 export interface ProjectDef {
@@ -16,7 +17,10 @@ export interface EventDef {
   id: string;
   titleKey: string;
   dateKey: string;
-  locationKey: string;
+  /** Texto literal de ubicación (mismo en todos los idiomas). */
+  location: string;
+  /** Opcional: sobrescribe `location` con una clave i18n cuando el texto difiera entre idiomas. */
+  locationKey?: string;
   descriptionKey: string;
   source?: string;
   /** ISO date (YYYY-MM-DD) used to sort entries; falls back to a very old date if missing. */
