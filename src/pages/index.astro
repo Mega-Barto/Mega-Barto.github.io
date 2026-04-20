@@ -1,6 +1,6 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
-import heroProfile from '../assets/ProfileImages/github_profile.jpeg';
 import Carousel from '../components/astro/Carousel.astro';
 import SiteFooter from '../components/astro/SiteFooter.astro';
 import SiteHeader from '../components/astro/SiteHeader.astro';
@@ -14,6 +14,14 @@ import { withBase } from '../utils/baseUrl';
 
 const title = `${t('personal.displayName')} — ${t('personal.domain')}`;
 const description = t('personal.description');
+
+const profileImageModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/ProfileImages/*.{jpg,jpeg,png,webp}',
+  { eager: true },
+);
+const profileImages = Object.values(profileImageModules).map((mod) => mod.default);
+const heroProfile =
+  profileImages[Math.floor(Math.random() * profileImages.length)] ?? profileImages[0];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -33,9 +41,7 @@ const description = t('personal.description');
             />
           </div>
           <h1 data-i18n-key="home.hero.welcome">{t('home.hero.welcome')}</h1>
-          <p data-i18n-key="home.hero.description">
-            {t('home.hero.description', 'es', { description: t('personal.description') })}
-          </p>
+          <p data-i18n-key="personal.description">{t('personal.description')}</p>
         </div>
       </section>
       <section id="autobiography" class="autobiography-section">
