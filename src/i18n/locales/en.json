@@ -62,6 +62,9 @@
       "description": "{{description}}"
     }
   },
+  "common": {
+    "viewAll": "View all →"
+  },
   "personal": {
     "name": "MegaBarto",
     "displayName": "MegaBarto",
@@ -69,10 +72,13 @@
     "description": "Systems and Computer Engineer.",
     "domain": "megabarto.rocks"
   },
+  "about": {
+    "detailLead": "Extended version of “Who is Barto?” with the same core story; you can grow this page later with milestones and links."
+  },
   "autobiography": {
-  "introduction": "Hello! I’m Juan Alejandro Pérez Bermúdez (or Barto, as friends call me), a Systems and Computing Engineer eager to gain professional experience in software projects.",
-  "background": "I have experience in web development, working with technologies such as React, FastAPI and BaaS as Supabase. Now, I'm working in a new project using the Flutter + Firebase stack to create mobile cross-platform applications.",
-  "current": "At present, I work in mobile development, software quality, and building tech community engagement."
+    "introduction": "Hello! I’m Juan Alejandro Pérez Bermúdez (or Barto, as friends call me), a Systems and Computing Engineer eager to gain professional experience in software projects.",
+    "background": "I have experience in web development, working with technologies such as React, FastAPI and BaaS as Supabase. Now, I'm working in a new project using the Flutter + Firebase stack to create mobile cross-platform applications.",
+    "current": "At present, I work in mobile development, software quality, and building tech community engagement."
   },
   "projects": {
     "portfolio": {
@@ -105,7 +111,15 @@
     "links": {
       "github": "View Code",
       "demo": "Live Demo"
+    },
+    "filter": {
+      "status": "Status",
+      "technology": "Technology",
+      "all": "All"
     }
+  },
+  "carousel": {
+    "title": "Most Used Technologies"
   },
   "certificates": {
     "academyLabel": "Academy",
@@ -134,6 +148,11 @@
       "title": "Course: FLUTTER",
       "academy": "Platzi",
       "dateObtained": "September 2025"
+    },
+    "scrum": {
+      "title": "Professional Scrum Course",
+      "academy": "Platzi",
+      "dateObtained": "March 2026"
     }
   },
   "contact": {
@@ -168,62 +187,57 @@
     "flisol-1": {
       "title": "FLISOL 2023",
       "date": "April 27-28, 2023",
-      "location": "Pereira, Colombia",
       "description": "Participated as a staff member and speaker."
     },
     "flisol-2": {
       "title": "FLISOL 2024",
       "date": "May 16, 2024",
-      "location": "Pereira - Ibague - Bogotá, Colombia",
       "description": "Participated as a staff member and speaker."
     },
     "flisol-3": {
       "title": "FLISOL 2025",
       "date": "May 8, 2025",
-      "location": "Pereira, Colombia",
       "description": "Participated as a staff coordinator and event host."
     },
     "sfd-1": {
       "title": "Software Freedom Day 2023",
       "date": "September 7, 2023",
-      "location": "Pereira, Colombia",
       "description": "Participated as a staff member."
     },
     "sfd-2": {
       "title": "Software Freedom Day 2024",
       "date": "October 10, 2024",
-      "location": "Pereira, Colombia",
       "description": "Participated as Panel moderator."
     },
     "sfd-3": {
       "title": "Software Freedom Day 2025",
       "date": "October 10, 2025",
-      "location": "Pereira, Colombia",
       "description": "Participated as logistics manager and speaker."
     },
     "qaconf-1": {
       "title": "QAConf Pereira 2024",
       "date": "September 5-6, 2024",
-      "location": "Pereira, Colombia",
       "description": "Founder and organizer of the event."
     },
     "qaconf-2": {
       "title": "QAConf Pereira 2025",
       "date": "September 11-12, 2025",
-      "location": "Pereira, Colombia",
       "description": "Founder and organizer of the event."
     },
     "pertt": {
       "title": "Pereira Tech Talks",
       "date": "Since 2024",
-      "location": "Pereira, Colombia",
       "description": "Participate as a staff member and speakers finder."
     },
     "oth": {
       "title": "Open Tech Hackathon",
       "date": "October 6-11, 2025",
-      "location": "Virtual + Pereira, Colombia",
       "description": "Participated as a staff member."
+    },
+    "tribu-hackathon": {
+      "title": "Tribu Hackathon 2026",
+      "date": "April 17-18, 2026",
+      "description": "Competed with team 418: I'm a Teapot, earning third place."
     },
     "viewMore": "View More Information"
   },

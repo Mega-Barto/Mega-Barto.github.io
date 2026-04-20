@@ -1,0 +1,108 @@
+---
+import { getStatusColor, PROJECT_DEFS, sortProjectsByRelevance } from '../../../content/projects';
+import type { ProjectDef } from '../../../content/types';
+import { t } from '../../../i18n/t';
+import Section from '../Section.astro';
+
+import '../../sections/ProjectsSection/ProjectsSection.css';
+
+interface Props {
+  variant: 'summary' | 'full';
+  viewAllHref?: string;
+}
+
+const { variant, viewAllHref } = Astro.props;
+const isSummary = variant === 'summary';
+const sorted: ProjectDef[] = sortProjectsByRelevance(PROJECT_DEFS);
+const defs: ProjectDef[] = isSummary ? sorted.slice(0, 3) : sorted;
+
+function projectTitle(p: ProjectDef): { text: string; key?: string } {
+  if (p.titleLiteral) return { text: p.titleLiteral };
+  if (p.titleKey) return { text: t(p.titleKey), key: p.titleKey };
+  return { text: '' };
+}
+---
+
+<Section id="projects" titleKey="header.navigation.projects">
+  <div class="projects-grid">
+    {
+      defs.map((project) => {
+        const title = projectTitle(project);
+        return (
+          <div
+            class="project-card"
+            data-status={project.status}
+            data-tech={project.technologies.join(',')}
+          >
+            <div class="project-header">
+              <h3 class="project-title" data-i18n-key={title.key}>
+                {title.text}
+              </h3>
+              <span
+                class="project-status"
+                style={`background-color: ${getStatusColor(project.status)};`}
+                data-i18n-key={`projects.status.${project.status}`}
+              >
+                {t(`projects.status.${project.status}`)}
+              </span>
+            </div>
+            {!isSummary && (
+              <p class="project-description" data-i18n-key={project.descriptionKey}>
+                {t(project.descriptionKey)}
+              </p>
+            )}
+            <div class="project-technologies">
+              {project.technologies.map((tech) => (
+                <span class="tech-tag">{tech}</span>
+              ))}
+            </div>
+            <div class="project-links">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link github-link"
+                  data-i18n-key="projects.links.github"
+                >
+                  {t('projects.links.github')}
+                </a>
+              )}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link demo-link"
+                  data-i18n-key="projects.links.demo"
+                >
+                  {t('projects.links.demo')}
+                </a>
+              )}
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link demo-link"
+                  data-i18n-key="projects.links.demo"
+                >
+                  {t('projects.links.demo')}
+                </a>
+              )}
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+  {
+    variant === 'summary' && viewAllHref && (
+      <p class="section-view-all">
+        <a href={viewAllHref} class="view-all-link" data-i18n-key="common.viewAll">
+          {t('common.viewAll')}
+        </a>
+      </p>
+    )
+  }
+</Section>

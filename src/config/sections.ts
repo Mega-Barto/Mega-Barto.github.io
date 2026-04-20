@@ -12,53 +12,51 @@ export const SECTIONS_CONFIG: SectionConfig[] = [
     id: 'hero',
     component: 'HeroSection',
     isVisible: true,
-    order: 0
+    order: 0,
   },
   {
     id: 'autobiography',
     component: 'AutobiographySection',
     isVisible: true,
-    order: 1
+    order: 1,
   },
   {
     id: 'work-experience',
     component: 'WorkExperienceSection',
     isVisible: true,
-    order: 2
+    order: 2,
   },
   {
     id: 'projects',
     component: 'ProjectsSection',
     isVisible: true,
-    order: 3
-  }
+    order: 3,
+  },
 ];
 
 // Función para obtener secciones activas ordenadas
 export const getActiveSections = (): SectionConfig[] => {
-  return SECTIONS_CONFIG
-    .filter(section => section.isVisible)
-    .sort((a, b) => a.order - b.order);
+  return SECTIONS_CONFIG.filter((section) => section.isVisible).sort((a, b) => a.order - b.order);
 };
 
 // Configuración específica de cada sección
 export const SECTION_SETTINGS = {
   hero: {
     showScrollIndicator: true,
-    parallaxEffect: false
+    parallaxEffect: false,
   },
   autobiography: {
     showTimeline: false,
-    showSkills: true
+    showSkills: true,
   },
   workExperience: {
     showCompanyLogos: false,
     showDuration: true,
-    highlightCurrent: true
+    highlightCurrent: true,
   },
   projects: {
     itemsPerPage: 6,
     showFilters: true,
-    categories: ['web', 'mobile', 'api', 'tools']
-  }
+    categories: ['web', 'mobile', 'api', 'tools'],
+  },
 } as const;

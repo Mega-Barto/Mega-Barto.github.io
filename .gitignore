@@ -9,8 +9,17 @@ lerna-debug.log*
 
 node_modules
 dist
+dist-astro
 dist-ssr
+.astro
 *.local
+
+# Astro
+.astro/
+dist-astro/
+
+# Bitácora local de migración (se versiona solo en la rama de release)
+bitacora.md
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +31,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Bitácora
+bitacora.md

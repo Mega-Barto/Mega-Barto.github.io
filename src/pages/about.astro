@@ -1,0 +1,59 @@
+---
+import Section from '../components/astro/Section.astro';
+import SiteFooter from '../components/astro/SiteFooter.astro';
+import SiteHeader from '../components/astro/SiteHeader.astro';
+import { t } from '../i18n/t';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = `${t('header.navigation.autobiography')} — ${t('personal.displayName')}`;
+const description = t('autobiography.introduction');
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="app">
+    <SiteHeader />
+    <main class="main-content page-detail">
+      <Section id="autobiography" titleKey="header.navigation.autobiography">
+        <article class="about-prose">
+          <p class="about-lead" data-i18n-key="about.detailLead">
+            {t('about.detailLead')}
+          </p>
+          <p data-i18n-key="autobiography.introduction">
+            {t('autobiography.introduction')}
+          </p>
+          <p data-i18n-key="autobiography.background">
+            {t('autobiography.background')}
+          </p>
+          <p data-i18n-key="autobiography.current">
+            {t('autobiography.current')}
+          </p>
+        </article>
+      </Section>
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .about-prose {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--color-text-inverse);
+  }
+
+  .about-prose p {
+    margin: 0 0 1.25rem;
+    line-height: 1.75;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+  }
+
+  .about-prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-lead {
+    color: var(--color-secondary-300);
+    font-style: italic;
+    margin-bottom: 2rem !important;
+  }
+</style>

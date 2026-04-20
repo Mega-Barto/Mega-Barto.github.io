@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mega-barto.github.io/Mega-Barto.github.io/sitemap-index.xml

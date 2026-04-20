@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import {
+  calculateGap,
+  calculateRepetitions,
+  FRAMEWORK_CAROUSEL,
+  LANGUAGE_CAROUSEL,
+  SERVICE_CAROUSEL,
+} from '../../content/carousel';
+import type { CarouselItemDef } from '../../content/types';
+
+import '../sections/Carousel/CarouselSection.css';
+import '../sections/common/CarouselCard.css';
+
+const imageModules = import.meta.glob<{ default: ImageMetadata }>('../../assets/CarouselImages/*', {
+  eager: true,
+});
+const imageMap: Record<string, ImageMetadata> = {};
+for (const path in imageModules) {
+  const fileName = path.split('/').pop();
+  if (fileName) imageMap[fileName] = imageModules[path].default;
+}
+
+interface RowProps {
+  items: CarouselItemDef[];
+  speed: number;
+  reverse?: boolean;
+}
+
+const rows: RowProps[] = [
+  { items: LANGUAGE_CAROUSEL, speed: 15 },
+  { items: FRAMEWORK_CAROUSEL, speed: 20, reverse: true },
+  { items: SERVICE_CAROUSEL, speed: 18 },
+];
+---
+
+<div class="carousel-background">
+  {
+    rows.map(({ items, speed, reverse }) => {
+      const repetitions = calculateRepetitions(items.length);
+      const gap = calculateGap(items.length);
+      const duplicated = Array.from({ length: repetitions }).flatMap(() => items);
+      return (
+        <div
+          class={`carousel ${reverse ? 'carousel-reverse' : ''}`}
+          style={`--carousel-speed: ${speed}s; --carousel-gap: ${gap};`}
+        >
+          <div class="carousel-track">
+            <div class="group">
+              {duplicated.map((item, index) => (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="carousel-card"
+                  aria-label={item.name}
+                >
+                  {imageMap[item.imageFile] && (
+                    <Image
+                      src={imageMap[item.imageFile]}
+                      alt={item.name}
+                      class="carousel-card-image"
+                      widths={[64, 96, 128]}
+                      sizes="96px"
+                      loading={index < 8 ? 'eager' : 'lazy'}
+                    />
+                  )}
+                </a>
+              ))}
+            </div>
+            <div class="group" aria-hidden="true">
+              {duplicated.map((item) => (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="carousel-card"
+                  tabindex={-1}
+                >
+                  {imageMap[item.imageFile] && (
+                    <Image
+                      src={imageMap[item.imageFile]}
+                      alt=""
+                      class="carousel-card-image"
+                      widths={[64, 96, 128]}
+                      sizes="96px"
+                      loading="lazy"
+                    />
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

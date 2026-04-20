@@ -1,62 +1,31 @@
-.work-experience-section {
-  padding: 6rem 0 4rem 0;
-  background: var(--color-background-projects);
-  min-height: 60vh;
-  color: var(--color-text-inverse);
-  position: relative;
-}
-
-.work-experience-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
-
-.work-experience-section .section-title {
-  font-size: 2.8rem;
-  text-align: center;
-  color: var(--color-text-inverse);
-  margin-bottom: 3rem;
-  font-weight: 800;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.work-experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-}
-
 .work-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.work-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .work-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1.5rem;
-  gap: 1rem;
+  margin-bottom: 1.25rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .work-title {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-weight: 700;
-  flex: 1;
+  flex: 1 1 auto;
   line-height: 1.3;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .work-link {
@@ -76,21 +45,22 @@
   color: var(--color-text-inverse);
   padding: 0.4rem 0.8rem;
   border-radius: 12px;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   white-space: nowrap;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+  flex-shrink: 0;
 }
 
 .work-info {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  padding: 0.9rem 1rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -99,12 +69,12 @@
 .work-time {
   color: var(--color-secondary-200);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .work-duration {
   color: var(--color-secondary-300);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
@@ -116,66 +86,13 @@
   font-size: 1rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .work-experience-section {
-    padding: 4rem 0 3rem 0;
-  }
-
-  .work-experience-section .container {
-    padding: 0 1.5rem;
-  }
-
-  .work-experience-section .section-title {
-    font-size: 2.2rem;
-    color: var(--color-text-inverse);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  }
-
-  .work-experience-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .work-card {
-    padding: 2rem;
-  }
-
+@media (max-width: 480px) {
   .work-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
   }
 
   .work-current-badge {
     align-self: flex-start;
-  }
-
-  .work-title {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .work-card {
-    padding: 1.5rem;
-  }
-
-  .work-title {
-    font-size: 1.3rem;
-  }
-
-  .work-info {
-    padding: 0.75rem;
-  }
-
-  .work-time,
-  .work-duration {
-    font-size: 0.85rem;
-  }
-
-  .work-description {
-    font-size: 0.95rem;
   }
 }
