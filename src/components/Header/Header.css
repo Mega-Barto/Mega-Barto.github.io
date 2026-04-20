@@ -277,8 +277,13 @@
   display: none;
 }
 
-@media (max-width: 1199px) {
-  .mobile-overlay {
-    display: block;
+.mobile-overlay.open {
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .mobile-overlay,
+  .mobile-overlay.open {
+    display: none !important;
   }
 }

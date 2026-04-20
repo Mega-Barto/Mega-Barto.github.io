@@ -68,7 +68,6 @@ const { items } = Astro.props;
     }
     for (const overlay of document.querySelectorAll<HTMLElement>('[data-mobile-overlay]')) {
       overlay.classList.toggle('open', open);
-      overlay.style.display = open ? 'block' : '';
     }
   };
 

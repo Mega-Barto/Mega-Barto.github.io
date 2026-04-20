@@ -1,11 +1,6 @@
 ---
 import { getActiveSocialLinks, type SocialIconName } from '../../config/socialLinks';
 
-interface Props {
-  class?: string;
-}
-
-const { class: className = '' } = Astro.props;
 const links = getActiveSocialLinks();
 
 const ICON_PATHS: Record<SocialIconName, string> = {
@@ -22,28 +17,26 @@ const ICON_PATHS: Record<SocialIconName, string> = {
 };
 ---
 
-<div class={className}>
-  {
-    links.map((social) => (
-      <a
-        href={social.url}
-        class="social-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        title={social.description}
-        aria-label={social.name}
+{
+  links.map((social) => (
+    <a
+      href={social.url}
+      class="social-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      title={social.description}
+      aria-label={social.name}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="1em"
+        height="1em"
+        fill="currentColor"
+        aria-hidden="true"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="1em"
-          height="1em"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path d={ICON_PATHS[social.iconName]} />
-        </svg>
-      </a>
-    ))
-  }
-</div>
+        <path d={ICON_PATHS[social.iconName]} />
+      </svg>
+    </a>
+  ))
+}
