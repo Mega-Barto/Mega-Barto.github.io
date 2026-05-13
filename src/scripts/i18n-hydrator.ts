@@ -18,8 +18,20 @@ function applyTranslations(bundle: Bundle): void {
     const val = getStringByPath(bundle, key);
     if (val === undefined) continue;
     const attr = el.getAttribute('data-i18n-attr');
-    if (attr) el.setAttribute(attr, val);
-    else el.textContent = val;
+    const argsRaw = el.getAttribute('data-i18n-args');
+    let finalVal: string = String(val);
+    if (argsRaw) {
+      try {
+        const args = JSON.parse(argsRaw) as Record<string, string>;
+        for (const [k, v] of Object.entries(args)) {
+          finalVal = finalVal.replace(new RegExp(`{{\\s*${k}\\s*}}`, 'g'), v);
+        }
+      } catch {
+        /* ignore malformed args */
+      }
+    }
+    if (attr) el.setAttribute(attr, finalVal);
+    else el.textContent = finalVal;
   }
 }
 
