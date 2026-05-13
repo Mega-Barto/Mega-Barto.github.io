@@ -261,6 +261,17 @@
       "taejf": "At TAEJF S.A.S. I took over and modernized a mobile project in Flutter backed by Firebase as a Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore and other utilities). I integrated and optimized authentication flows, implemented cloud functions, and developed solutions for remote configuration and observability that improved system stability and maintainability. Additionally, I designed and built complementary applications in Next.js and deployed them to Vercel. I learned the business logic from scratch and proactively resolved technical and product challenges throughout the project."
     }
   },
+  "about": {
+    "contactTitle": "Contact",
+    "bioTitle": "About me",
+    "bioLead": "Systems engineer focused on building practical, maintainable software.",
+    "bioText": "I'm Juan Alejandro Pérez Bermúdez (Barto). I build mobile apps with Flutter, backends with Firebase, and web apps with Next.js. I prioritize quality, testing and scalable solutions; I also take part in the local tech community.",
+    "skillsTitle": "Skills",
+    "skills": "Flutter, Firebase, Dart, React, Next.js, TypeScript, Testing, CI/CD, Docker",
+    "timelineTitle": "Timeline",
+    "timelineLead": "I've worked on both commercial and community projects, leading implementations from development to deployment.",
+    "contactCTA": "Interested in collaborating? Drop me a line and let's talk."
+  },
   "works": {
     "webspro": "WebsPro",
     "taejf": "TAEJF",

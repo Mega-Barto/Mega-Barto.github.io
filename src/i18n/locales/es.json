@@ -258,6 +258,17 @@
       "taejf": "En TAEJF S.A.S. retomé y modernicé un proyecto móvil en Flutter apoyado en Firebase como Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore y otras utilidades). Integré y optimicé flujos de autenticación, implementé funciones en la nube y desarrollé soluciones para configuración remota y observabilidad que mejoraron la estabilidad y mantenibilidad del sistema. Además, diseñé y construí aplicaciones complementarias en Next.js y las desplegué en Vercel. Aprendí la lógica de negocio desde cero y resolví de manera proactiva los desafíos técnicos y del producto a lo largo del proyecto."
     }
   },
+  "about": {
+    "contactTitle": "Contacto",
+    "bioTitle": "Sobre mí",
+    "bioLead": "Ingeniero en sistemas orientado a la construcción de software práctico y mantenible.",
+    "bioText": "Soy Juan Alejandro Pérez Bermúdez (Barto). Desarrollo aplicaciones móviles con Flutter, backend con Firebase, y aplicaciones web con Next.js. Me enfoco en calidad, pruebas y soluciones escalables; además participo activamente en la comunidad tecnológica local.",
+    "skillsTitle": "Habilidades",
+    "skills": "Flutter, Firebase, Dart, React, Next.js, TypeScript, Testing, CI/CD, Docker",
+    "timelineTitle": "Trayectoria",
+    "timelineLead": "He trabajado en proyectos comerciales y comunitarios, liderando implementaciones desde el desarrollo hasta el despliegue.",
+    "contactCTA": "¿Te interesa colaborar? Escríbeme y conversemos."
+  },
   "works": {
     "webspro": "WebsPro",
     "taejf": "TAEJF",
