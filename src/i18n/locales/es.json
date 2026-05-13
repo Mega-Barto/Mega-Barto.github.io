@@ -242,9 +242,10 @@
   "workExperience": {
     "current": "Actual",
     "duration": "Duración",
+    "durationMonths": "{{months}} meses",
     "descriptions": {
       "webspro": "Desarrollador web full-stack especializado en frameworks modernos de JavaScript y tecnologías backend. Responsable del desarrollo de aplicaciones web escalables utilizando React, TypeScript y FastAPI. Enfocado en la calidad del código, optimización del rendimiento e implementación de mejores prácticas en desarrollo de software.",
-      "taejf": "Desarrollador de software e ingeniero de aseguramiento de calidad enfocado en desarrollo web y testing de software. Actualmente contribuyendo a iniciativas de engagement comunitario, programas de educación tecnológica y proyectos de código abierto, manteniendo altos estándares de calidad de software."
+      "taejf": "En TAEJF S.A.S. retomé y modernicé un proyecto móvil en Flutter apoyado en Firebase como Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore y otras utilidades). Integré y optimicé flujos de autenticación, implementé funciones en la nube y desarrollé soluciones para configuración remota y observabilidad que mejoraron la estabilidad y mantenibilidad del sistema. Además, diseñé y construí aplicaciones complementarias en Next.js y las desplegué en Vercel. Aprendí la lógica de negocio desde cero y resolví de manera proactiva los desafíos técnicos y del producto a lo largo del proyecto."
     }
   },
   "works": {
