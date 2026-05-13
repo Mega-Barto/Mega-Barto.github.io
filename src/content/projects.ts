@@ -68,10 +68,10 @@ export function getStatusColor(status: ProjectStatus): string {
 }
 
 const STATUS_PRIORITY: Record<ProjectStatus, number> = {
-  'contributing': 0,
+  contributing: 0,
   'in-progress': 1,
-  'completed': 2,
-  'planned': 3,
+  completed: 2,
+  planned: 3,
 };
 
 /** Sort projects so currently active items appear first on the landing page. */

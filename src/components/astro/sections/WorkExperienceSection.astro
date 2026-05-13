@@ -20,7 +20,8 @@ function monthsBetween(isoStart?: string, isoEnd?: string) {
   try {
     const start = new Date(isoStart);
     const end = isoEnd ? new Date(isoEnd) : new Date();
-    let months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    let months =
+      (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
     if (end.getDate() < start.getDate()) months -= 1;
     if (months < 0) months = 0;
     return String(months);
