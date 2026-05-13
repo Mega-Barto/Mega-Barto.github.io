@@ -101,7 +101,7 @@
       "description": "Una API REST (primer acercamiento a Django Rest Framework) que permite almacenar información detallada sobre partidas de ajedrez, incluyendo jugadores con su respectivo ELO y color en la partida, jugadas, lugar y fecha de la competición."
     },
     "pereiratechtalks-org": {
-      "description": "Sitio web de Pereira Tech Talks; contribuciones en diseño, mejoras, mantenimiento y despliegue." 
+      "description": "Sitio web de Pereira Tech Talks; contribuciones en diseño, mejoras, mantenimiento y despliegue."
     },
     "status": {
       "completed": "Completado",
