@@ -1,5 +1,5 @@
 // Definiciones de tipos para los contenidos estáticos del portafolio.
-export type ProjectStatus = 'completed' | 'in-progress' | 'planned';
+export type ProjectStatus = 'completed' | 'in-progress' | 'planned' | 'contributing';
 
 export interface ProjectDef {
   id: string;
