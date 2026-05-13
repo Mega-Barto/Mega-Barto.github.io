@@ -72,9 +72,6 @@
     "description": "Ingeniero en sistemas y computación.",
     "domain": "megabarto.rocks"
   },
-  "about": {
-    "detailLead": "Versión ampliada de la sección «¿Quién es Barto?» con el mismo contenido base; aquí puedes ampliar en el futuro con más hitos y enlaces."
-  },
   "autobiography": {
     "introduction": "¡Hola! Soy Juan Alejandro Pérez Bermúdez (o Barto, como me llaman mis amigos), un Ingeniero en Sistemas y Computación con ganas de adquirir experiencia profesional en proyectos de software.",
     "background": "Tengo experiencia en desarrollo web, trabajando con tecnologías como React, FastAPI y BaaS como Supabase. Actualmente, estoy trabajando en un nuevo proyecto utilizando el stack Flutter + Firebase para crear aplicaciones móviles multiplataforma.",
@@ -261,13 +258,13 @@
   "about": {
     "contactTitle": "Contacto",
     "bioTitle": "Sobre mí",
-    "bioLead": "Ingeniero en sistemas orientado a la construcción de software práctico y mantenible.",
-    "bioText": "Soy Juan Alejandro Pérez Bermúdez (Barto). Desarrollo aplicaciones móviles con Flutter, backend con Firebase, y aplicaciones web con Next.js. Me enfoco en calidad, pruebas y soluciones escalables; además participo activamente en la comunidad tecnológica local.",
+    "bioLead": "Ingeniero en Sistemas y Computación enfocado en construir software útil, escalable y mantenible.",
+    "bioText": "Soy Juan Alejandro Pérez Bermúdez (Barto), nacido en Manizales y residente en Dosquebradas desde 2009. Soy egresado del Programa de Ingeniería en Sistemas y Computación de la Universidad Tecnológica de Pereira desde 2025.\n\nDesarrollo aplicaciones móviles con Flutter, backend con Firebase y Supabase, y aplicaciones web con Next.js y TypeScript, combinando buenas prácticas de ingeniería, calidad de software y enfoque en experiencia de usuario. Me interesa especialmente la automatización, las pruebas de software, CI/CD y la construcción de soluciones sostenibles a largo plazo. También he trabajado integrando proyectos Unity WebGL con aplicaciones React y desarrollando APIs escalables con FastAPI.\n\nMás allá del desarrollo, participo activamente en la comunidad tecnológica local apoyando la organización de eventos desde 2023 y promoviendo espacios de aprendizaje colaborativo. Formé parte del semillero de investigación SONAR I.S.C., fortaleciendo mi interés por la investigación académica y la calidad de software. Mi mayor logro en comunidad ha sido fundar QAConf, el primer evento especializado en calidad de software de la región, una iniciativa enfocada en conectar estudiantes, profesionales y empresas alrededor de la cultura de calidad y mejora continua.",
     "skillsTitle": "Habilidades",
-    "skills": "Flutter, Firebase, Dart, React, Next.js, TypeScript, Testing, CI/CD, Docker",
+    "skills": "Flutter, Firebase, React, Next.js, TypeScript, Python, Testing, QA, Docker, CI/CD, Desarrollo Mobile, Desarrollo Web, APIs REST, Liderazgo, Comunicación",
     "timelineTitle": "Trayectoria",
-    "timelineLead": "He trabajado en proyectos comerciales y comunitarios, liderando implementaciones desde el desarrollo hasta el despliegue.",
-    "contactCTA": "¿Te interesa colaborar? Escríbeme y conversemos."
+    "timelineLead": "A lo largo de mi trayectoria he participado en proyectos comerciales, académicos y comunitarios, asumiendo tareas que van desde el desarrollo y las pruebas hasta el despliegue, la mejora continua y el soporte a equipos de trabajo. Cada etapa me ha permitido fortalecer una visión más completa del ciclo de vida del software y aportar de forma más sólida a los productos, a la calidad técnica y a la construcción de comunidad tecnológica.",
+    "contactCTA": "¿Te interesa colaborar, construir comunidad o desarrollar una idea? Conversemos."
   },
   "works": {
     "webspro": "WebsPro",
