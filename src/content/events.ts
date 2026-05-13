@@ -25,8 +25,17 @@ export const EVENT_DEFS: EventDef[] = [
     dateKey: 'events.flisol-3.date',
     location: 'Pereira, Colombia',
     descriptionKey: 'events.flisol-3.description',
-    source: 'https://flisolpereira.vercel.app/',
+    source: 'https://flisolpereira.vercel.app/2025',
     sortDate: '2025-05-08',
+  },
+  {
+    id: 'flisol-4',
+    titleKey: 'events.flisol-4.title',
+    dateKey: 'events.flisol-4.date',
+    location: 'Pereira, Colombia',
+    descriptionKey: 'events.flisol-4.description',
+    source: 'https://flisolpereira.vercel.app/',
+    sortDate: '2026-05-07',
   },
   {
     id: 'sfd-1',

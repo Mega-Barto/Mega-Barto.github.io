@@ -1,9 +1,17 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Section from '../components/astro/Section.astro';
 import SiteFooter from '../components/astro/SiteFooter.astro';
 import SiteHeader from '../components/astro/SiteHeader.astro';
 import { t } from '../i18n/t';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const profileImageModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/ProfileImages/*.{jpg,jpeg,png,webp}',
+  { eager: true },
+);
+const profileImages = Object.values(profileImageModules).map((mod) => mod.default);
 
 const title = `${t('header.navigation.autobiography')} — ${t('personal.displayName')}`;
 const description = t('autobiography.introduction');
@@ -14,20 +22,52 @@ const description = t('autobiography.introduction');
     <SiteHeader />
     <main class="main-content page-detail">
       <Section id="autobiography" titleKey="header.navigation.autobiography">
-        <article class="about-prose">
-          <p class="about-lead" data-i18n-key="about.detailLead">
-            {t('about.detailLead')}
-          </p>
-          <p data-i18n-key="autobiography.introduction">
-            {t('autobiography.introduction')}
-          </p>
-          <p data-i18n-key="autobiography.background">
-            {t('autobiography.background')}
-          </p>
-          <p data-i18n-key="autobiography.current">
-            {t('autobiography.current')}
-          </p>
-        </article>
+        <div class="about-grid">
+          <aside class="about-sidebar">
+            <div class="about-image-stack">
+              {
+                profileImages.map((src, i) => (
+                  <Image
+                    src={src}
+                    alt={t('personal.displayName')}
+                    class:list={['about-avatar', 'about-avatar-slot', { 'is-active': i === 0 }]}
+                    widths={[320, 480, 640]}
+                    sizes="(max-width: 900px) 280px, 320px"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    fetchpriority={i === 0 ? 'high' : undefined}
+                    aria-hidden={i !== 0}
+                    data-about-profile=""
+                  />
+                ))
+              }
+            </div>
+            <script is:inline>
+              (function () {
+                var slots = document.querySelectorAll('[data-about-profile]');
+                if (slots.length <= 1) return;
+                var idx = Math.floor(Math.random() * slots.length);
+                slots.forEach(function (el, i) {
+                  var on = i === idx;
+                  el.classList.toggle('is-active', on);
+                  el.setAttribute('aria-hidden', on ? 'false' : 'true');
+                  if (on) el.setAttribute('loading', 'eager');
+                });
+              })();
+            </script>
+          </aside>
+
+          <article class="about-prose">
+            <h2 data-i18n-key="about.bioTitle">{t('about.bioTitle')}</h2>
+            <p class="about-lead" data-i18n-key="about.bioLead">{t('about.bioLead')}</p>
+            <p class="about-bio" data-i18n-key="about.bioText">{t('about.bioText')}</p>
+
+            <h3 data-i18n-key="about.timelineTitle">{t('about.timelineTitle')}</h3>
+            <p data-i18n-key="about.timelineLead">{t('about.timelineLead')}</p>
+
+            <p class="call-to-action" data-i18n-key="about.contactCTA">{t('about.contactCTA')}</p>
+          </article>
+        </div>
       </Section>
     </main>
     <SiteFooter />
@@ -35,16 +75,90 @@ const description = t('autobiography.introduction');
 </BaseLayout>
 
 <style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .about-sidebar {
+    order: 1;
+    text-align: center;
+  }
+
   .about-prose {
-    max-width: 760px;
+    order: 2;
+    min-width: 0;
+  }
+
+  .about-avatar {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    margin-bottom: 1rem;
+  }
+
+  .about-image-stack {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 1rem;
+  }
+
+  .about-image-stack .about-avatar-slot:not(.is-active) {
+    display: none;
+  }
+
+  .about-image-stack .about-avatar-slot.is-active {
+    display: block;
+  }
+
+  .about-contact h4 { margin: 0 0 0.25rem 0; }
+
+  .call-to-action { margin-top:1.5rem; font-weight:600 }
+
+  @media (max-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-sidebar {
+      order: 1;
+    }
+
+    .about-avatar {
+      width: 280px;
+      height: 280px;
+    }
+
+    .about-image-stack {
+      width: 280px;
+      height: 280px;
+    }
+
+    .about-prose {
+      order: 2;
+    }
+  }
+
+  .about-prose {
+    max-width: 700px;
     margin: 0 auto;
     color: var(--color-text-inverse);
+    text-align: justify;
   }
 
   .about-prose p {
     margin: 0 0 1.25rem;
-    line-height: 1.75;
+    line-height: 1.8;
     font-size: clamp(1rem, 1.8vw, 1.1rem);
+  }
+
+  .about-bio {
+    white-space: pre-line;
   }
 
   .about-prose p:last-child {
@@ -55,5 +169,12 @@ const description = t('autobiography.introduction');
     color: var(--color-secondary-300);
     font-style: italic;
     margin-bottom: 2rem !important;
+    line-height: 1.7;
+  }
+
+  .call-to-action {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    line-height: 1.7;
   }
 </style>

@@ -35,6 +35,15 @@ export const PROJECT_DEFS: ProjectDef[] = [
     github: 'https://github.com/Mega-Barto/Chess-Games-Api',
   },
   {
+    id: '7',
+    titleLiteral: 'pereiratechtalks.org',
+    descriptionKey: 'projects.pereiratechtalks-org.description',
+    technologies: ['AstroWind'],
+    status: 'contributing',
+    github: 'https://github.com/pereira-tech-talks/pereiratechtalks.com',
+    demo: 'https://pereiratechtalks.org/',
+  },
+  {
     id: '3',
     titleKey: 'projects.project2.title',
     descriptionKey: 'projects.project2.description',
@@ -51,15 +60,18 @@ export function getStatusColor(status: ProjectStatus): string {
       return '#ffc107';
     case 'planned':
       return '#6c757d';
+    case 'contributing':
+      return '#17a2b8';
     default:
       return '#6c757d';
   }
 }
 
 const STATUS_PRIORITY: Record<ProjectStatus, number> = {
-  'in-progress': 0,
-  completed: 1,
-  planned: 2,
+  'contributing': 0,
+  'in-progress': 1,
+  'completed': 2,
+  'planned': 3,
 };
 
 /** Sort projects so currently active items appear first on the landing page. */

@@ -1,5 +1,5 @@
 // Definiciones de tipos para los contenidos estáticos del portafolio.
-export type ProjectStatus = 'completed' | 'in-progress' | 'planned';
+export type ProjectStatus = 'completed' | 'in-progress' | 'planned' | 'contributing';
 
 export interface ProjectDef {
   id: string;
@@ -48,8 +48,10 @@ export interface WorkDef {
   timeKey: string;
   durationKey?: string;
   actual?: boolean;
-  /** ISO date (YYYY-MM-DD) marking the start of the role, used to sort. */
-  sortDate?: string;
+  /** ISO date (YYYY-MM-DD) marking the start of the role used to compute durations. */
+  startDate?: string;
+  /** ISO date (YYYY-MM-DD) marking the end of the role. If omitted and `actual` is true, the current date is used. */
+  endDate?: string;
 }
 
 export interface CarouselItemDef {
