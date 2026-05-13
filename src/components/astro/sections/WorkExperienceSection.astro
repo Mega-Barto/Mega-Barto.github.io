@@ -14,6 +14,20 @@ const { variant, viewAllHref } = Astro.props;
 const isSummary = variant === 'summary';
 const sorted = sortWorksByRecency(WORK_DEFS);
 const defs = isSummary ? sorted.slice(0, 2) : sorted;
+
+function monthsBetween(isoStart?: string, isoEnd?: string) {
+  if (!isoStart) return null;
+  try {
+    const start = new Date(isoStart);
+    const end = isoEnd ? new Date(isoEnd) : new Date();
+    let months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    if (end.getDate() < start.getDate()) months -= 1;
+    if (months < 0) months = 0;
+    return String(months);
+  } catch {
+    return null;
+  }
+}
 ---
 
 <Section id="work-experience" titleKey="header.navigation.workExperience">
@@ -42,15 +56,25 @@ const defs = isSummary ? sorted.slice(0, 2) : sorted;
             <span class="work-time" data-i18n-key={work.timeKey}>
               {t(work.timeKey)}
             </span>
-            {work.durationKey && (
-              <span class="work-duration">
-                <span data-i18n-key="workExperience.duration">
-                  {t('workExperience.duration')}
+            {
+              (work.durationKey || work.startDate) && (
+                <span class="work-duration">
+                  <span data-i18n-key="workExperience.duration">{t('workExperience.duration')}</span>
+                  {': '}
+                  {work.startDate ? (
+                    (() => {
+                      const months = monthsBetween(work.startDate, work.endDate);
+                      if (months !== null) {
+                        return <span data-i18n-key="workExperience.durationMonths" data-i18n-args={JSON.stringify({ months })}>{t('workExperience.durationMonths', undefined, { months })}</span>;
+                      }
+                      return <span>-</span>;
+                    })()
+                  ) : (
+                    <span data-i18n-key={work.durationKey}>{t(work.durationKey ?? '')}</span>
+                  )}
                 </span>
-                {': '}
-                <span data-i18n-key={work.durationKey}>{t(work.durationKey)}</span>
-              </span>
-            )}
+              )
+            }
           </div>
           {!isSummary && (
             <p
