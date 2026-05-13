@@ -68,6 +68,14 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#branching-flow">Branching Flow</a>
+      <ul>
+        <li><a href="#existing-branches-and-purpose">Existing Branches and Purpose</a></li>
+        <li><a href="#recommended-delivery-flow">Recommended Delivery Flow</a></li>
+        <li><a href="#commit-message-format">Commit Message Format</a></li>
+      </ul>
+    </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -226,6 +234,62 @@ Make sure you have Node.js and npm installed, or Bun as an alternative faster Ja
    bun dev
    ```
    Your application will be available at `http://localhost:5173`.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Branching Flow
+
+This repository currently uses a GitFlow-like model with long-lived integration and release branches.
+
+### Existing Branches and Purpose
+
+- main: production branch. It points to stable releases (for example, Release v3.0.1).
+- develop: integration branch for completed features before release.
+- release/vX.Y or release/vX.Y.Z: release stabilization branches (examples: release/v3.0, release/v3.0.1).
+- feature__*: feature work branches (examples: feature__may_updates, feature__carousel).
+- featute__astro_migration: legacy feature branch with a typo in the prefix, still valid and tracked.
+
+### Recommended Delivery Flow
+
+1. Create a feature branch from develop:
+  - git checkout develop
+  - git pull origin develop
+  - git checkout -b feature__short_name
+2. Work and commit in small logical units.
+3. Open PR from feature branch to develop.
+4. When develop is ready for publication, create or update release branch:
+  - git checkout -b release/vX.Y.Z develop
+5. Stabilize release branch (fixes, version bumps, CI/workflow adjustments).
+6. Merge release branch into main and tag version (for example v3.0.1).
+7. Sync the release changes back into develop to avoid drift.
+
+### Commit Message Format
+
+Current history follows Conventional Commits style in most cases.
+
+Use this format:
+- type(scope): short imperative summary
+
+Common types already used in this repository:
+- feat: new feature
+- fix: bug fix
+- refactor: internal change without behavior change
+- style: visual or formatting adjustments
+- chore: maintenance, tooling, dependencies
+- ci: CI/CD changes
+- merge: explicit branch synchronization commits
+- release: version/release commits
+
+Examples aligned with existing history:
+- feat(content): add tribu-hackathon event and scrum certificate
+- refactor(home+about): move autobiography card design to landing
+- chore(workflow): add Node.js setup step to deployment workflow
+- merge: sync develop after release v3.0.1
+- release: v3.0.1 - random hero profile per refresh, CI Node 22
+
+Branch naming guideline:
+- Preferred: feature__descriptive_name
+- Keep release branches as: release/vX.Y.Z
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
