@@ -68,28 +68,38 @@ function projectTitle(p: ProjectDef): { text: string; key?: string } {
                   {t('projects.links.github')}
                 </a>
               )}
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link demo-link"
-                  data-i18n-key="projects.links.demo"
-                >
-                  {t('projects.links.demo')}
-                </a>
-              )}
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link demo-link"
-                  data-i18n-key="projects.links.demo"
-                >
-                  {t('projects.links.demo')}
-                </a>
-              )}
+              {
+                (() => {
+                  const demoKey = project.status === 'contributing' ? 'projects.links.viewProject' : 'projects.links.demo';
+                  const demoLabel = t(demoKey);
+                  return (
+                    <>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="project-link demo-link"
+                          data-i18n-key={demoKey}
+                        >
+                          {demoLabel}
+                        </a>
+                      )}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="project-link demo-link"
+                          data-i18n-key={demoKey}
+                        >
+                          {demoLabel}
+                        </a>
+                      )}
+                    </>
+                  );
+                })()
+              }
             </div>
           </div>
         );

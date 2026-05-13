@@ -104,14 +104,19 @@
     "chess_api": {
       "description": "A REST API (first approach to Django Rest Framework) that allows storing detailed information about chess games, including players with their respective ELO and color in the game, moves, location, and date of the competition."
     },
+    "pereiratechtalks-org": {
+      "description": "Website for Pereira Tech Talks — contributions include design, improvements, maintenance and deployment."
+    },
     "status": {
       "completed": "Completed",
       "in-progress": "In Progress",
-      "planned": "Planned"
+      "planned": "Planned",
+      "contributing": "Contributing"
     },
     "links": {
       "github": "View Code",
-      "demo": "Live Demo"
+      "demo": "Live Demo",
+      "viewProject": "View project"
     },
     "filter": {
       "status": "Status",
@@ -199,6 +204,11 @@
       "title": "FLISOL 2025",
       "date": "May 8, 2025",
       "description": "Participated as a staff coordinator and event host."
+    },
+    "flisol-4": {
+      "title": "FLISOL 2026",
+      "date": "May 7, 2026",
+      "description": "Participated as coorganizer and event host."
     },
     "sfd-1": {
       "title": "Software Freedom Day 2023",

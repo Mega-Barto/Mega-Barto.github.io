@@ -103,14 +103,19 @@
     "chess_api": {
       "description": "Una API REST (primer acercamiento a Django Rest Framework) que permite almacenar información detallada sobre partidas de ajedrez, incluyendo jugadores con su respectivo ELO y color en la partida, jugadas, lugar y fecha de la competición."
     },
+    "pereiratechtalks-org": {
+      "description": "Sitio web de Pereira Tech Talks; contribuciones en diseño, mejoras, mantenimiento y despliegue." 
+    },
     "status": {
       "completed": "Completado",
       "in-progress": "En Progreso",
-      "planned": "Planeado"
+      "planned": "Planeado",
+      "contributing": "Contribuyendo"
     },
     "links": {
       "github": "Ver Código",
-      "demo": "Demo en Vivo"
+      "demo": "Demo en Vivo",
+      "viewProject": "Ver proyecto"
     },
     "filter": {
       "status": "Estado",
@@ -196,6 +201,11 @@
       "title": "FLISOL 2025",
       "date": "Mayo 8, 2025",
       "description": "Participé como coordinador del staff y host del evento."
+    },
+    "flisol-4": {
+      "title": "FLISOL 2026",
+      "date": "Mayo 7, 2026",
+      "description": "Participé como coorganizador y host del evento."
     },
     "sfd-1": {
       "title": "Software Freedom Day 2023",
