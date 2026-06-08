@@ -33,7 +33,7 @@ jobs:
         python-version: '3.13'
 
     - name: Install RenderCV
-      run: pip install rendercv
+      run: pip install "rendercv[full]"
 
     - name: Install Typst
       run: |
