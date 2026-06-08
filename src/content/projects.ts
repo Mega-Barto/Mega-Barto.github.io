@@ -55,13 +55,13 @@ export const PROJECT_DEFS: ProjectDef[] = [
 export function getStatusColor(status: ProjectStatus): string {
   switch (status) {
     case 'completed':
-      return '#28a745';
+      return '#22c55e'; // green
     case 'in-progress':
-      return '#ffc107';
+      return '#eab308'; // yellow
     case 'planned':
-      return '#6c757d';
+      return '#ef4444'; // red
     case 'contributing':
-      return '#17a2b8';
+      return '#f97316'; // orange
     default:
       return '#6c757d';
   }
