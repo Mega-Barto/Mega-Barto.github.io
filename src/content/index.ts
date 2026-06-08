@@ -1,5 +1,6 @@
 export * from './carousel';
 export * from './certificates';
+export * from './cv';
 export * from './events';
 export * from './navigation';
 export * from './projects';

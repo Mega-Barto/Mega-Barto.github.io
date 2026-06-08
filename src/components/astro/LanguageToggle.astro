@@ -11,10 +11,10 @@ const { showText = true, compact = false } = Astro.props;
 
 <button
   type="button"
-  class={`language-toggle ${compact ? 'compact' : ''}`.trim()}
+  class:list={['language-toggle', compact && 'compact']}
   data-language-toggle
-  title="Toggle language"
-  aria-label="Toggle language"
+  title="Cambiar a inglés"
+  aria-label="Cambiar a inglés"
 >
   <span class="language-icon" aria-hidden="true">
     <svg
@@ -33,16 +33,23 @@ const { showText = true, compact = false } = Astro.props;
       <path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"></path>
     </svg>
   </span>
-  {showText && <span class="language-text" data-language-label>ES</span>}
+  {showText && <span class="language-text" data-language-label>EN</span>}
 </button>
 
 <script>
   import { $language, setLanguage } from '../../stores/i18n';
 
   const render = (lang: 'es' | 'en') => {
-    const labels = document.querySelectorAll<HTMLElement>('[data-language-label]');
-    for (const el of labels) {
-      el.textContent = lang === 'es' ? 'ES' : 'EN';
+    const nextLabel = lang === 'es' ? 'EN' : 'ES';
+    const title = lang === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish';
+
+    for (const el of document.querySelectorAll<HTMLElement>('[data-language-label]')) {
+      el.textContent = nextLabel;
+    }
+
+    for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-language-toggle]')) {
+      btn.title = title;
+      btn.setAttribute('aria-label', title);
     }
   };
 

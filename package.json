@@ -1,5 +1,5 @@
 {
-  "name": "megabarto.rocks",
+  "name": "megabarto.com",
   "private": true,
   "version": "3.0.1",
   "type": "module",
@@ -11,6 +11,7 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
+    "render:cv": "node scripts/render-cv.mjs",
     "verify": "bun run lint && bun run check && bun run build",
     "predeploy": "bun run verify",
     "deploy": "gh-pages -d dist"

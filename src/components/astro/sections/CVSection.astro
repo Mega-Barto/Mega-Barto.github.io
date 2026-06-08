@@ -1,0 +1,123 @@
+---
+import { CV_PDF_PATHS } from '../../../content/cv';
+import { t } from '../../../i18n/t';
+import { withBase } from '../../../utils/baseUrl';
+import Section from '../Section.astro';
+
+import '../../sections/CVSection/CVSection.css';
+
+const pdfPaths = {
+  en: withBase(CV_PDF_PATHS.en),
+  es: withBase(CV_PDF_PATHS.es),
+};
+---
+
+<Section id="cv" titleKey="header.navigation.cv">
+  <p class="section-description" data-i18n-key="cv.description">
+    {t('cv.description')}
+  </p>
+
+  <div class="cv-viewer-wrap" data-cv-root data-cv-paths={JSON.stringify(pdfPaths)}>
+    <iframe
+      id="cv-viewer"
+      class="cv-viewer"
+      title={t('cv.viewerTitle')}
+      data-cv-viewer
+      data-i18n-attr="title"
+      data-i18n-key="cv.viewerTitle"
+    />
+    <div class="cv-actions">
+      <a
+        href={pdfPaths.en}
+        class="cv-download-link"
+        data-cv-download
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span data-i18n-key="cv.download">{t('cv.download')}</span>
+      </a>
+    </div>
+  </div>
+</Section>
+
+<script>
+  import { $language, syncLanguageFromHtml } from '../../../stores/i18n';
+
+  type CvLang = 'en' | 'es';
+
+  function resolveLang(lang?: CvLang): CvLang {
+    if (lang === 'en' || lang === 'es') return lang;
+    const fromStore = $language.get();
+    if (fromStore === 'en' || fromStore === 'es') return fromStore;
+    const attr = document.documentElement.getAttribute('data-lang');
+    if (attr === 'en' || attr === 'es') return attr;
+    return 'es';
+  }
+
+  function syncCvView(root: HTMLElement, lang?: CvLang): void {
+    const raw = root.dataset.cvPaths;
+    if (!raw) return;
+
+    let paths: Record<CvLang, string>;
+    try {
+      paths = JSON.parse(raw) as Record<CvLang, string>;
+    } catch {
+      return;
+    }
+
+    const resolvedLang = resolveLang(lang);
+    const src = paths[resolvedLang];
+    if (!src) return;
+
+    const viewer = root.querySelector<HTMLIFrameElement>('[data-cv-viewer]');
+    const download = root.querySelector<HTMLAnchorElement>('[data-cv-download]');
+
+    if (viewer) {
+      const nextSrc = new URL(src, window.location.href).href;
+      if (viewer.src !== nextSrc) {
+        viewer.src = src;
+      }
+    }
+    if (download) {
+      download.href = src;
+    }
+  }
+
+  function syncAllCvViews(lang?: CvLang): void {
+    for (const root of document.querySelectorAll<HTMLElement>('[data-cv-root]')) {
+      syncCvView(root, lang);
+    }
+  }
+
+  function bindCvDownloads(): void {
+    if (document.documentElement.dataset.cvDownloadsBound === 'true') return;
+    document.documentElement.dataset.cvDownloadsBound = 'true';
+
+    document.addEventListener(
+      'click',
+      (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        const link = target.closest<HTMLAnchorElement>('[data-cv-download]');
+        if (!link) return;
+
+        const root = link.closest<HTMLElement>('[data-cv-root]');
+        if (!root) return;
+
+        syncCvView(root, $language.get());
+      },
+      true,
+    );
+  }
+
+  function initCvSection(): void {
+    syncLanguageFromHtml();
+    bindCvDownloads();
+    syncAllCvViews($language.get());
+  }
+
+  initCvSection();
+  document.addEventListener('astro:page-load', initCvSection);
+  $language.listen((lang) => syncAllCvViews(lang));
+</script>

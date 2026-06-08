@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "megabarto.rocks",
+      "name": "megabarto.com",
       "dependencies": {
         "gh-pages": "^6.3.0",
         "nanostores": "^1.3.0",

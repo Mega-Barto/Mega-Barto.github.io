@@ -9,6 +9,52 @@
   gap: 3rem;
   position: relative;
   color: var(--color-text-inverse);
+  overflow: hidden;
+}
+
+/* Animated gradient orbs in background */
+.carousel-background::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 50%;
+  height: 70%;
+  background: radial-gradient(ellipse, rgba(128, 128, 128, 0.06) 0%, transparent 60%);
+  animation: carouselOrbFloat1 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.carousel-background::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 50%;
+  height: 70%;
+  background: radial-gradient(ellipse, rgba(96, 96, 96, 0.05) 0%, transparent 60%);
+  animation: carouselOrbFloat2 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes carouselOrbFloat1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+}
+
+@keyframes carouselOrbFloat2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-5%, -8%) scale(1.05);
+  }
 }
 
 .carousel {
@@ -17,6 +63,7 @@
   width: 50%;
   padding: 2rem 0;
   position: relative;
+  z-index: 1;
   --carousel-speed: 12s;
   --carousel-gap: 0.65em;
   mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
@@ -66,6 +113,20 @@
   color: var(--color-text-inverse);
   font-weight: 800;
   text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-section-title::after {
+  content: "";
+  display: block;
+  margin: 0.75rem auto 0;
+  width: clamp(60px, 15%, 120px);
+  height: 3px;
+  background: linear-gradient(135deg, #606060 0%, #808080 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 .group {

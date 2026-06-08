@@ -37,7 +37,7 @@
     <a href="https://github.com/mega-barto/mega-barto.github.io"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://www.megabarto.rocks">View Page</a>
+    <a href="https://megabarto.com">View Page</a>
     ·
     <a href="https://github.com/mega-barto/mega-barto.github.io/issues">Report Bug</a>
   </p>
@@ -219,7 +219,7 @@ Make sure you have Node.js and npm installed, or Bun as an alternative faster Ja
    ```
 2. Navigate to the project directory
    ```sh
-   cd mega-barto.github.io/megabarto.rocks
+   cd mega-barto.github.io
    ```
 3. Install packages (using npm or bun)
    ```sh
