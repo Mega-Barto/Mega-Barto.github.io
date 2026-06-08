@@ -15,8 +15,17 @@ export const WORK_DEFS: WorkDef[] = [
     labelKey: 'works.taejf',
     href: 'https://taejf.com/',
     timeKey: 'works.periods.taejf',
-    actual: true,
     startDate: '2025-08-28',
+    endDate: '2026-05-31',
+    badgeKey: 'workExperience.badges.middleTime',
+  },
+  {
+    id: 'dailybot',
+    labelKey: 'works.dailybot',
+    href: 'https://dailybot.com/',
+    timeKey: 'works.periods.dailybot',
+    actual: true,
+    startDate: '2026-06-01',
   },
 ];
 
