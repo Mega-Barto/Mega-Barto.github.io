@@ -61,8 +61,11 @@ const navItems = resolveNavItems(pathname, base);
       <SocialLinks />
     </div>
     <div class="header-right">
-      <div class="language-toggle-wrap">
+      <div class="language-toggle-wrap language-toggle-wrap--desktop">
         <LanguageToggle />
+      </div>
+      <div class="language-toggle-wrap language-toggle-wrap--mobile">
+        <LanguageToggle compact />
       </div>
       <MobileMenu items={navItems} />
     </div>
