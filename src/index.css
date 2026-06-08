@@ -1,54 +1,81 @@
 :root {
-  /* Colores principales */
-  --color-primary-50: #f9fafb;
-  --color-primary-100: #f3f4f6;
-  --color-primary-200: #e5e7eb;
-  --color-primary-300: #d1d5db;
-  --color-primary-400: #9ca3af;
-  --color-primary-500: #6b7280;
-  --color-primary-600: #4b5563;
-  --color-primary-700: #374151;
-  --color-primary-800: #1f2937;
-  --color-primary-900: #111827;
+  /* ===== NEUTRAL GRAY PALETTE =====
+   * #d0d0d0 - Light gray (primary text on dark backgrounds)
+   * #b0b0b0 - Medium gray (secondary text)
+   * #808080 - Darker gray (muted text/borders)
+   * #505050 - Dark gray (accent/interactive elements)
+   * #2a2a2a - Darkest (backgrounds)
+   */
 
-  /* Colores secundarios */
-  --color-secondary-50: #fafafa;
-  --color-secondary-100: #f4f4f5;
-  --color-secondary-200: #e4e4e7;
-  --color-secondary-300: #d4d4d8;
-  --color-secondary-400: #a1a1aa;
-  --color-secondary-500: #71717a;
-  --color-secondary-600: #52525b;
-  --color-secondary-700: #3f3f46;
-  --color-secondary-800: #27272a;
-  --color-secondary-900: #18181b;
+  /* Colores principales - neutral grays */
+  --color-primary-50: #e8e8e8;
+  --color-primary-100: #d0d0d0;
+  --color-primary-200: #b0b0b0;
+  --color-primary-300: #909090;
+  --color-primary-400: #808080;
+  --color-primary-500: #707070;
+  --color-primary-600: #606060;
+  --color-primary-700: #505050;
+  --color-primary-800: #404040;
+  --color-primary-900: #2a2a2a;
+
+  /* Colores secundarios - text hierarchy */
+  --color-secondary-50: #e8e8e8;
+  --color-secondary-100: #d0d0d0;
+  --color-secondary-200: #b0b0b0;
+  --color-secondary-300: #909090;
+  --color-secondary-400: #808080;
+  --color-secondary-500: #707070;
+  --color-secondary-600: #606060;
+  --color-secondary-700: #505050;
+  --color-secondary-800: #404040;
+  --color-secondary-900: #2a2a2a;
 
   /* Backgrounds */
-  --color-background-light: #ffffff;
-  --color-background-muted: #f4f4f5;
-  --color-background-dark: #18181b;
-  --color-background-darker: #0a0a0a;
-  --color-background-hero: #1f2937;
-  --color-background-autobiography: #dcdcdc;
-  --color-background-projects: #3e4147;
+  --color-background-light: #e8e8e8;
+  --color-background-muted: #d0d0d0;
+  --color-background-dark: #2a2a2a;
+  --color-background-darker: #1a1a1a;
+  --color-background-hero: #2a2a2a;
+  --color-background-autobiography: #e8e8e8;
+  --color-background-projects: #2a2a2a;
 
   /* Texto */
-  --color-text-primary: #111827;
-  --color-text-secondary: #4b5563;
-  --color-text-muted: #6b7280;
-  --color-text-inverse: #ffffff;
+  --color-text-primary: #2a2a2a;
+  --color-text-secondary: #808080;
+  --color-text-muted: #808080;
+  --color-text-inverse: #d0d0d0;
 
   /* Estados */
   --color-status-success: #22c55e;
   --color-status-warning: #eab308;
   --color-status-error: #ef4444;
-  --color-status-info: #3b82f6;
+  --color-status-info: #808080;
 
-  /* Acentos y efectos */
-  --color-accent-blue: #60a5fa;
-  --color-accent-blue-light: #93c5fd;
-  --color-accent-cyan: #38bdf8;
-  --color-accent-cyan-light: #0ea5e9;
+  /* Acentos - neutral grays */
+  --color-accent-blue: #909090;
+  --color-accent-blue-light: #b0b0b0;
+  --color-accent-cyan: #909090;
+  --color-accent-cyan-light: #b0b0b0;
+
+  /* Gradients - VERY SUBTLE gray transitions */
+  --gradient-primary: linear-gradient(135deg, #505050 0%, #606060 100%);
+  --gradient-secondary: linear-gradient(135deg, #404040 0%, #505050 100%);
+  --gradient-accent: linear-gradient(135deg, #505050 0%, #606060 100%);
+  --gradient-dark: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  --gradient-hero: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  --gradient-card-border: linear-gradient(135deg, rgba(128, 128, 128, 0.3) 0%, rgba(96, 96, 96, 0.2) 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(128, 128, 128, 0.08) 0%, rgba(96, 96, 96, 0.05) 100%);
+  --gradient-section: linear-gradient(180deg, #2a2a2a 0%, #252525 50%, #2a2a2a 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(128, 128, 128, 0.08) 0%, transparent 70%);
+  --gradient-text: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
+  
+  /* Shadows - neutral */
+  --shadow-glow-sm: 0 0 15px rgba(0, 0, 0, 0.2);
+  --shadow-glow-md: 0 0 30px rgba(0, 0, 0, 0.3);
+  --shadow-glow-lg: 0 4px 40px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-card-hover: 0 12px 48px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -103,23 +130,50 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border-radius: 10px;
+  border: none;
+  padding: 0.65em 1.3em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
   font-family: inherit;
-  background-color: var(--color-primary-800);
+  background: linear-gradient(135deg, #505050 0%, #606060 100%);
   cursor: pointer;
-  transition: border-color 0.25s;
-  color: var(--color-text-inverse);
+  transition: all 0.3s ease;
+  color: #d0d0d0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transition: left 0.4s ease;
+}
+
 button:hover {
-  border-color: var(--color-accent-blue);
+  background: linear-gradient(135deg, #606060 0%, #707070 100%);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
+
+button:hover::before {
+  left: 100%;
+}
+
 button:focus,
 button:focus-visible {
-  border: 2px;
+  outline: 2px solid rgba(128, 128, 128, 0.5);
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 @media (prefers-color-scheme: light) {

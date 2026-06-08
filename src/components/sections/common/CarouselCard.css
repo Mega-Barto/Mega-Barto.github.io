@@ -4,24 +4,49 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
   backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 2rem;
-  border: none;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
   text-decoration: none;
   color: inherit;
   width: 160px;
   height: 160px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient border effect */
+.carousel-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(128, 128, 128, 0.25) 0%, rgba(96, 96, 96, 0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .carousel-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px) scale(1.02);
+  background: linear-gradient(135deg, rgba(96, 96, 96, 0.12) 0%, rgba(112, 112, 112, 0.08) 100%);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(128, 128, 128, 0.25);
+}
+
+.carousel-card:hover::before {
+  opacity: 1;
 }
 
 .carousel-card:active {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.01);
 }
 
 .carousel-card-image {

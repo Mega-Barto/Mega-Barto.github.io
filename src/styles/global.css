@@ -28,6 +28,27 @@ body {
   padding: clamp(2.5rem, 5vw, 5rem) 0 clamp(2.5rem, 5vw, 5rem);
   background: var(--color-background-projects);
   color: var(--color-text-inverse);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient overlay for sections */
+.page-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 20% 0%, rgba(128, 128, 128, 0.03) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 100%, rgba(96, 96, 96, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .page-section-inner {
@@ -45,8 +66,24 @@ body {
   color: var(--color-text-inverse);
   margin: 0 0 clamp(1.75rem, 3vw, 3rem);
   font-weight: 800;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   text-wrap: balance;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.page-section .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(60px, 15%, 120px);
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Compatibilidad retro: el viejo wrapper colapsable deja de afectar centrado. */
@@ -73,35 +110,69 @@ body {
 @media (min-width: 1024px) {
   .projects-grid,
   .events-grid,
-  .certificates-grid,
-  .work-experience-grid {
+  .certificates-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .work-experience-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
 /* =============================================================
-   Estética común de tarjetas: estática, borde sutil en hover
+   Estética común de tarjetas: gradientes y profundidad
    ============================================================= */
 .project-card,
 .event-card,
 .certificate-card,
 .work-card {
+  position: relative;
   transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  box-shadow: var(--shadow-card);
+}
+
+/* Gradient border effect using pseudo-element */
+.project-card::before,
+.event-card::before,
+.certificate-card::before,
+.work-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(128, 128, 128, 0.25) 0%, rgba(96, 96, 96, 0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-card:hover,
 .event-card:hover,
 .certificate-card:hover,
 .work-card:hover {
-  transform: none;
-  box-shadow: none;
-  border-color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.project-card:hover::before,
+.event-card:hover::before,
+.certificate-card:hover::before,
+.work-card:hover::before {
+  opacity: 1;
 }
 
 /* =============================================================
@@ -117,18 +188,50 @@ body {
   font-weight: 600;
   color: var(--color-text-inverse);
   text-decoration: none;
-  padding: 0.6rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
+  border: none;
+  background: linear-gradient(135deg, rgba(80, 80, 80, 0.3) 0%, rgba(96, 96, 96, 0.25) 100%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient border for view-all button */
+.view-all-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(128, 128, 128, 0.4) 0%, rgba(96, 96, 96, 0.3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Shimmer effect on hover */
+.view-all-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transition: left 0.5s ease;
 }
 
 .view-all-link:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(96, 96, 96, 0.4) 0%, rgba(112, 112, 112, 0.35) 100%);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.view-all-link:hover::after {
+  left: 100%;
 }
 
 /* =============================================================

@@ -21,15 +21,16 @@
   height: 100%;
 }
 
-.event-card::before {
+.event-card::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--color-primary-400);
+  background: linear-gradient(90deg, #505050 0%, #707070 100%);
   border-radius: 18px 18px 0 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .event-header {
@@ -53,15 +54,22 @@
 }
 
 .event-date {
-  background: rgba(59, 130, 246, 0.2);
-  color: var(--color-accent-blue-light);
-  padding: 0.4rem 0.85rem;
+  background: linear-gradient(135deg, rgba(80, 80, 80, 0.2) 0%, rgba(96, 96, 96, 0.15) 100%);
+  color: #d0d0d0;
+  padding: 0.45rem 0.9rem;
   border-radius: 12px;
   font-size: 0.875rem;
   font-weight: 600;
   white-space: nowrap;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(128, 128, 128, 0.25);
   flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.event-date:hover {
+  background: linear-gradient(135deg, rgba(96, 96, 96, 0.3) 0%, rgba(112, 112, 112, 0.25) 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .event-location {
@@ -97,20 +105,40 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-accent-blue);
+  color: #d0d0d0;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.65rem 1.25rem;
-  background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  padding: 0.7rem 1.3rem;
+  background: linear-gradient(135deg, rgba(80, 80, 80, 0.2) 0%, rgba(96, 96, 96, 0.15) 100%);
+  border: 1px solid rgba(128, 128, 128, 0.3);
   border-radius: 12px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.event-source-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transition: left 0.4s ease;
 }
 
 .event-source-link:hover {
-  background: rgba(96, 165, 250, 0.2);
-  border-color: rgba(96, 165, 250, 0.55);
+  background: linear-gradient(135deg, rgba(96, 96, 96, 0.3) 0%, rgba(112, 112, 112, 0.25) 100%);
+  border-color: rgba(128, 128, 128, 0.45);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.event-source-link:hover::before {
+  left: 100%;
 }
 
 .event-source-link::after {

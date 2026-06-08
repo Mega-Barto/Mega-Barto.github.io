@@ -20,8 +20,48 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: var(--color-background-projects);
+  background: var(--gradient-hero);
   position: relative;
+  overflow: hidden;
+}
+
+/* Subtle ambient gradient for hero background */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(128, 128, 128, 0.05) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 60%, rgba(96, 96, 96, 0.04) 0%, transparent 45%);
+  animation: heroGradientShift 15s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--color-background-projects), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes heroGradientShift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(2%, 1%) rotate(1deg);
+  }
+  66% {
+    transform: translate(-1%, 2%) rotate(-1deg);
+  }
 }
 
 .hero-section .hero-content {
@@ -32,10 +72,56 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image {
   margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Gradient ring around profile image */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  z-index: -1;
+  animation: profileRingPulse 4s ease-in-out infinite;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(128, 128, 128, 0.15) 0%, transparent 70%);
+  z-index: -2;
+  animation: profileGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes profileRingPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes profileGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
 }
 
 .hero-profile-image {
@@ -43,20 +129,37 @@
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .hero-profile-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-glow-md);
 }
 
 .hero-section h1 {
   font-size: 4rem;
   font-weight: 800;
   margin: 0;
-  color: var(--color-accent-cyan);
+  background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 50%, #e0e0e0 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1.2;
-  text-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+  animation: gradientTextShift 8s ease infinite;
+}
+
+@keyframes gradientTextShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .hero-section p {
@@ -66,7 +169,8 @@
   max-width: 700px;
   line-height: 1.7;
   font-weight: 300;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  position: relative;
 }
 
 /* Smooth scrolling for section navigation */
