@@ -60,5 +60,5 @@ export const PERSONAL_INFO = {
   companyName: 'Bartland Labs.',
   logoUrl: 'https://i.imgur.com/kBWOFBL.png',
   description: 'Ingeniero en sistemas y computación.',
-  domain: 'megabarto.rocks',
+  domain: 'megabarto.com',
 } as const;
