@@ -1,0 +1,317 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
+cv:
+  name: Juan Alejandro Pérez Bermúdez
+  headline:
+  location: Dosquebradas, Colombia
+  email: personal.jperez@gmail.com
+ # photo: 2025.jpg
+  phone: +57-323-328-0136
+  social_networks:
+    - network: LinkedIn
+      username: mega-barto
+    - network: GitHub
+      username: Mega-Barto
+    - network: X
+      username: Mega_Barto
+    - network: GitLab
+      username: Mega-Barto
+  website: https://megabarto.com/
+  custom_connections:
+  sections:
+    Resumen Personal:
+      - Ingeniero de Sistemas y Computación proactivo con un fuerte interés en el desarrollo de software y las tecnologías modernas.
+      - Altamente motivado para aprender continuamente, adaptarme a los estándares de la industria y contribuir a soluciones técnicas de alta calidad mientras crezco profesionalmente.
+      - Apasionado por las comunidades tecnológicas, el software de código abierto y la organización de eventos.
+    educación:
+      - institution: '[Universidad Tecnológica de Pereira](https://www.utp.edu.co/)'
+        area: Pregrado en Ingeniería en Sistemas y Computación
+        start_date: 2020-02
+        end_date: 2025-07
+        location: Pereira, Colombia
+        highlights:
+          - Participación en diferentes eventos de la Red Regional de Semilleros de Investigación con SONAR I.S.C, semillero sobre calidad de software liderado de 2022 a 2024.
+    experiencia:
+      - company: '[Dailybot](https://dailybot.com/)'
+        position: Ingeniero de Distribución
+        start_date: 2026-06
+        end_date: present
+        location: Remoto
+        summary:
+        highlights:
+          - Desarrollo y mantenimiento del sistema de distribución para la plataforma Dailybot y proyectos relacionados, asegurando una entrega eficiente y confiable de productos y sus novedades a los clientes.
+          - Colaboración en el desarrollo general de la plataforma Dailybot y proyectos relacionados, asegurando la entrega de funcionalidades de alta calidad a los clientes.
+      - company: '[JUAN FERNANDEZ T.A.E.](https://taejf.com/)'
+        position: Desarrollador Móvil
+        start_date: 2025-08
+        end_date: 2026-06
+        location: Remoto
+        summary:
+        highlights:
+          - Continuación del desarrollo de una aplicación de fitness multiplataforma usando Flutter, entregando una experiencia consistente y de alto rendimiento en iOS y Android.
+          - Integración de la aplicación con servicios de Firebase para autenticación, mensajería y almacenamiento en la nube, mejorando el engagement del usuario y la gestión de datos.
+          - Colaboración en requisitos funcionales y decisiones de UX para alinear la implementación técnica con las necesidades del usuario y los objetivos del negocio.
+      - company: '[Webspro](https://webspro.co/)'
+        position: Desarrollador Fullstack
+        start_date: 2024-12
+        end_date: 2025-08
+        location: Pereira, Colombia
+        summary:
+        highlights:
+          - Adaptación y despliegue de proyectos Unity a WebGL, integrándolos con aplicaciones web basadas en React.
+          - Desarrollo de APIs RESTful con FastAPI, asegurando rendimiento, escalabilidad y documentación clara.
+          - Gestión de servicios backend con Supabase, incluyendo autenticación, diseño de base de datos y control de acceso.
+          - Liderazgo de equipos de desarrollo, coordinando tareas y asegurando la entrega de proyectos.
+    proyectos:
+      - name: '[PR Extractor](https://github.com/Mega-Barto/PR-Extractor)'
+        start_date: 2026
+        summary: Aplicación de escritorio con Electron para extraer PRs de GitHub y generar facturas PDF
+        highlights:
+          - Extracción automatizada de PRs de repositorios GitHub
+          - Generación de facturas profesionales en PDF
+      - name: '[Legendary Pokedex API](https://github.com/Mega-Barto/legendary-pokemon-api)'
+        start_date: 2026
+        summary: API REST en Flask lista para producción para datos de Pokémon legendarios y míticos
+        highlights:
+          - Desplegada en PythonAnywhere
+          - Integración con base de datos MySQL
+      - name: '[pereiratechtalks.org](https://github.com/pereira-tech-talks/pereiratechtalks.com)'
+        start_date: 2025
+        summary: Sitio web de la comunidad Pereira Tech Talks
+        highlights:
+          - Contribuciones en diseño, mejoras, mantenimiento y despliegue
+    habilidades:
+      - label: Idiomas
+        details: Inglés (B1), Español (Nativo)
+      - label: Lenguajes de Programación
+        details: Python, Flutter, JavaScript, TypeScript, Java
+      - label: Infraestructura
+        details: Docker, Firebase, Supabase, Digital Ocean, Google Cloud
+      - label: Desarrollo Asistido por IA
+        details: Cursor (AI IDE), GitHub Copilot, ChatGPT
+      - label: Frameworks de Testing
+        details: Selenium, WebdriverIO, Playwright
+    charlas_invitadas:
+      - number: Testing en tiempos de DevOps — FLISOL Pereira (2023)
+      - number: En Defensa del Testing — FLISOL Bogotá (2024)
+      - number: "FLOSS en la Academia y la Industria: Importancia, Reto y Oportunidades  — Software Freedom Day Pereira (2025)"
+    últimos_cursos_completados:
+      - label: '[Curso de Django Rest Framework](https://platzi.com/p/mega_barto/curso/10728-course/diploma/detalle/)'  
+        details: Aprobado el 22 de diciembre de 2024
+      - label: '[Curso de Docker: Fundamentos](https://platzi.com/p/mega_barto/curso/8781-course/diploma/detalle/)'  
+        details: Aprobado el 16 de junio de 2025
+      - label: '[Curso de Flutter](https://platzi.com/p/mega_barto/curso/11256-course/diploma/detalle/)'  
+        details: Aprobado el 28 de septiembre de 2025
+      - label: '[Curso de Fundamentos de Pruebas de Software](https://platzi.com/p/mega_barto/curso/1421-course/diploma/detalle/)'  
+        details: Aprobado el 8 de febrero de 2025
+      - label: '[Curso de Flutter con Firebase](https://platzi.com/p/mega_barto/curso/11883-course/diploma/detalle/)'  
+        details: Aprobado el 5 de enero de 2026
+    participación_en_eventos:
+      - label: FLISOL — Pereira (2023–2026); Ibagué y Bogotá (2024)
+        details: Staff y ponente (2023–2024); coordinador de staff y presentador (2025); coorganizador y presentador (2026).
+      - label: Software Freedom Day — Pereira (2023–2025)
+        details: Staff (2023); moderador de panel (2024); gestor de logística y ponente (2025).
+      - label: QAConf — Pereira
+        details: Fundador y organizador.
+      - label: Open Tech Hackathon 2025 - Pereira
+        details: Miembro del staff.
+      - label: Tribu Hackathon 2026 - Cartago
+        details: Participante en equipo "418 I'm a Teapot", tercer puesto.
+      - label: Pereira Tech Talks
+        details: Staff, gestión del lugar y búsqueda de ponentes.
+    referencias_personales:
+      - name: Ing. Juan de Jesús Fernandez
+        position: Senior Software Test Automation Engineer
+        contact: juan.isfg@gmail.com
+      - name: Ing. Sebastian Agudelo Morales 
+        position: Software Test Automation Engineer en EPAM
+        contact: sebastian.agudelo2@utp.edu.co
+      - name: Ing. Abdénago López Hernandez
+        position: QA Engineer en FirmScribe
+        contact: abdenagoingeniero@gmail.com
+design:
+  theme: engineeringclassic
+  templates:
+    normal_entry:
+      main_column: |-
+        **NAME**
+        POSITION
+        CONTACT
+  # page:
+  #   size: us-letter
+  #   top_margin: 0.7in
+  #   bottom_margin: 0.7in
+  #   left_margin: 0.7in
+  #   right_margin: 0.7in
+  #   show_footer: true
+  #   show_top_note: true
+  colors:
+    body: rgb(0, 0, 0)
+  #   name: rgb(0, 79, 144)
+  #   headline: rgb(0, 79, 144)
+  #   connections: rgb(0, 79, 144)
+  #   section_titles: rgb(0, 79, 144)
+    links: rgb(0, 0, 0)
+  #   footer: rgb(128, 128, 128)
+  #   top_note: rgb(128, 128, 128)
+  typography:
+    line_spacing: 0.6em
+    alignment: justified
+    date_and_location_column_alignment: right
+    font_family:
+      body: Ubuntu
+      name: Ubuntu
+      headline: Ubuntu
+      connections: Ubuntu
+      section_titles: Ubuntu
+    font_size:
+      body: 10pt
+      name: 25pt
+      headline: 10pt
+      connections: 10pt
+      section_titles: 1.4em
+  #   small_caps:
+  #     name: false
+  #     headline: false
+  #     connections: false
+  #     section_titles: false
+  #   bold:
+  #     name: true
+  #     headline: false
+  #     connections: false
+  #     section_titles: true
+  # links:
+  #   underline: false
+  #   show_external_link_icon: false
+  header:
+    alignment: center
+    photo_width: 3.5cm
+    photo_position: left
+    photo_space_left: 0.4cm
+    photo_space_right: 0.4cm
+    space_below_name: 0.7cm
+    space_below_headline: 1cm
+    space_below_connections: 1cm
+    connections:
+  #     phone_number_format: national
+  #     hyperlink: true
+  #     show_icons: true
+  #     display_urls_instead_of_usernames: false
+  #     separator: ''
+      space_between_connections: 0.5cm
+  # section_titles:
+  #   type: with_partial_line
+  #   line_thickness: 0.5pt
+  #   space_above: 0.5cm
+  #   space_below: 0.3cm
+  # sections:
+  #   allow_page_break: true
+  #   space_between_regular_entries: 1.2em
+  #   space_between_text_based_entries: 0.3em
+  #   show_time_spans_in:
+  #     - experience
+  # entries:
+  #   date_and_location_width: 4.15cm
+  #   side_space: 0.2cm
+  #   space_between_columns: 0.1cm
+  #   allow_page_break: false
+  #   short_second_row: true
+  #   summary:
+  #     space_above: 0cm
+  #     space_left: 0cm
+  #   highlights:
+  #     bullet: •
+  #     nested_bullet: •
+  #     space_left: 0.15cm
+  #     space_above: 0cm
+  #     space_between_items: 0cm
+  #     space_between_bullet_and_text: 0.5em
+  # templates:
+  #   footer: '*NAME -- PAGE_NUMBER/TOTAL_PAGES*'
+  #   top_note: '*LAST_UPDATED CURRENT_DATE*'
+  #   single_date: MONTH_ABBREVIATION YEAR
+  #   date_range: START_DATE – END_DATE
+  #   time_span: HOW_MANY_YEARS YEARS HOW_MANY_MONTHS MONTHS
+  #   one_line_entry:
+  #     main_column: '**LABEL:** DETAILS'
+  #   education_entry:
+  #     main_column: |-
+  #       **INSTITUTION**, AREA
+  #       SUMMARY
+  #       HIGHLIGHTS
+  #     degree_column: '**DEGREE**'
+  #     date_and_location_column: |-
+  #       LOCATION
+  #       DATE
+  #   normal_entry:
+  #     main_column: |-
+  #       **NAME**
+  #       SUMMARY
+  #       HIGHLIGHTS
+  #     date_and_location_column: |-
+  #       LOCATION
+  #       DATE
+  #   experience_entry:
+  #     main_column: |-
+  #       **COMPANY**, POSITION
+  #       SUMMARY
+  #       HIGHLIGHTS
+  #     date_and_location_column: |-
+  #       LOCATION
+  #       DATE
+  #   publication_entry:
+  #     main_column: |-
+  #       **TITLE**
+  #       SUMMARY
+  #       AUTHORS
+  #       URL (JOURNAL)
+  #     date_and_location_column: DATE
+locale:
+  language: spanish
+  last_updated: Última actualización en
+  month: mes
+  months: meses
+  year: año
+  years: años
+  present: presente
+  month_abbreviations:
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Sep
+    - Oct
+    - Nov
+    - Dic
+  month_names:
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+settings:
+  current_date: '2026-04-10'
+  render_command:
+    design:
+    locale:
+    typst_path: rendercv_output/NAME_IN_SNAKE_CASE_CV_es.typ
+    pdf_path: rendercv_output/NAME_IN_SNAKE_CASE_CV_es.pdf
+    markdown_path: rendercv_output/NAME_IN_SNAKE_CASE_CV_es.md
+    html_path: rendercv_output/NAME_IN_SNAKE_CASE_CV_es.html
+    png_path: rendercv_output/NAME_IN_SNAKE_CASE_CV_es.png
+    dont_generate_markdown: true
+    dont_generate_html: true
+    dont_generate_typst: false
+    dont_generate_pdf: false
+    dont_generate_png: true
+  bold_keywords: []
