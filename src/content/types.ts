@@ -52,6 +52,8 @@ export interface WorkDef {
   startDate?: string;
   /** ISO date (YYYY-MM-DD) marking the end of the role. If omitted and `actual` is true, the current date is used. */
   endDate?: string;
+  /** Optional i18n key for an extra badge (e.g. "middle-time", "part-time"). */
+  badgeKey?: string;
 }
 
 export interface CarouselItemDef {

@@ -17,7 +17,6 @@ export function syncLanguageFromHtml(): void {
 }
 
 export function setLanguage(lang: SiteLanguage): void {
-  $language.set(lang);
   if (typeof document !== 'undefined') {
     document.documentElement.lang = lang;
     document.documentElement.setAttribute('data-lang', lang);
@@ -29,4 +28,5 @@ export function setLanguage(lang: SiteLanguage): void {
       /* ignore quota / private mode */
     }
   }
+  $language.set(lang);
 }
