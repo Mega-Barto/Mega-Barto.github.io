@@ -27,6 +27,31 @@ jobs:
     - name: Install dependencies
       run: bun install
 
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: Install RenderCV
+      run: pip install rendercv
+
+    - name: Install Typst
+      run: |
+        curl -fsSL https://github.com/typst/typst/releases/download/v0.13.1/typst-x86_64-unknown-linux-musl.tar.xz -o typst.tar.xz
+        tar -xf typst.tar.xz
+        sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
+
+    - name: Generate CV PDFs
+      working-directory: src/content/renderCV
+      run: |
+        rendercv render JAPB_CV.yaml
+        rendercv render JAPB_CV_es.yaml
+
+    - name: Copy CV to public
+      run: |
+        cp src/content/renderCV/rendercv_output/Juan_Alejandro_Pérez_Bermúdez_CV.pdf public/
+        cp src/content/renderCV/rendercv_output/Juan_Alejandro_Pérez_Bermúdez_CV_es.pdf public/
+
     - name: Lint (Biome)
       run: bun run lint
 
@@ -42,4 +67,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
-        cname: megabarto.rocks
+        cname: megabarto.com
