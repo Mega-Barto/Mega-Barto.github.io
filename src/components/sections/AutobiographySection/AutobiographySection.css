@@ -16,8 +16,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at 10% 20%, rgba(128, 128, 128, 0.04) 0%, transparent 50%),
-              radial-gradient(ellipse at 90% 80%, rgba(96, 96, 96, 0.03) 0%, transparent 45%);
+  background:
+    radial-gradient(ellipse at 10% 20%, rgba(128, 128, 128, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(96, 96, 96, 0.03) 0%, transparent 45%);
   pointer-events: none;
   z-index: 0;
 }
@@ -63,7 +64,9 @@
   border-radius: inherit;
   padding: 1px;
   background: linear-gradient(135deg, rgba(128, 128, 128, 0.25) 0%, rgba(96, 96, 96, 0.2) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;

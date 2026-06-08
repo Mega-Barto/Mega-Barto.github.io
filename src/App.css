@@ -33,8 +33,9 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(ellipse at 30% 20%, rgba(128, 128, 128, 0.05) 0%, transparent 50%),
-              radial-gradient(ellipse at 70% 60%, rgba(96, 96, 96, 0.04) 0%, transparent 45%);
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(128, 128, 128, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(96, 96, 96, 0.04) 0%, transparent 45%);
   animation: heroGradientShift 15s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -53,7 +54,8 @@
 }
 
 @keyframes heroGradientShift {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) rotate(0deg);
   }
   33% {
@@ -103,7 +105,8 @@
 }
 
 @keyframes profileRingPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.8;
     transform: scale(1);
   }
@@ -129,7 +132,9 @@
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
   border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
@@ -154,7 +159,8 @@
 }
 
 @keyframes gradientTextShift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
