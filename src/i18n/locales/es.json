@@ -65,12 +65,17 @@
   "common": {
     "viewAll": "Ver todos →"
   },
+  "cv": {
+    "description": "Visualiza o descarga mi currículum.",
+    "download": "Descargar PDF",
+    "viewerTitle": "Vista previa del currículum"
+  },
   "personal": {
     "name": "MegaBarto",
     "displayName": "MegaBarto",
     "companyName": "Bartland Labs",
     "description": "Ingeniero en sistemas y computación.",
-    "domain": "megabarto.rocks"
+    "domain": "megabarto.com"
   },
   "autobiography": {
     "introduction": "¡Hola! Soy Juan Alejandro Pérez Bermúdez (o Barto, como me llaman mis amigos), un Ingeniero en Sistemas y Computación con ganas de adquirir experiencia profesional en proyectos de software.",
@@ -250,9 +255,16 @@
     "current": "Actual",
     "duration": "Duración",
     "durationMonths": "{{months}} meses",
+    "readMore": "Leer más →",
+    "close": "Cerrar",
+    "visitWebsite": "Visitar sitio web",
+    "badges": {
+      "middleTime": "Medio tiempo"
+    },
     "descriptions": {
       "webspro": "Desarrollador web full-stack especializado en frameworks modernos de JavaScript y tecnologías backend. Responsable del desarrollo de aplicaciones web escalables utilizando React, TypeScript y FastAPI. Enfocado en la calidad del código, optimización del rendimiento e implementación de mejores prácticas en desarrollo de software.",
-      "taejf": "En TAEJF S.A.S. retomé y modernicé un proyecto móvil en Flutter apoyado en Firebase como Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore y otras utilidades). Integré y optimicé flujos de autenticación, implementé funciones en la nube y desarrollé soluciones para configuración remota y observabilidad que mejoraron la estabilidad y mantenibilidad del sistema. Además, diseñé y construí aplicaciones complementarias en Next.js y las desplegué en Vercel. Aprendí la lógica de negocio desde cero y resolví de manera proactiva los desafíos técnicos y del producto a lo largo del proyecto."
+      "taejf": "En TAEJF S.A.S. retomé y modernicé un proyecto móvil en Flutter apoyado en Firebase como Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore y otras utilidades). Integré y optimicé flujos de autenticación, implementé funciones en la nube y desarrollé soluciones para configuración remota y observabilidad que mejoraron la estabilidad y mantenibilidad del sistema. Además, diseñé y construí aplicaciones complementarias en Next.js y las desplegué en Vercel. Aprendí la lógica de negocio desde cero y resolví de manera proactiva los desafíos técnicos y del producto a lo largo del proyecto.",
+      "dailybot": "Distribution Engineer, enfocado en desarrollar herramientas, automatizaciones, integraciones, proyectos open source y soluciones impulsadas por IA que aceleran el crecimiento y la adopción del producto. Actúo en la intersección de ingeniería, producto y distribución, creando experimentos técnicos, demos, flujos de trabajo inteligentes y plataformas que amplían la visibilidad de Dailybot, optimizan procesos y generan oportunidades de crecimiento a escala."
     }
   },
   "about": {
@@ -269,9 +281,11 @@
   "works": {
     "webspro": "WebsPro",
     "taejf": "TAEJF",
+    "dailybot": "Dailybot",
     "periods": {
       "webspro": "2024 - 2025",
-      "taejf": "2025 - Actualidad"
+      "taejf": "2025 - 2026",
+      "dailybot": "2026 - Actualidad"
     },
     "durations": {
       "webspro": "9 meses"

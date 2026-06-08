@@ -66,12 +66,17 @@
   "common": {
     "viewAll": "View all →"
   },
+  "cv": {
+    "description": "Preview or download my curriculum vitae.",
+    "download": "Download PDF",
+    "viewerTitle": "CV preview"
+  },
   "personal": {
     "name": "MegaBarto",
     "displayName": "MegaBarto",
     "companyName": "Bartland Labs",
     "description": "Systems and Computer Engineer.",
-    "domain": "megabarto.rocks"
+    "domain": "megabarto.com"
   },
   "autobiography": {
     "introduction": "Hello! I’m Juan Alejandro Pérez Bermúdez (or Barto, as friends call me), a Systems and Computing Engineer eager to gain professional experience in software projects.",
@@ -253,9 +258,16 @@
     "current": "Current",
     "duration": "Duration",
     "durationMonths": "{{months}} months",
+    "readMore": "Read more →",
+    "close": "Close",
+    "visitWebsite": "Visit website",
+    "badges": {
+      "middleTime": "Middle-time"
+    },
     "descriptions": {
       "webspro": "Full-stack web developer specializing in modern JavaScript frameworks and backend technologies. Responsible for developing scalable web applications using React, TypeScript, and FastAPI. Focused on code quality, performance optimization, and implementing best practices in software development.",
-      "taejf": "At TAEJF S.A.S. I took over and modernized a mobile project in Flutter backed by Firebase as a Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore and other utilities). I integrated and optimized authentication flows, implemented cloud functions, and developed solutions for remote configuration and observability that improved system stability and maintainability. Additionally, I designed and built complementary applications in Next.js and deployed them to Vercel. I learned the business logic from scratch and proactively resolved technical and product challenges throughout the project."
+      "taejf": "At TAEJF S.A.S. I took over and modernized a mobile project in Flutter backed by Firebase as a Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore and other utilities). I integrated and optimized authentication flows, implemented cloud functions, and developed solutions for remote configuration and observability that improved system stability and maintainability. Additionally, I designed and built complementary applications in Next.js and deployed them to Vercel. I learned the business logic from scratch and proactively resolved technical and product challenges throughout the project.",
+      "dailybot": "Distribution Engineer, focused on developing tools, automations, integrations, open source projects and AI-powered solutions that accelerate product growth and adoption. I operate at the intersection of engineering, product and distribution, creating technical experiments, demos, intelligent workflows and platforms that expand Dailybot's visibility, optimize processes and generate growth opportunities at scale."
     }
   },
   "about": {
@@ -272,9 +284,11 @@
   "works": {
     "webspro": "WebsPro",
     "taejf": "TAEJF",
+    "dailybot": "Dailybot",
     "periods": {
       "webspro": "2024 - 2025",
-      "taejf": "2025 - Present"
+      "taejf": "2025 - 2026",
+      "dailybot": "2026 - Present"
     },
     "durations": {
       "webspro": "9 months"
