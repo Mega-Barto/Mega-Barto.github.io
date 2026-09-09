@@ -67,7 +67,9 @@ function monthsBetween(isoStart?: string, isoEnd?: string) {
                 <span class="work-duration">
                   <span data-i18n-key="workExperience.duration">{t('workExperience.duration')}</span>
                   {': '}
-                  {work.startDate ? (
+                  {work.durationKey ? (
+                    <span data-i18n-key={work.durationKey}>{t(work.durationKey)}</span>
+                  ) : work.startDate ? (
                     (() => {
                       const months = monthsBetween(work.startDate, work.endDate);
                       if (months !== null) {
@@ -75,9 +77,7 @@ function monthsBetween(isoStart?: string, isoEnd?: string) {
                       }
                       return <span>-</span>;
                     })()
-                  ) : (
-                    <span data-i18n-key={work.durationKey}>{t(work.durationKey ?? '')}</span>
-                  )}
+                  ) : null}
                 </span>
               )
             }

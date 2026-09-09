@@ -16,9 +16,9 @@ function applyVars(template: string, vars?: Record<string, string>): string {
 }
 
 /** Traducción por clave tipo `header.navigation.projects` (SSG y uso en islas). */
-export function t(key: string, lang: SiteLanguage = 'es', vars?: Record<string, string>): string {
+export function t(key: string, lang: SiteLanguage = 'en', vars?: Record<string, string>): string {
   const primary = getStringByPath(bundles[lang], key);
   if (primary !== undefined) return applyVars(primary, vars);
-  const fallback = getStringByPath(bundles.es, key);
+  const fallback = getStringByPath(bundles.en, key);
   return applyVars(fallback ?? key, vars);
 }

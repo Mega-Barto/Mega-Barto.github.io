@@ -69,6 +69,7 @@
   "cv": {
     "description": "Preview or download my curriculum vitae.",
     "download": "Download PDF",
+    "professionalCard": "View professional card",
     "viewerTitle": "CV preview"
   },
   "personal": {
@@ -288,10 +289,11 @@
     "periods": {
       "webspro": "2024 - 2025",
       "taejf": "2025 - 2026",
-      "dailybot": "2026 - Present"
+      "dailybot": "2026"
     },
     "durations": {
-      "webspro": "9 months"
+      "webspro": "9 months",
+      "dailybot": "3 months"
     }
   }
 }
