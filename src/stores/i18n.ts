@@ -5,7 +5,7 @@ import type { SiteLanguage } from '../i18n/t';
 /** Misma clave que usaba `i18next-browser-languagedetector` para conservar preferencia. */
 export const I18N_STORAGE_KEY = 'i18nextLng';
 
-export const $language = atom<SiteLanguage>('es');
+export const $language = atom<SiteLanguage>('en');
 
 /** Alinea el store con `<html data-lang>` del script inline (antes de hidratar). */
 export function syncLanguageFromHtml(): void {
