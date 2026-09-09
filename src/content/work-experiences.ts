@@ -24,8 +24,9 @@ export const WORK_DEFS: WorkDef[] = [
     labelKey: 'works.dailybot',
     href: 'https://dailybot.com/',
     timeKey: 'works.periods.dailybot',
-    actual: true,
+    durationKey: 'works.durations.dailybot',
     startDate: '2026-06-01',
+    endDate: '2026-08-31',
   },
 ];
 
