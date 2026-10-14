@@ -75,6 +75,7 @@
   "personal": {
     "name": "MegaBarto",
     "displayName": "MegaBarto",
+    "fullName": "Juan Alejandro Pérez Bermúdez",
     "companyName": "Bartland Labs",
     "description": "Systems and Computer Engineer.",
     "domain": "megabarto.com"
@@ -274,13 +275,90 @@
   "about": {
     "contactTitle": "Contact",
     "bioTitle": "About me",
-    "bioLead": "Systems and Computing Engineer focused on building useful, scalable, and maintainable software.",
-    "bioText": "I'm Juan Alejandro Pérez Bermúdez (Barto), born in Manizales and resident in Dosquebradas since 2009. I graduated from the Systems and Computing Engineering program at the Universidad Tecnológica de Pereira in 2025.\n\nI develop mobile applications with Flutter, backends with Firebase and Supabase, and web applications with Next.js and TypeScript, combining good engineering practices, software quality, and user experience focus. I'm especially interested in automation, software testing, CI/CD, and building sustainable long-term solutions. I've also worked integrating Unity WebGL projects with React applications and developing scalable APIs with FastAPI.\n\nBeyond development, I actively participate in the local tech community supporting event organization since 2023 and promoting collaborative learning spaces. I was part of the SONAR I.S.C. research group, strengthening my interest in academic research and software quality. My greatest community achievement has been founding QAConf, the region's first software quality-specialized event, an initiative focused on connecting students, professionals, and companies around software quality culture and continuous improvement.",
+    "bioLead": "An engineer from Dosquebradas: I write software someone else can pick up, and I host rooms where people learn out loud.",
+    "bio": {
+      "p1": "Friends call me Barto. I was born in Manizales, have lived in Dosquebradas since 2009, and finished Systems and Computing Engineering at UTP in 2025. Campus left me a better habit than a diploma: asking whether what we ship survives real use, not just the demo.",
+      "p2": "Day to day I move between Flutter apps, Firebase or FastAPI backends, and TypeScript fronts. I would rather leave tests, pipelines, and decisions that do not depend on me being in the chat than collect frameworks. If a deploy or an API can be understood without guessing, the work is done.",
+      "p3": "Since 2023 I have been pushing the tech calendar in Colombia's Coffee Axis: logistics, speakers, and the conversation after the talk. Founding QAConf — the region's first gathering built around software quality — is the part of the job that does not fit in a repository."
+    },
     "skillsTitle": "Skills",
-    "skills": "Flutter, Firebase, React, Next.js, TypeScript, Python, Testing, QA, Docker, CI/CD, Mobile Development, Web Development, REST APIs, Leadership, Communication",
+    "skillLabels": {
+      "mobile": "Mobile Development",
+      "web": "Web Development",
+      "leadership": "Leadership",
+      "communication": "Communication"
+    },
+    "actions": {
+      "cv": "CV",
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    },
     "timelineTitle": "Timeline",
-    "timelineLead": "Throughout my career I have contributed to commercial, academic, and community projects, taking on responsibilities that range from development and testing to deployment, continuous improvement, and team support. Each stage has helped me build a broader view of the software lifecycle and contribute more effectively to products, technical quality, and tech community growth.",
-    "contactCTA": "Interested in collaborating, building community, or developing an idea? Let's talk."
+    "timelineLead": "Throughout my career I have contributed to commercial, academic, and community projects, taking on responsibilities that range from development and testing to deployment, continuous improvement, and team support.",
+    "timeline": {
+      "groups": {
+        "work": "Work",
+        "education": "Education",
+        "community": "Community"
+      },
+      "kinds": {
+        "education": "Education",
+        "work": "Work",
+        "event": "Event",
+        "community": "Community"
+      },
+      "milestones": {
+        "utp": {
+          "title": "Universidad Tecnológica de Pereira",
+          "description": "B.S. in Systems and Computing Engineering, class of 2025."
+        },
+        "sonar": {
+          "title": "SONAR I.S.C.",
+          "description": "Software-quality research with the regional seedbed network, 2022–2024."
+        },
+        "webspro": {
+          "title": "WebsPro",
+          "description": "Full-stack: FastAPI services, Supabase, and Unity WebGL on React."
+        },
+        "taejf": {
+          "title": "TAEJF",
+          "description": "Fitness app on Flutter + Firebase; companion apps on Next.js."
+        },
+        "dailybot": {
+          "title": "Dailybot",
+          "description": "Distribution Engineer: tools and integrations that help the product land."
+        },
+        "qaconf": {
+          "title": "QAConf",
+          "description": "The Coffee Axis's first software-quality gathering; I founded it from SONAR. 2025 in person; 2026 virtual after the August 10 earthquake."
+        },
+        "awsUg": {
+          "title": "AWS User Group Pereira",
+          "description": "AWS user group of the city of Pereira; I co-organize meetups on cloud, DevOps, and architecture."
+        },
+        "flisol": {
+          "title": "FLISOL",
+          "description": "Pereira rejoined the festival after years without a venue. The Latin American Festival of Free Software Installation has run since 2005: install fests, talks, and FOSS community."
+        },
+        "sfd": {
+          "title": "Software Freedom Day",
+          "description": "At UTP, with CIDT and Backbone. A worldwide FOSS celebration (since 2004): talks, research-group stands, and free-software culture."
+        },
+        "pertt": {
+          "title": "Pereira Tech Talks",
+          "description": "Monthly meetup community founded in Pereira in 2014; also hosts Pereira Tech Day. I join as staff and speaker scout."
+        },
+        "oth": {
+          "title": "Open Tech Hackathon",
+          "description": "An AI and blockchain hackathon (remote plus a pitch day at UTP) run by local communities; I was on staff."
+        },
+        "tribu": {
+          "title": "Tinku — Tribu Hackathon",
+          "description": "The north Valle's first AI hackathon (The Tribu), in Cartago. I competed with team 418: I'm a Teapot and we placed third."
+        }
+      }
+    },
+    "contactCTA": "If you want to build a product, an event, or a half-formed idea, write me."
   },
   "works": {
     "webspro": "WebsPro",

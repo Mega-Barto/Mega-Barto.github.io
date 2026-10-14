@@ -80,3 +80,22 @@ export interface ResolvedNavItem {
   /** Points to a different origin (true external); used to render the off-site icon. */
   isOffsite?: boolean;
 }
+
+export type AboutMilestoneKind = 'education' | 'work' | 'event' | 'community';
+
+export interface AboutMilestoneDef {
+  id: string;
+  kind: AboutMilestoneKind;
+  /** ISO date (YYYY-MM-DD) used to sort entries. */
+  sortDate: string;
+  /** Visible year, e.g. "2025" or "2023–". */
+  yearLabel: string;
+  titleKey: string;
+  descriptionKey: string;
+  /** Company URL, /work-experience/, /events/, etc. */
+  href?: string;
+}
+
+export type AboutSkillDef =
+  | { label: string; labelKey?: never }
+  | { labelKey: string; label?: never };
