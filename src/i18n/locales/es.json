@@ -236,6 +236,17 @@
       "date": "Septiembre 11-12, 2025",
       "description": "Fundador y organizador del evento."
     },
+    "qaconf-3": {
+      "title": "QAConf Pereira 2026",
+      "date": "Septiembre 4-5, 2026",
+      "location": "Virtual",
+      "description": "Fundador y organizador. Edición virtual por el terremoto del 10 de agosto de 2026 en Colombia."
+    },
+    "aws-ug-pereira": {
+      "title": "AWS User Group Pereira",
+      "date": "Desde septiembre 2026",
+      "description": "Coorganizador del grupo de usuarios AWS de la ciudad de Pereira: meetups sobre nube, DevOps y arquitectura."
+    },
     "pertt": {
       "title": "Pereira Tech Talks",
       "date": "Desde 2024",
