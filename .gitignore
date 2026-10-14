@@ -33,6 +33,12 @@ lerna-debug.log*
 # Local migration notes (not for main branch)
 bitacora.md
 
-# RenderCV — generated artifacts (sources: src/content/renderCV/*.yaml)
+# RenderCV — generated artifacts (canonical sources stay tracked)
 src/content/renderCV/rendercv_output/
+
+# Local targeted resumes. Canonical files remain JAPB_CV.yaml and JAPB_CV_es.yaml.
+src/content/renderCV/JAPB_CV_dev.yaml
+src/content/renderCV/JAPB_CV_dev_es.yaml
+src/content/renderCV/JAPB_CV_qa.yaml
+src/content/renderCV/JAPB_CV_qa_es.yaml
 
