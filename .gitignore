@@ -36,6 +36,3 @@ bitacora.md
 # RenderCV — generated artifacts (sources: src/content/renderCV/*.yaml)
 src/content/renderCV/rendercv_output/
 
-# CV PDFs — generated via `bun run render:cv` and in CI before build
-public/Juan_Alejandro_Pérez_Bermúdez_CV.pdf
-public/Juan_Alejandro_Pérez_Bermúdez_CV_es.pdf

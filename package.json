@@ -26,6 +26,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@biomejs/biome": "^2.4.12",
     "astro": "^6.1.8",
+    "lightningcss": "^1.33.0",
     "typescript": "~5.8.3"
   }
 }

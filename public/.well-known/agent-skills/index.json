@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agentskills.io/schemas/index.json",
+  "skills": [
+    {
+      "name": "portfolio-info",
+      "type": "content",
+      "description": "Read information about MegaBarto's professional background, projects, work experience, certifications, and events",
+      "url": "https://megabarto.com/llms.txt"
+    }
+  ]
+}

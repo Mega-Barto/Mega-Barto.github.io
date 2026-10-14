@@ -30,6 +30,7 @@ body {
   color: var(--color-text-inverse);
   position: relative;
   overflow: hidden;
+  contain: layout style;
 }
 
 /* Subtle gradient overlay for sections */

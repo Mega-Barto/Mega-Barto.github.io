@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import globalCssPath from '../styles/global.css?url';
 import { withBase } from '../utils/baseUrl';
 
 interface Props {
@@ -33,6 +34,7 @@ const faviconHref = withBase('/favicon.svg');
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="generator" content={Astro.generator} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     {!noindex && <meta name="robots" content="index, follow" />}
@@ -41,6 +43,36 @@ const faviconHref = withBase('/favicon.svg');
     <link rel="canonical" href={canonicalURL.href} />
     <link rel="icon" type="image/svg+xml" href={faviconHref} />
     <link rel="manifest" href={manifestHref} />
+    <link rel="author" href={new URL('/about/', Astro.site).href} />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href={new URL('/llms.txt', Astro.site).href}
+      title="LLM-friendly site description"
+    />
+    <link rel="index" href={new URL('/.well-known/agent-skills/index.json', Astro.site).href} />
+
+    <link rel="dns-prefetch" href="https://i.imgur.com" />
+    <link rel="preconnect" href="https://i.imgur.com" crossorigin />
+    <link rel="preload" as="style" href={globalCssPath} />
+    <style is:inline>
+      :root {
+        --color-background-dark: #2a2a2a;
+        --color-text-inverse: #d0d0d0;
+      }
+      body {
+        margin: 0;
+        background: var(--color-background-dark);
+        color: var(--color-text-inverse);
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+    </style>
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -76,8 +108,8 @@ const faviconHref = withBase('/favicon.svg');
   </head>
   <body>
     <slot />
-    <script>
-      import '../scripts/i18n-hydrator';
+    <script type="module" async>
+      import('../scripts/i18n-hydrator');
     </script>
   </body>
 </html>

@@ -63,7 +63,8 @@ const rows: RowProps[] = [
                       class="carousel-card-image"
                       widths={[64, 96, 128]}
                       sizes="96px"
-                      loading={index < 8 ? 'eager' : 'lazy'}
+                      loading={index < 4 ? 'eager' : 'lazy'}
+                      decoding="async"
                     />
                   )}
                 </a>
@@ -86,6 +87,7 @@ const rows: RowProps[] = [
                       widths={[64, 96, 128]}
                       sizes="96px"
                       loading="lazy"
+                      decoding="async"
                     />
                   )}
                 </a>
