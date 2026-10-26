@@ -299,29 +299,27 @@ The copy deck is gitignored. Commit `es.json` and `en.json` when the site copy s
 
 ## Branching Flow
 
-This repository currently uses a GitFlow-like model with long-lived integration and release branches.
+Canonical path (also in `.cursor/skills/git-branching-flow/SKILL.md`):
 
-### Existing Branches and Purpose
+```text
+feature__*  →  develop  →  main  →  release/vX.Y  (cut from main)
+```
 
-- main: production branch. It points to stable releases (for example, Release v3.0.1).
-- develop: integration branch for completed features before release.
-- release/vX.Y or release/vX.Y.Z: release stabilization branches (examples: release/v3.0, release/v3.0.1).
-- feature__*: feature work branches (examples: feature__may_updates, feature__carousel).
-- featute__astro_migration: legacy feature branch with a typo in the prefix, still valid and tracked.
+### Branch roles
+
+- `feature__*`: short-lived work (prefix is literally `feature__`).
+- `develop`: integration; features land here first.
+- `main`: production (GitHub Pages).
+- `release/vX.Y` or `release/vX.Y.Z`: release snapshot **cloned from `main`** after ship content is on `main`; used to bump/tag.
+
+Legacy branches (e.g. `featute__astro_migration`, older release cuts) may exist; do not use them as the template for new work.
 
 ### Recommended Delivery Flow
 
-1. Create a feature branch from develop:
-  - git checkout develop
-  - git pull origin develop
-  - git checkout -b feature__short_name
-2. Work and commit in small logical units.
-3. Open PR from feature branch to develop.
-4. When develop is ready for publication, create or update release branch:
-  - git checkout -b release/vX.Y.Z develop
-5. Stabilize release branch (fixes, version bumps, CI/workflow adjustments).
-6. Merge release branch into main and tag version (for example v3.0.1).
-7. Sync the release changes back into develop to avoid drift.
+1. From `develop`, create `feature__short_name`, commit in small units, PR **→ `develop`**.
+2. When a batch is ready, PR **`develop` → `main`**.
+3. From up-to-date `main`, cut `release/vX.Y`, bump version if needed, tag `vX.Y.Z`.
+4. Merge any release-only commits back to `main`, then sync **`main` → `develop`**.
 
 ### Commit Message Format
 
