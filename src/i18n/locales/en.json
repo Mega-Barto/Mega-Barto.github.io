@@ -70,7 +70,7 @@
     "viewAll": "View all →"
   },
   "cv": {
-    "description": "Preview or download my curriculum vitae.",
+    "description": "The short version of my path: roles, stack, and what I've shipped — written to read without guessing. Browse it here or take the PDF.",
     "download": "Download PDF",
     "professionalCard": "View professional card",
     "viewerTitle": "CV preview"
@@ -89,6 +89,7 @@
     "current": "I am currently looking for a new role where I can apply my skills in a professional setting, contributing to software quality, software development, and the tech community."
   },
   "projects": {
+    "description": "Ideas that already left the editor: tools and sites meant to be used, not to die as a demo.",
     "portfolio": {
       "title": "Personal Portfolio",
       "description": "My personal portfolio as a systems engineer; it showcases my projects and experience. Built with Astro and TypeScript, and deployed on GitHub Pages."
@@ -135,6 +136,7 @@
     "title": "Most Used Technologies"
   },
   "certificates": {
+    "description": "Training I actually use: testing, Docker, Flutter, and the rest of the stack I work with day to day.",
     "academyLabel": "Academy",
     "verificationCode": "Verification Code",
     "automation": {
@@ -194,7 +196,7 @@
   },
   "events": {
     "name": "Featured Events",
-    "description": "Stay updated with the latest events and happenings that I have been involved in.",
+    "description": "Since 2023 I've pushed the Eje Cafetero's tech agenda: staff, speakers, and rooms where people learn out loud — including QAConf.",
     "flisol-1": {
       "title": "FLISOL 2023",
       "date": "April 27-28, 2023",
@@ -269,6 +271,7 @@
     "viewMore": "View More Information"
   },
   "workExperience": {
+    "description": "From remote Unity to Flutter with Firebase and distribution at Dailybot: I ship product for real use, with the bar that someone else can pick up the work.",
     "current": "Current",
     "duration": "Duration",
     "durationMonths": "{{months}} months",

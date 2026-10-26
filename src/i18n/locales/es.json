@@ -69,7 +69,7 @@
     "viewAll": "Ver todos →"
   },
   "cv": {
-    "description": "Visualiza o descarga mi currículum.",
+    "description": "La versión corta de mi trayectoria: roles, stack y lo que he construido — pensada para leerse sin adivinar. Léela aquí o llévatela en PDF.",
     "download": "Descargar PDF",
     "professionalCard": "Ver tarjeta profesional",
     "viewerTitle": "Vista previa del currículum"
@@ -88,6 +88,7 @@
     "current": "En la actualidad, me encuentro en la búsqueda de un nuevo empleo, para tener la posibilidad de aplicar mis conocimientos y habilidades en un ambiente de trabajo, aportando mis conocimientos en calidad de software, desarrollo de software y fomento de la comunidad tecnológica."
   },
   "projects": {
+    "description": "Ideas que ya salieron del editor: herramientas y sitios pensados para usarse, no para quedar de demo.",
     "portfolio": {
       "title": "Portafolio Personal",
       "description": "Mi portafolio personal como ingeniero en sistemas; muestra mis proyectos y experiencia. Desarrollado con Astro, TypeScript y despliegue en GitHub Pages."
@@ -134,6 +135,7 @@
     "title": "Tecnologías más usadas"
   },
   "certificates": {
+    "description": "Formación que uso de verdad: testing, Docker, Flutter y el resto del stack con el que trabajo día a día.",
     "academyLabel": "Academia",
     "verificationCode": "Código de Verificación",
     "automation": {
@@ -193,7 +195,7 @@
   },
   "events": {
     "name": "Eventos Destacados",
-    "description": "Mantente actualizado con los últimos eventos y novedades en los que me he involucrado.",
+    "description": "Desde 2023 empujo la agenda tech del Eje Cafetero: staff, speakers y espacios donde se aprende en voz alta — incluyendo QAConf.",
     "flisol-1": {
       "title": "FLISOL 2023",
       "date": "Abril 27-28, 2023",
@@ -268,6 +270,7 @@
     "viewMore": "Ver más información"
   },
   "workExperience": {
+    "description": "De Unity en remoto a Flutter con Firebase y distribución en Dailybot: llevo producto al uso real, con el criterio de que otra persona pueda retomar el trabajo.",
     "current": "Actual",
     "duration": "Duración",
     "durationMonths": "{{months}} meses",

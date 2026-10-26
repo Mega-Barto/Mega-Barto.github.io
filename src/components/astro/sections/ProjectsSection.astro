@@ -24,6 +24,13 @@ function projectTitle(p: ProjectDef): { text: string; key?: string } {
 ---
 
 <Section id="projects" titleKey="header.navigation.projects">
+  {
+    !isSummary && (
+      <p class="section-description" data-i18n-key="projects.description">
+        {t('projects.description')}
+      </p>
+    )
+  }
   <div class="projects-grid">
     {
       defs.map((project) => {
