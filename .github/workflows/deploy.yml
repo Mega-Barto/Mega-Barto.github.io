@@ -27,6 +27,9 @@ jobs:
     - name: Install dependencies
       run: bun install
 
+    - name: Verify i18n locales
+      run: bun run verify:i18n
+
     - name: Setup Python
       uses: actions/setup-python@v5
       with:

@@ -36,6 +36,9 @@ bitacora.md
 # RenderCV — generated artifacts (canonical sources stay tracked)
 src/content/renderCV/rendercv_output/
 
+# Spanish copy deck (canonical locale files remain src/i18n/locales/*.json)
+src/i18n/copydeck.es.yaml
+
 # Local targeted resumes. Canonical files remain JAPB_CV.yaml and JAPB_CV_es.yaml.
 src/content/renderCV/JAPB_CV_dev.yaml
 src/content/renderCV/JAPB_CV_dev_es.yaml

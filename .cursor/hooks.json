@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": "node .cursor/hooks/verify-i18n-after-edit.mjs",
+        "failClosed": true
+      }
+    ]
+  }
+}
