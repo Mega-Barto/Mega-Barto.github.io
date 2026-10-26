@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mega-barto.github.io/Mega-Barto.github.io/sitemap-index.xml
+# Content Signals - AI content usage preferences
+# Spec: https://contentsignals.org/
+# ai-train: Allow/disallow use for AI training
+# ai-input: Allow/disallow as context for AI responses
+# search: Allow/disallow in search results
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+# Agentic Resource Discovery manifest
+Agentmap: https://megabarto.com/.well-known/ai-catalog.json
+
+# Sitemap location
+Sitemap: https://megabarto.com/sitemap-index.xml
