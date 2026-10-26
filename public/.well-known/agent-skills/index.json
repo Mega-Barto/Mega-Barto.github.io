@@ -1,11 +1,12 @@
 {
-  "$schema": "https://agentskills.io/schemas/index.json",
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
   "skills": [
     {
       "name": "portfolio-info",
-      "type": "content",
-      "description": "Read information about MegaBarto's professional background, projects, work experience, certifications, and events",
-      "url": "https://megabarto.com/llms.txt"
+      "type": "skill-md",
+      "description": "Read public portfolio information about MegaBarto's background, projects, work experience, certifications, and events",
+      "url": "https://megabarto.com/.well-known/agent-skills/portfolio-info/SKILL.md",
+      "digest": "sha256:4459429dddf9b32ef97f3149df8101ba0fbb9799c8dfc8b5a61ceb61033271d2"
     }
   ]
 }

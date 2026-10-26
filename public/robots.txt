@@ -8,5 +8,8 @@ Allow: /
 # search: Allow/disallow in search results
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 
+# Agentic Resource Discovery manifest
+Agentmap: https://megabarto.com/.well-known/ai-catalog.json
+
 # Sitemap location
 Sitemap: https://megabarto.com/sitemap-index.xml

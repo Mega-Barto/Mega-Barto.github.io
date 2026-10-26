@@ -1,0 +1,41 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "MegaBarto",
+    "identifier": "did:web:megabarto.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:megabarto.com:content:llms-txt",
+      "displayName": "LLM site summary",
+      "type": "text/plain",
+      "url": "https://megabarto.com/llms.txt",
+      "representativeQueries": [
+        "What is MegaBarto's professional background?",
+        "Summarize megabarto.com for an LLM",
+        "Where can I find MegaBarto's projects and CV links?"
+      ]
+    },
+    {
+      "identifier": "urn:air:megabarto.com:skill:portfolio-info",
+      "displayName": "Portfolio info agent skill",
+      "type": "text/markdown",
+      "url": "https://megabarto.com/.well-known/agent-skills/portfolio-info/SKILL.md",
+      "representativeQueries": [
+        "How should an agent read MegaBarto's portfolio?",
+        "What public pages exist on megabarto.com?",
+        "Does megabarto.com expose APIs or MCP?"
+      ]
+    },
+    {
+      "identifier": "urn:air:megabarto.com:discovery:agent-skills-index",
+      "displayName": "Agent skills discovery index",
+      "type": "application/json",
+      "url": "https://megabarto.com/.well-known/agent-skills/index.json",
+      "representativeQueries": [
+        "List agent skills published by megabarto.com",
+        "Find the skills discovery index for this portfolio"
+      ]
+    }
+  ]
+}
