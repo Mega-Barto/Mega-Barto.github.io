@@ -58,6 +58,7 @@
       <ul>
         <li><a href="#folder-structure">Folder Structure</a></li>
         <li><a href="#key-features">Key Features</a></li>
+        <li><a href="#agent-readiness">Agent Readiness</a></li>
         <li><a href="#best-practices">Best Practices</a></li>
       </ul>
     </li>
@@ -189,8 +190,40 @@ src/
 - **JSON locale files**: `src/i18n/locales/en.json` and `es.json`
 - **YAML copy deck**: local Spanish source (`copydeck.es.yaml`) synced with `sync:texts`
 - **`verify:i18n`**: locale parity and placeholder checks in local `verify` and CI
+- **Lighthouse CI**: audits the static `dist/` build (Performance, Accessibility, Best Practices, SEO) in GitHub Actions and locally via `bun run verify:lighthouse`
 
 This architecture ensures the project remains maintainable, scalable, and developer-friendly while providing excellent performance and user experience.
+
+### Agent Readiness
+
+Static discovery for AI agents and LLMs on [megabarto.com](https://megabarto.com) (GitHub Pages). Only **public portfolio content** is advertised—no fake APIs, auth, or MCP endpoints.
+
+#### Implemented
+
+| Artifact | Path / location | Purpose |
+|----------|-----------------|--------|
+| Content Signals | `public/robots.txt` | `Content-Signal: ai-train=no, search=yes, ai-input=yes` |
+| ARD manifest | `public/.well-known/ai-catalog.json` | Agentic Resource Discovery; also `Agentmap:` in `robots.txt` |
+| Agent Skills index | `public/.well-known/agent-skills/index.json` | Discovery RFC v0.2.0 (`skill-md` + `digest`) |
+| Portfolio skill | `public/.well-known/agent-skills/portfolio-info/SKILL.md` | How agents should read the site |
+| LLM summary | `public/llms.txt` | Structured site map for models |
+| HTML discovery | `src/layouts/BaseLayout.astro` | `<link rel="author">`, `alternate` → `llms.txt`, `index` → skills, `describedby` → `ai-catalog.json` |
+
+After changing `SKILL.md`, recompute SHA-256 and update the `digest` field in `index.json`:
+
+```sh
+powershell -NoProfile -Command "(Get-FileHash -Algorithm SHA256 'public/.well-known/agent-skills/portfolio-info/SKILL.md').Hash.ToLower()"
+```
+
+#### Intentionally omitted
+
+Not applicable to a static portfolio on GitHub Pages, or would mislead agents:
+
+- HTTP `Link:` response headers and `Accept: text/markdown` negotiation (needs a dynamic edge/server)
+- DNS-AID (DNS SVCB/HTTPS + DNSSEC at the registrar)
+- API catalog (`/.well-known/api-catalog`), OAuth/OIDC, `auth.md`, MCP server card, WebMCP
+
+Validate with [isitagentready.com](https://isitagentready.com/) after deploy.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -252,7 +285,15 @@ Make sure you have Node.js and npm installed, or Bun as an alternative faster Ja
    bun run verify
    ```
 
+4. Optional — same Lighthouse gate as CI (requires a prior `bun run build` or runs build for you):
+   ```sh
+   bun run verify:lighthouse
+   ```
+   Reports are written to `.lighthouseci/` (gitignored). Thresholds live in `lighthouserc.json`.
+
 The copy deck is gitignored. Commit `es.json` and `en.json` when the site copy should ship.
+
+**Pull requests:** GitHub Actions job `build-and-lighthouse` must pass before merge. On `main`, enable **Settings → Branches → Branch protection → Require status checks** and select `build-and-lighthouse`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
