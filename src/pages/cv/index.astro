@@ -4,9 +4,13 @@ import SiteHeader from '../../components/astro/SiteHeader.astro';
 import CVSection from '../../components/astro/sections/CVSection.astro';
 import { t } from '../../i18n/t';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../utils/baseUrl';
+
+const ogImage = new URL(withBase('/og/cv.png'), Astro.site).href;
 ---
 
 <BaseLayout
+  ogImage={ogImage}
   title="MegaBarto's Portfolio | CV"
   description={t('cv.description')}
 >
