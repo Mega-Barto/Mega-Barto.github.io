@@ -132,7 +132,8 @@ src/
 │   ├── sections.ts     # Section configuration
 │   └── socialLinks.ts  # Social media links config
 ├── i18n/               # Internationalization
-│   ├── index.ts        # i18n setup and configuration
+│   ├── t.ts            # Translation helper (SSG + islands)
+│   ├── copydeck.es.example.yaml  # Template for the local Spanish copy deck
 │   └── locales/        # Translation files
 │       ├── en.json     # English translations
 │       └── es.json     # Spanish translations
@@ -154,10 +155,10 @@ src/
 - **Separation of Concerns**: Content logic separated from presentation components
 
 #### 🌍 **Internationalization (i18n)**
-- **react-i18next Integration**: Seamless language switching between English and Spanish
-- **Type-Safe Translations**: TypeScript support for translation keys
-- **Scalable Localization**: Easy addition of new languages through JSON files
-- **Complete Coverage**: All UI elements and content properly translated
+- **Spanish copy deck**: edit `src/i18n/copydeck.es.yaml` (gitignored; start from `copydeck.es.example.yaml` or `bun run sync:texts -- --export`)
+- **`bun run sync:texts`**: merges the deck into `src/i18n/locales/es.json` without touching English
+- **English sync**: follow the project skill `.cursor/skills/sync-i18n-en/` after applying the deck
+- **`bun run verify:i18n`**: checks EN/ES key parity, `{{placeholders}}`, and keys referenced in `src/` (also runs in GitHub Actions and via a Cursor `afterFileEdit` hook)
 
 #### ⚙️ **Configuration Management**
 - **Centralized Config**: All configuration files organized in dedicated config folder
@@ -185,9 +186,9 @@ src/
 - **CSS Variables**: Dynamic theming and color management
 
 #### **Internationalization**
-- **react-i18next**: Industry-standard i18n solution
-- **i18next-browser-languagedetector**: Automatic language detection
-- **JSON-based translations**: Easy translation management
+- **JSON locale files**: `src/i18n/locales/en.json` and `es.json`
+- **YAML copy deck**: local Spanish source (`copydeck.es.yaml`) synced with `sync:texts`
+- **`verify:i18n`**: locale parity and placeholder checks in local `verify` and CI
 
 This architecture ensures the project remains maintainable, scalable, and developer-friendly while providing excellent performance and user experience.
 
@@ -234,6 +235,24 @@ Make sure you have Node.js and npm installed, or Bun as an alternative faster Ja
    bun dev
    ```
    Your application will be available at `http://localhost:5173`.
+
+### Copy and translations
+
+1. Export a local Spanish deck (once):
+   ```sh
+   bun run sync:texts -- --export
+   ```
+2. Edit `src/i18n/copydeck.es.yaml`, then apply it to `es.json`:
+   ```sh
+   bun run sync:texts
+   ```
+3. Update English with the **sync-i18n-en** skill (or by editing `en.json` to match keys), then:
+   ```sh
+   bun run verify:i18n
+   bun run verify
+   ```
+
+The copy deck is gitignored. Commit `es.json` and `en.json` when the site copy should ship.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
