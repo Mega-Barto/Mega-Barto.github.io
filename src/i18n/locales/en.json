@@ -58,6 +58,9 @@
     }
   },
   "home": {
+    "meta": {
+      "description": "Portfolio of MegaBarto — systems and computer engineer. Projects, work experience, events, and more."
+    },
     "hero": {
       "welcome": "Welcome to MegaBarto's Portfolio!",
       "description": "{{description}}"
@@ -82,13 +85,13 @@
   },
   "autobiography": {
     "introduction": "Hello! I’m Juan Alejandro Pérez Bermúdez (or Barto, as friends call me), a Systems and Computing Engineer eager to gain professional experience in software projects.",
-    "background": "I have experience in web development, working with technologies such as React, FastAPI and BaaS as Supabase. Now, I'm working in a new project using the Flutter + Firebase stack to create mobile cross-platform applications.",
-    "current": "At present, I work in mobile development, software quality, and building tech community engagement."
+    "background": "I have experience in web development, working with technologies such as React, FastAPI, and BaaS platforms like Supabase, as well as using the Flutter + Firebase stack to build cross-platform mobile apps.",
+    "current": "I am currently looking for a new role where I can apply my skills in a professional setting, contributing to software quality, software development, and the tech community."
   },
   "projects": {
     "portfolio": {
       "title": "Personal Portfolio",
-      "description": "A modern, responsive portfolio website built with React and TypeScript, featuring internationalization and modern design patterns."
+      "description": "My personal portfolio as a systems engineer; it showcases my projects and experience. Built with Astro and TypeScript, and deployed on GitHub Pages."
     },
     "project2": {
       "title": "Web Application",
@@ -168,7 +171,7 @@
   "contact": {
     "info": {
       "title": "Let's Connect!",
-      "description": "I'm always open to discussing new opportunities, collaborations, or just having a chat about technology. Feel free to reach out!"
+      "description": "I'm actively looking to join new opportunities, collaborations, or just chat about technology. Get in touch!"
     },
     "methods": {
       "email": "Email",
@@ -192,8 +195,6 @@
   "events": {
     "name": "Featured Events",
     "description": "Stay updated with the latest events and happenings that I have been involved in.",
-    "eventBName": "Event Name",
-    "eventBDescription": "Event Description",
     "flisol-1": {
       "title": "FLISOL 2023",
       "date": "April 27-28, 2023",
@@ -248,7 +249,7 @@
     "aws-ug-pereira": {
       "title": "AWS User Group Pereira",
       "date": "Since September 2026",
-      "description": "Co-organizer of the Pereira city AWS user group: meetups on cloud, DevOps, and architecture."
+      "description": "Co-organizer of the AWS user group in Pereira."
     },
     "pertt": {
       "title": "Pereira Tech Talks",
@@ -278,9 +279,9 @@
       "middleTime": "Middle-time"
     },
     "descriptions": {
-      "webspro": "Full-stack web developer specializing in modern JavaScript frameworks and backend technologies. Responsible for developing scalable web applications using React, TypeScript, and FastAPI. Focused on code quality, performance optimization, and implementing best practices in software development.",
+      "webspro": "At Webspro I worked on Cubicage Optimizer, a cargo-space optimization SaaS with 3D simulation. To make it real, I adapted a Unity application built for Windows desktop so it could run remotely, deploying the backend on DigitalOcean with Wine-led packages and managing queue priorities with Redis, all connected with FastAPI.",
       "taejf": "At TAEJF S.A.S. I took over and modernized a mobile project in Flutter backed by Firebase as a Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore and other utilities). I integrated and optimized authentication flows, implemented cloud functions, and developed solutions for remote configuration and observability that improved system stability and maintainability. Additionally, I designed and built complementary applications in Next.js and deployed them to Vercel. I learned the business logic from scratch and proactively resolved technical and product challenges throughout the project.",
-      "dailybot": "Distribution Engineer, focused on developing tools, automations, integrations, open source projects and AI-powered solutions that accelerate product growth and adoption. I operate at the intersection of engineering, product and distribution, creating technical experiments, demos, intelligent workflows and platforms that expand Dailybot's visibility, optimize processes and generate growth opportunities at scale."
+      "dailybot": "At Dailybot I was a Distribution Engineer on the engineering team. I developed and maintained the distribution system for the platform and related projects, collaborated on product evolution, and supported process automation with AI agents, including OpenClaw and Hermes."
     }
   },
   "about": {
@@ -329,39 +330,39 @@
         },
         "webspro": {
           "title": "WebsPro",
-          "description": "Full-stack: FastAPI services, Supabase, and Unity WebGL on React."
+          "description": "Cubicage Optimizer: cargo-space SaaS with 3D simulation in Unity, run remotely."
         },
         "taejf": {
           "title": "TAEJF",
-          "description": "Fitness app on Flutter + Firebase; companion apps on Next.js."
+          "description": "Wellness Box app on Flutter + Firebase; companion apps on Next.js."
         },
         "dailybot": {
           "title": "Dailybot",
-          "description": "Distribution Engineer: tools and integrations that help the product land."
+          "description": "Distribution Engineer: product distribution and automation with AI agents (OpenClaw, Hermes)."
         },
         "qaconf": {
           "title": "QAConf",
-          "description": "The Coffee Axis's first software-quality gathering; I founded it from SONAR. 2025 in person; 2026 virtual after the August 10 earthquake."
+          "description": "The Coffee Axis's first gathering dedicated to software quality. Two in-person editions and one virtual after the August 10 earthquake."
         },
         "awsUg": {
           "title": "AWS User Group Pereira",
-          "description": "AWS user group of the city of Pereira; I co-organize meetups on cloud, DevOps, and architecture."
+          "description": "AWS user group in Pereira; I am part of the organizing team."
         },
         "flisol": {
           "title": "FLISOL",
-          "description": "Pereira rejoined the festival after years without a venue. The Latin American Festival of Free Software Installation has run since 2005: install fests, talks, and FOSS community."
+          "description": "The Latin American Festival of Free Software Installation (FLISOL) returned to Pereira in 2023; I have been part of the organizing team since 2024."
         },
         "sfd": {
           "title": "Software Freedom Day",
-          "description": "At UTP, with CIDT and Backbone. A worldwide FOSS celebration (since 2004): talks, research-group stands, and free-software culture."
+          "description": "Led by the Backbone research seedbed. A worldwide free-software celebration (since 2004): talks, research-group stands, and FLOSS philosophy."
         },
         "pertt": {
           "title": "Pereira Tech Talks",
-          "description": "Monthly meetup community founded in Pereira in 2014; also hosts Pereira Tech Day. I join as staff and speaker scout."
+          "description": "A monthly meetup community that fosters Pereira's tech scene; it also hosts Pereira Tech Day. I am part of the organizing team."
         },
         "oth": {
           "title": "Open Tech Hackathon",
-          "description": "An AI and blockchain hackathon (remote plus a pitch day at UTP) run by local communities; I was on staff."
+          "description": "An AI and blockchain hackathon co-organized by local communities; I was on staff."
         },
         "tribu": {
           "title": "Tinku — Tribu Hackathon",
@@ -369,7 +370,7 @@
         }
       }
     },
-    "contactCTA": "If you want to build a product, an event, or a half-formed idea, write me."
+    "contactCTA": "Ready to make a great idea real? Write to me!"
   },
   "works": {
     "webspro": "WebsPro",
@@ -382,6 +383,7 @@
     },
     "durations": {
       "webspro": "9 months",
+      "taejf": "9 months",
       "dailybot": "3 months"
     }
   }

@@ -57,6 +57,9 @@
     }
   },
   "home": {
+    "meta": {
+      "description": "Portafolio de MegaBarto — ingeniero en sistemas y computación. Proyectos, experiencia laboral, eventos y más."
+    },
     "hero": {
       "welcome": "¡Bienvenido al Portafolio de MegaBarto!",
       "description": "{{description}}"
@@ -81,13 +84,13 @@
   },
   "autobiography": {
     "introduction": "¡Hola! Soy Juan Alejandro Pérez Bermúdez (o Barto, como me llaman mis amigos), un Ingeniero en Sistemas y Computación con ganas de adquirir experiencia profesional en proyectos de software.",
-    "background": "Tengo experiencia en desarrollo web, trabajando con tecnologías como React, FastAPI y BaaS como Supabase. Actualmente, estoy trabajando en un nuevo proyecto utilizando el stack Flutter + Firebase para crear aplicaciones móviles multiplataforma.",
-    "current": "En la actualidad, trabajo en desarrollo móvil, calidad de software y fomentando el compromiso con la comunidad tecnológica."
+    "background": "Tengo experiencia en desarrollo web, trabajando con tecnologías como React, FastAPI y BaaS como Supabase, así como también utilizando el stack Flutter + Firebase para crear aplicaciones móviles multiplataforma.",
+    "current": "En la actualidad, me encuentro en la búsqueda de un nuevo empleo, para tener la posibilidad de aplicar mis conocimientos y habilidades en un ambiente de trabajo, aportando mis conocimientos en calidad de software, desarrollo de software y fomento de la comunidad tecnológica."
   },
   "projects": {
     "portfolio": {
       "title": "Portafolio Personal",
-      "description": "Un sitio web moderno y responsivo construido con React y TypeScript, con internacionalización y patrones de diseño modernos."
+      "description": "Mi portafolio personal como ingeniero en sistemas; muestra mis proyectos y experiencia. Desarrollado con Astro, TypeScript y despliegue en GitHub Pages."
     },
     "project2": {
       "title": "Aplicación Web",
@@ -167,7 +170,7 @@
   "contact": {
     "info": {
       "title": "¡Conectemos!",
-      "description": "Siempre estoy abierto a discutir nuevas oportunidades, colaboraciones o simplemente charlar sobre tecnología. ¡No dudes en contactarme!"
+      "description": "Busco activamente hacer parte de nuevas oportunidades, colaboraciones o simplemente charlar sobre tecnología. ¡Contáctame!"
     },
     "methods": {
       "email": "Email",
@@ -245,7 +248,7 @@
     "aws-ug-pereira": {
       "title": "AWS User Group Pereira",
       "date": "Desde septiembre 2026",
-      "description": "Coorganizador del grupo de usuarios AWS de la ciudad de Pereira: meetups sobre nube, DevOps y arquitectura."
+      "description": "Coorganizador del grupo de usuarios AWS de la ciudad de Pereira."
     },
     "pertt": {
       "title": "Pereira Tech Talks",
@@ -275,9 +278,9 @@
       "middleTime": "Medio tiempo"
     },
     "descriptions": {
-      "webspro": "Desarrollador web full-stack especializado en frameworks modernos de JavaScript y tecnologías backend. Responsable del desarrollo de aplicaciones web escalables utilizando React, TypeScript y FastAPI. Enfocado en la calidad del código, optimización del rendimiento e implementación de mejores prácticas en desarrollo de software.",
+      "webspro": "En Webspro participé en Cubicage Optimizer, un SaaS de optimización de cubicaje con simulación 3D. Para hacerla real, adapté una aplicación Unity pensada para escritorio Windows para ejecutarla en remoto, desplegando el backend en DigitalOcean mediante paquetes liderados por Wine y gestionando las prioridades de cola con Redis, todo conectado usando FastAPI.",
       "taejf": "En TAEJF S.A.S. retomé y modernicé un proyecto móvil en Flutter apoyado en Firebase como Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore y otras utilidades). Integré y optimicé flujos de autenticación, implementé funciones en la nube y desarrollé soluciones para configuración remota y observabilidad que mejoraron la estabilidad y mantenibilidad del sistema. Además, diseñé y construí aplicaciones complementarias en Next.js y las desplegué en Vercel. Aprendí la lógica de negocio desde cero y resolví de manera proactiva los desafíos técnicos y del producto a lo largo del proyecto.",
-      "dailybot": "Distribution Engineer, enfocado en desarrollar herramientas, automatizaciones, integraciones, proyectos open source y soluciones impulsadas por IA que aceleran el crecimiento y la adopción del producto. Actúo en la intersección de ingeniería, producto y distribución, creando experimentos técnicos, demos, flujos de trabajo inteligentes y plataformas que amplían la visibilidad de Dailybot, optimizan procesos y generan oportunidades de crecimiento a escala."
+      "dailybot": "En Dailybot fui Distribution Engineer en el equipo de ingeniería. Desarrollé y mantuve el sistema de distribución de la plataforma y proyectos relacionados, colaboré en la evolución del producto y apoyé la automatización de procesos con agentes de inteligencia artificial, incluyendo OpenClaw y Hermes."
     }
   },
   "about": {
@@ -326,39 +329,39 @@
         },
         "webspro": {
           "title": "WebsPro",
-          "description": "Full-stack: APIs en FastAPI, Supabase y Unity WebGL sobre React."
+          "description": "Cubicage Optimizer: SaaS de cubicaje con simulación 3D en Unity, en remoto."
         },
         "taejf": {
           "title": "TAEJF",
-          "description": "App de fitness en Flutter + Firebase; apps satélite en Next.js."
+          "description": "App para Wellness Box en Flutter + Firebase; apps satélite en Next.js."
         },
         "dailybot": {
           "title": "Dailybot",
-          "description": "Distribution Engineer: herramientas e integraciones para adoptar el producto."
+          "description": "Distribution Engineer: distribución del producto y automatización con agentes de IA (OpenClaw, Hermes)."
         },
         "qaconf": {
           "title": "QAConf",
-          "description": "Primer encuentro del Eje Cafetero dedicado a calidad de software; lo fundé desde SONAR. 2025 presencial; 2026 virtual por el terremoto del 10 de agosto."
+          "description": "Primer encuentro del Eje Cafetero dedicado a calidad de software. 2 ediciones presenciales y 1 virtual por el terremoto del 10 de agosto."
         },
         "awsUg": {
           "title": "AWS User Group Pereira",
-          "description": "Grupo de usuarios AWS de la ciudad de Pereira; lo coorganizo con meetups de nube, DevOps y arquitectura."
+          "description": "Grupo de usuarios AWS de la ciudad de Pereira; hago parte del equipo organizador."
         },
         "flisol": {
           "title": "FLISOL",
-          "description": "Pereira volvió al festival tras años sin sede. El Festival Latinoamericano de Instalación de Software Libre existe desde 2005: instalaciones, charlas y comunidad FOSS."
+          "description": "El Festival Latinoamericano de Instalación de Software Libre (FLISOL) vuelve a Pereira en 2023, hago parte del equipo organizador del evento desde 2024"
         },
         "sfd": {
           "title": "Software Freedom Day",
-          "description": "En la UTP, con el CIDT y Backbone. Celebración mundial del software libre (desde 2004): charlas, stands de semilleros y filosofía FOSS."
+          "description": "Liderado por el semillero de investigación Backbone. Celebración mundial del software libre (desde 2004): charlas, stands de semilleros y filosofía FLOSS."
         },
         "pertt": {
           "title": "Pereira Tech Talks",
-          "description": "Comunidad de meetups mensuales fundada en Pereira en 2014; también organiza Pereira Tech Day. Entro como staff y buscador de ponentes."
+          "description": "Comunidad de meetups mensuales que busca fomentar la comunidad tecnológica en Pereira; también organiza Pereira Tech Day. Hago parte del equipo organizador."
         },
         "oth": {
           "title": "Open Tech Hackathon",
-          "description": "Hackathon de IA y blockchain (virtual + Pitch Day en la UTP), coorganizado por comunidades locales; estuve en el staff."
+          "description": "Hackathon de IA y blockchain coorganizado por comunidades locales; estuve en el staff."
         },
         "tribu": {
           "title": "Tinku — Tribu Hackathon",
@@ -366,7 +369,7 @@
         }
       }
     },
-    "contactCTA": "Si quieres construir producto, un evento o una idea a medias, escríbeme."
+    "contactCTA": "¿Listo para hacer real una estupenda idea? ¡Escríbeme!"
   },
   "works": {
     "webspro": "WebsPro",
@@ -379,6 +382,7 @@
     },
     "durations": {
       "webspro": "9 meses",
+      "taejf": "9 meses",
       "dailybot": "3 meses"
     }
   }
