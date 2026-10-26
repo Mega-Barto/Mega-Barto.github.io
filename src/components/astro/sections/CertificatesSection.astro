@@ -11,11 +11,19 @@ interface Props {
 }
 
 const { variant, viewAllHref } = Astro.props;
+const isSummary = variant === 'summary';
 const sorted = sortCertificatesByRecency(CERTIFICATE_DEFS);
-const defs = variant === 'summary' ? sorted.slice(0, 3) : sorted;
+const defs = isSummary ? sorted.slice(0, 3) : sorted;
 ---
 
 <Section id="certificates" titleKey="header.navigation.certificates">
+  {
+    !isSummary && (
+      <p class="section-description" data-i18n-key="certificates.description">
+        {t('certificates.description')}
+      </p>
+    )
+  }
   <div class="certificates-grid">
     {
       defs.map((certificate) => (

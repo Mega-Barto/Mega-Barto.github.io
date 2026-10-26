@@ -4,7 +4,7 @@ cv:
   headline:
   location: Dosquebradas, Colombia
   email: personal.jperez@gmail.com
- # photo: 2025.jpg
+  photo: 2025.jpg
   phone: +57-323-328-0136
   social_networks:
     - network: LinkedIn
@@ -300,7 +300,7 @@ locale:
     - Noviembre
     - Diciembre
 settings:
-  current_date: '2026-04-10'
+  current_date: '2026-10-14'
   render_command:
     design:
     locale:

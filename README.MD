@@ -58,6 +58,7 @@
       <ul>
         <li><a href="#folder-structure">Folder Structure</a></li>
         <li><a href="#key-features">Key Features</a></li>
+        <li><a href="#agent-readiness">Agent Readiness</a></li>
         <li><a href="#best-practices">Best Practices</a></li>
       </ul>
     </li>
@@ -132,7 +133,8 @@ src/
 │   ├── sections.ts     # Section configuration
 │   └── socialLinks.ts  # Social media links config
 ├── i18n/               # Internationalization
-│   ├── index.ts        # i18n setup and configuration
+│   ├── t.ts            # Translation helper (SSG + islands)
+│   ├── copydeck.es.example.yaml  # Template for the local Spanish copy deck
 │   └── locales/        # Translation files
 │       ├── en.json     # English translations
 │       └── es.json     # Spanish translations
@@ -154,10 +156,10 @@ src/
 - **Separation of Concerns**: Content logic separated from presentation components
 
 #### 🌍 **Internationalization (i18n)**
-- **react-i18next Integration**: Seamless language switching between English and Spanish
-- **Type-Safe Translations**: TypeScript support for translation keys
-- **Scalable Localization**: Easy addition of new languages through JSON files
-- **Complete Coverage**: All UI elements and content properly translated
+- **Spanish copy deck**: edit `src/i18n/copydeck.es.yaml` (gitignored; start from `copydeck.es.example.yaml` or `bun run sync:texts -- --export`)
+- **`bun run sync:texts`**: merges the deck into `src/i18n/locales/es.json` without touching English
+- **English sync**: follow the project skill `.cursor/skills/sync-i18n-en/` after applying the deck
+- **`bun run verify:i18n`**: checks EN/ES key parity, `{{placeholders}}`, and keys referenced in `src/` (also runs in GitHub Actions and via a Cursor `afterFileEdit` hook)
 
 #### ⚙️ **Configuration Management**
 - **Centralized Config**: All configuration files organized in dedicated config folder
@@ -185,11 +187,43 @@ src/
 - **CSS Variables**: Dynamic theming and color management
 
 #### **Internationalization**
-- **react-i18next**: Industry-standard i18n solution
-- **i18next-browser-languagedetector**: Automatic language detection
-- **JSON-based translations**: Easy translation management
+- **JSON locale files**: `src/i18n/locales/en.json` and `es.json`
+- **YAML copy deck**: local Spanish source (`copydeck.es.yaml`) synced with `sync:texts`
+- **`verify:i18n`**: locale parity and placeholder checks in local `verify` and CI
+- **Lighthouse CI**: audits the static `dist/` build (Performance, Accessibility, Best Practices, SEO) in GitHub Actions and locally via `bun run verify:lighthouse`
 
 This architecture ensures the project remains maintainable, scalable, and developer-friendly while providing excellent performance and user experience.
+
+### Agent Readiness
+
+Static discovery for AI agents and LLMs on [megabarto.com](https://megabarto.com) (GitHub Pages). Only **public portfolio content** is advertised—no fake APIs, auth, or MCP endpoints.
+
+#### Implemented
+
+| Artifact | Path / location | Purpose |
+|----------|-----------------|--------|
+| Content Signals | `public/robots.txt` | `Content-Signal: ai-train=no, search=yes, ai-input=yes` |
+| ARD manifest | `public/.well-known/ai-catalog.json` | Agentic Resource Discovery; also `Agentmap:` in `robots.txt` |
+| Agent Skills index | `public/.well-known/agent-skills/index.json` | Discovery RFC v0.2.0 (`skill-md` + `digest`) |
+| Portfolio skill | `public/.well-known/agent-skills/portfolio-info/SKILL.md` | How agents should read the site |
+| LLM summary | `public/llms.txt` | Structured site map for models |
+| HTML discovery | `src/layouts/BaseLayout.astro` | `<link rel="author">`, `alternate` → `llms.txt`, `index` → skills, `describedby` → `ai-catalog.json` |
+
+After changing `SKILL.md`, recompute SHA-256 and update the `digest` field in `index.json`:
+
+```sh
+powershell -NoProfile -Command "(Get-FileHash -Algorithm SHA256 'public/.well-known/agent-skills/portfolio-info/SKILL.md').Hash.ToLower()"
+```
+
+#### Intentionally omitted
+
+Not applicable to a static portfolio on GitHub Pages, or would mislead agents:
+
+- HTTP `Link:` response headers and `Accept: text/markdown` negotiation (needs a dynamic edge/server)
+- DNS-AID (DNS SVCB/HTTPS + DNSSEC at the registrar)
+- API catalog (`/.well-known/api-catalog`), OAuth/OIDC, `auth.md`, MCP server card, WebMCP
+
+Validate with [isitagentready.com](https://isitagentready.com/) after deploy.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -235,33 +269,57 @@ Make sure you have Node.js and npm installed, or Bun as an alternative faster Ja
    ```
    Your application will be available at `http://localhost:5173`.
 
+### Copy and translations
+
+1. Export a local Spanish deck (once):
+   ```sh
+   bun run sync:texts -- --export
+   ```
+2. Edit `src/i18n/copydeck.es.yaml`, then apply it to `es.json`:
+   ```sh
+   bun run sync:texts
+   ```
+3. Update English with the **sync-i18n-en** skill (or by editing `en.json` to match keys), then:
+   ```sh
+   bun run verify:i18n
+   bun run verify
+   ```
+
+4. Optional — same Lighthouse gate as CI (requires a prior `bun run build` or runs build for you):
+   ```sh
+   bun run verify:lighthouse
+   ```
+   Reports are written to `.lighthouseci/` (gitignored). Thresholds live in `lighthouserc.json`.
+
+The copy deck is gitignored. Commit `es.json` and `en.json` when the site copy should ship.
+
+**Pull requests:** GitHub Actions job `build-and-lighthouse` must pass before merge. On `main`, enable **Settings → Branches → Branch protection → Require status checks** and select `build-and-lighthouse`.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Branching Flow
 
-This repository currently uses a GitFlow-like model with long-lived integration and release branches.
+Canonical path (also in `.cursor/skills/git-branching-flow/SKILL.md`):
 
-### Existing Branches and Purpose
+```text
+feature__*  →  develop  →  main  →  release/vX.Y  (cut from main)
+```
 
-- main: production branch. It points to stable releases (for example, Release v3.0.1).
-- develop: integration branch for completed features before release.
-- release/vX.Y or release/vX.Y.Z: release stabilization branches (examples: release/v3.0, release/v3.0.1).
-- feature__*: feature work branches (examples: feature__may_updates, feature__carousel).
-- featute__astro_migration: legacy feature branch with a typo in the prefix, still valid and tracked.
+### Branch roles
+
+- `feature__*`: short-lived work (prefix is literally `feature__`).
+- `develop`: integration; features land here first.
+- `main`: production (GitHub Pages).
+- `release/vX.Y` or `release/vX.Y.Z`: release snapshot **cloned from `main`** after ship content is on `main`; used to bump/tag.
+
+Legacy branches (e.g. `featute__astro_migration`, older release cuts) may exist; do not use them as the template for new work.
 
 ### Recommended Delivery Flow
 
-1. Create a feature branch from develop:
-  - git checkout develop
-  - git pull origin develop
-  - git checkout -b feature__short_name
-2. Work and commit in small logical units.
-3. Open PR from feature branch to develop.
-4. When develop is ready for publication, create or update release branch:
-  - git checkout -b release/vX.Y.Z develop
-5. Stabilize release branch (fixes, version bumps, CI/workflow adjustments).
-6. Merge release branch into main and tag version (for example v3.0.1).
-7. Sync the release changes back into develop to avoid drift.
+1. From `develop`, create `feature__short_name`, commit in small units, PR **→ `develop`**.
+2. When a batch is ready, PR **`develop` → `main`**.
+3. From up-to-date `main`, cut `release/vX.Y`, bump version if needed, tag `vX.Y.Z`.
+4. Merge any release-only commits back to `main`, then sync **`main` → `develop`**.
 
 ### Commit Message Format
 

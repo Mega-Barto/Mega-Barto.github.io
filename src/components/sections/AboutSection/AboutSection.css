@@ -1,0 +1,255 @@
+.about-profile {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.about-sidebar {
+  text-align: center;
+}
+
+.about-image-stack {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+.about-avatar {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.about-image-stack .about-avatar-slot:not(.is-active) {
+  display: none;
+}
+
+.about-image-stack .about-avatar-slot.is-active {
+  display: block;
+}
+
+.about-identity {
+  min-width: 0;
+}
+
+.about-name {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-text-inverse);
+  text-wrap: balance;
+}
+
+.about-lead {
+  margin: 0;
+  color: var(--color-secondary-300);
+  font-style: italic;
+  line-height: 1.7;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.about-card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.25),
+    0 8px 25px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.about-card p {
+  margin: 0;
+  color: var(--color-text-inverse);
+  line-height: 1.8;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+}
+
+.about-block-title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  font-weight: 700;
+  color: var(--color-text-inverse);
+}
+
+.about-skills-block,
+.about-timeline-block {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-skill {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--color-text-inverse);
+  background: rgba(80, 80, 80, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-timeline-group {
+  margin-bottom: 1.75rem;
+}
+
+.about-timeline-group:last-child {
+  margin-bottom: 0;
+}
+
+.about-timeline-group-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-secondary-300);
+}
+
+.about-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-milestone {
+  display: grid;
+  grid-template-columns: 5.75rem minmax(0, 1fr);
+  column-gap: 1.5rem;
+  padding-bottom: 1.75rem;
+}
+
+.about-milestone:last-child {
+  padding-bottom: 0;
+}
+
+.about-milestone-year {
+  text-align: right;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--color-secondary-300);
+  padding-top: 0.15rem;
+}
+
+.about-milestone-body {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(128, 128, 128, 0.25);
+}
+
+.about-milestone-body::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #808080;
+  box-shadow: 0 0 8px rgba(128, 128, 128, 0.4);
+}
+
+.about-milestone-title {
+  display: block;
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text-inverse);
+  text-decoration: none;
+}
+
+a.about-milestone-title:hover {
+  color: #e0e0e0;
+  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.about-milestone-desc {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--color-text-inverse);
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+}
+
+.about-cta {
+  text-align: center;
+}
+
+.about-cta-text {
+  margin: 0 0 1.25rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.about-cta .about-actions {
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .about-profile {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-actions {
+    justify-content: center;
+  }
+
+  .about-avatar,
+  .about-image-stack {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-milestone {
+    grid-template-columns: 1fr;
+    row-gap: 0.35rem;
+  }
+
+  .about-milestone-year {
+    text-align: left;
+    padding-left: 1.5rem;
+  }
+}

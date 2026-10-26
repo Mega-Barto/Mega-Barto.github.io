@@ -1,0 +1,27 @@
+---
+description: Spanish copy deck → sync:texts → English skill → verify:i18n
+globs: src/i18n/**,scripts/sync-texts.mjs,scripts/verify-i18n.mjs,.cursor/skills/sync-i18n-en/**
+alwaysApply: false
+---
+
+# Copy deck and i18n sync
+
+Spanish source of truth for local editing is `src/i18n/copydeck.es.yaml` (gitignored). Canonical tracked files are `src/i18n/locales/es.json` and `src/i18n/locales/en.json`.
+
+## Flow
+
+1. Edit strings in `copydeck.es.yaml` (same dotted key tree as the locale JSON). Do not rename keys without updating `data-i18n-key` and `*Key` in `src/`.
+2. Run `bun run sync:texts` (or `npm run sync:texts`). That merges the deck into `es.json` only.
+3. Follow `.cursor/skills/sync-i18n-en/SKILL.md` to update `en.json`.
+4. Run `bun run verify:i18n`, then `bun run verify`.
+5. The sync log is `logs/i18n-sync.log` (local, gitignored). `sync:texts` appends `apply` or `export`. After English is updated, append the `en` block as described in the skill.
+
+If `copydeck.es.yaml` is missing: `bun run sync:texts -- --export`.
+
+## Constraints
+
+- Keep `{{placeholders}}` identical in ES and EN.
+- New keys: add to `en.json` + code wiring first, then the deck, then `sync:texts`.
+- Do not hand-edit `es.json` for copy unless the user asks; prefer the deck.
+- After editing `en.json` / `es.json`, the `afterFileEdit` hook runs `verify:i18n`. Fix failures before commit.
+- Do not sync RenderCV YAML or `public/llms.txt` automatically; mention them if profile/bio text changed.

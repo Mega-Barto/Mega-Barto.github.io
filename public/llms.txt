@@ -1,0 +1,25 @@
+# MegaBarto - Portfolio
+
+> Personal portfolio of Juan Alejandro Pérez Bermúdez (MegaBarto),
+> a mobile and cloud developer from Colombia specializing in Flutter,
+> Dart, Firebase, and Google Cloud Platform.
+
+## About
+- [About MegaBarto](https://megabarto.com/about/) - Bio, skills, and background
+
+## Experience
+- [Work Experience](https://megabarto.com/work-experience/) - Professional history
+- [CV / Resume](https://megabarto.com/cv/) - Downloadable resume in PDF
+
+## Portfolio
+- [Projects](https://megabarto.com/projects/) - Personal and professional projects
+- [Certificates](https://megabarto.com/certificates/) - Professional certifications
+- [Events](https://megabarto.com/events/) - Conferences and community participation
+
+## Languages
+Site available in Spanish (default) and English via language toggle.
+
+## Contact
+- GitHub: https://github.com/Mega-Barto
+- LinkedIn: https://linkedin.com/in/Mega-Barto
+- Email: personal.jperez@gmail.com

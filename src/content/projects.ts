@@ -5,7 +5,7 @@ export const PROJECT_DEFS: ProjectDef[] = [
     id: '1',
     titleKey: 'projects.portfolio.title',
     descriptionKey: 'projects.portfolio.description',
-    technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
+    technologies: ['Astro', 'TypeScript', 'Bun', 'CSS'],
     github: 'https://github.com/Mega-Barto/Mega-Barto.github.io',
     status: 'in-progress',
   },

@@ -1,0 +1,184 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { getSocialLinkByName } from '../../../config/socialLinks';
+import {
+  ABOUT_BIO_KEYS,
+  ABOUT_MILESTONES,
+  ABOUT_SKILLS,
+  groupMilestonesByKind,
+} from '../../../content/about';
+import { t } from '../../../i18n/t';
+import { withBase } from '../../../utils/baseUrl';
+import Section from '../Section.astro';
+
+import '../../sections/AboutSection/AboutSection.css';
+
+const profileImageModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../../../assets/ProfileImages/*.{jpg,jpeg,png,webp}',
+  { eager: true },
+);
+const profileImages = Object.values(profileImageModules).map((mod) => mod.default);
+const timelineGroups = groupMilestonesByKind(ABOUT_MILESTONES);
+
+const email = getSocialLinkByName('Email');
+const linkedin = getSocialLinkByName('LinkedIn');
+const cvHref = withBase('/cv/');
+
+function resolveHref(href: string): string {
+  if (href.startsWith('http') || href.startsWith('mailto:')) return href;
+  return withBase(href);
+}
+
+function isOffsiteHref(href: string): boolean {
+  return href.startsWith('http');
+}
+---
+
+<Section id="autobiography" titleKey="header.navigation.autobiography">
+  <div class="about-profile">
+    <aside class="about-sidebar">
+      <div class="about-image-stack">
+        {
+          profileImages.map((src, i) => (
+            <Image
+              src={src}
+              alt={t('personal.fullName')}
+              class:list={['about-avatar', 'about-avatar-slot', { 'is-active': i === 0 }]}
+              widths={[320, 480, 640]}
+              sizes="(max-width: 900px) 280px, 320px"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchpriority={i === 0 ? 'high' : undefined}
+              aria-hidden={i !== 0}
+              data-about-profile=""
+            />
+          ))
+        }
+      </div>
+      <script is:inline>
+        (function () {
+          var slots = document.querySelectorAll('[data-about-profile]');
+          if (slots.length <= 1) return;
+          var idx = Math.floor(Math.random() * slots.length);
+          slots.forEach(function (el, i) {
+            var on = i === idx;
+            el.classList.toggle('is-active', on);
+            el.setAttribute('aria-hidden', on ? 'false' : 'true');
+            if (on) el.setAttribute('loading', 'eager');
+          });
+        })();
+      </script>
+    </aside>
+
+    <div class="about-identity">
+      <h3 class="about-name" data-i18n-key="personal.fullName">{t('personal.fullName')}</h3>
+      <p class="about-lead" data-i18n-key="about.bioLead">{t('about.bioLead')}</p>
+    </div>
+  </div>
+
+  <div class="about-bio">
+    {
+      ABOUT_BIO_KEYS.map((key) => (
+        <div class="about-card">
+          <p data-i18n-key={key}>{t(key)}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="about-skills-block">
+    <h3 class="about-block-title" data-i18n-key="about.skillsTitle">{t('about.skillsTitle')}</h3>
+    <ul class="about-skills">
+      {
+        ABOUT_SKILLS.map((skill) =>
+          skill.labelKey ? (
+            <li>
+              <span class="about-skill" data-i18n-key={skill.labelKey}>
+                {t(skill.labelKey)}
+              </span>
+            </li>
+          ) : (
+            <li>
+              <span class="about-skill">{skill.label}</span>
+            </li>
+          ),
+        )
+      }
+    </ul>
+  </div>
+
+  <div class="about-timeline-block">
+    <h3 class="about-block-title" data-i18n-key="about.timelineTitle">{t('about.timelineTitle')}</h3>
+    {
+      timelineGroups.map((group) => (
+        <section class="about-timeline-group" aria-labelledby={`about-timeline-${group.id}`}>
+          <h4 class="about-timeline-group-title" id={`about-timeline-${group.id}`} data-i18n-key={group.titleKey}>
+            {t(group.titleKey)}
+          </h4>
+          <ol class="about-timeline">
+            {group.items.map((milestone) => {
+              const href = milestone.href ? resolveHref(milestone.href) : undefined;
+              const offsite = milestone.href ? isOffsiteHref(milestone.href) : false;
+              return (
+                <li class="about-milestone">
+                  <span class="about-milestone-year">{milestone.yearLabel}</span>
+                  <div class="about-milestone-body">
+                    {
+                      href ? (
+                        <a
+                          href={href}
+                          class="about-milestone-title"
+                          target={offsite ? '_blank' : undefined}
+                          rel={offsite ? 'noopener noreferrer' : undefined}
+                        >
+                          <span data-i18n-key={milestone.titleKey}>{t(milestone.titleKey)}</span>
+                        </a>
+                      ) : (
+                        <h5 class="about-milestone-title" data-i18n-key={milestone.titleKey}>
+                          {t(milestone.titleKey)}
+                        </h5>
+                      )
+                    }
+                    <p class="about-milestone-desc" data-i18n-key={milestone.descriptionKey}>
+                      {t(milestone.descriptionKey)}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+      ))
+    }
+  </div>
+
+  <div class="about-card about-cta">
+    <p class="about-cta-text" data-i18n-key="about.contactCTA">{t('about.contactCTA')}</p>
+    <div class="about-actions">
+      <a href={cvHref} class="view-all-link" data-i18n-key="about.actions.cv">
+        {t('about.actions.cv')}
+      </a>
+      {
+        email && (
+          <a href={email.url} class="view-all-link" data-i18n-key="about.actions.email">
+            {t('about.actions.email')}
+          </a>
+        )
+      }
+      {
+        linkedin && (
+          <a
+            href={linkedin.url}
+            class="view-all-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n-key="about.actions.linkedin"
+          >
+            {t('about.actions.linkedin')}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</Section>

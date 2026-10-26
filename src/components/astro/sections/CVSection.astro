@@ -63,6 +63,8 @@ const professionalCardPath = withBase('/copnia-card/');
     return 'en';
   }
 
+  const desktopViewer = window.matchMedia('(min-width: 769px)');
+
   function syncCvView(root: HTMLElement, lang?: CvLang): void {
     const raw = root.dataset.cvPaths;
     if (!raw) return;
@@ -82,9 +84,13 @@ const professionalCardPath = withBase('/copnia-card/');
     const download = root.querySelector<HTMLAnchorElement>('[data-cv-download]');
 
     if (viewer) {
-      const nextSrc = new URL(src, window.location.href).href;
-      if (viewer.src !== nextSrc) {
-        viewer.src = src;
+      if (desktopViewer.matches) {
+        const nextSrc = new URL(src, window.location.href).href;
+        if (viewer.src !== nextSrc) {
+          viewer.src = src;
+        }
+      } else if (viewer.getAttribute('src')) {
+        viewer.removeAttribute('src');
       }
     }
     if (download) {
@@ -129,4 +135,5 @@ const professionalCardPath = withBase('/copnia-card/');
   initCvSection();
   document.addEventListener('astro:page-load', initCvSection);
   $language.listen((lang) => syncAllCvViews(lang));
+  desktopViewer.addEventListener('change', () => syncAllCvViews($language.get()));
 </script>

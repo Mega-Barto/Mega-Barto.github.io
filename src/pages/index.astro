@@ -41,8 +41,8 @@ const profileImages = Object.values(profileImageModules).map((mod) => mod.defaul
                   widths={[320, 480, 640]}
                   sizes="(max-width: 768px) 240px, 280px"
                   loading={i === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                  fetchpriority={i === 0 ? 'high' : undefined}
+                  decoding={i === 0 ? 'sync' : 'async'}
+                  fetchpriority={i === 0 ? 'high' : 'low'}
                   aria-hidden={i !== 0}
                   data-hero-profile=""
                 />

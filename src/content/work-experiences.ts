@@ -15,6 +15,7 @@ export const WORK_DEFS: WorkDef[] = [
     labelKey: 'works.taejf',
     href: 'https://taejf.com/',
     timeKey: 'works.periods.taejf',
+    durationKey: 'works.durations.taejf',
     startDate: '2025-08-28',
     endDate: '2026-05-31',
     badgeKey: 'workExperience.badges.middleTime',

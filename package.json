@@ -1,7 +1,7 @@
 {
   "name": "megabarto.com",
   "private": true,
-  "version": "3.0.1",
+  "version": "4.1.0",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -12,7 +12,11 @@
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
     "render:cv": "node scripts/render-cv.mjs",
-    "verify": "bun run lint && bun run check && bun run build",
+    "sync:texts": "node scripts/sync-texts.mjs",
+    "verify:i18n": "node scripts/verify-i18n.mjs",
+    "verify": "bun run lint && bun run check && bun run verify:i18n && bun run build",
+    "lighthouse": "lhci autorun",
+    "verify:lighthouse": "bun run build && bun run lighthouse",
     "predeploy": "bun run verify",
     "deploy": "gh-pages -d dist"
   },
@@ -25,7 +29,10 @@
     "@astrojs/check": "^0.9.8",
     "@astrojs/sitemap": "^3.7.2",
     "@biomejs/biome": "^2.4.12",
+    "@lhci/cli": "^0.15.1",
     "astro": "^6.1.8",
-    "typescript": "~5.8.3"
+    "lightningcss": "^1.33.0",
+    "typescript": "~5.8.3",
+    "yaml": "^2.9.1"
   }
 }

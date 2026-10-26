@@ -1,3 +1,4 @@
+export * from './about';
 export * from './carousel';
 export * from './certificates';
 export * from './cv';

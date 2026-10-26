@@ -1,0 +1,33 @@
+# Spanish copy deck for megabarto.com
+# Copy this file to copydeck.es.yaml (gitignored) or run:
+#   bun run sync:texts -- --export
+#
+# Same key tree as src/i18n/locales/es.json. Do not rename keys without
+# updating data-i18n-key / *Key in src/. Keep {{placeholders}} intact.
+#
+# Flow:
+#   1. Edit copydeck.es.yaml
+#   2. bun run sync:texts          → merges into es.json
+#   3. Skill sync-i18n-en          → translates changed keys into en.json
+#   4. bun run verify:i18n
+
+_meta:
+  locale_source: es
+  apply: bun run sync:texts
+  export: bun run sync:texts -- --export
+  english: Follow .cursor/skills/sync-i18n-en/SKILL.md after apply
+  placeholders: Keep {{name}} tokens identical across locales
+
+header:
+  navigation:
+    autobiography: "¿Quién es Barto?"
+    projects: "Mis Proyectos"
+    cv: "Currículum"
+
+home:
+  hero:
+    welcome: "¡Bienvenido al Portafolio de MegaBarto!"
+    description: "{{description}}"
+
+workExperience:
+  durationMonths: "{{months}} meses"

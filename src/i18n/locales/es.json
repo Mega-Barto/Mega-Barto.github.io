@@ -57,6 +57,9 @@
     }
   },
   "home": {
+    "meta": {
+      "description": "Portafolio de MegaBarto — ingeniero en sistemas y computación. Proyectos, experiencia laboral, eventos y más."
+    },
     "hero": {
       "welcome": "¡Bienvenido al Portafolio de MegaBarto!",
       "description": "{{description}}"
@@ -66,7 +69,7 @@
     "viewAll": "Ver todos →"
   },
   "cv": {
-    "description": "Visualiza o descarga mi currículum.",
+    "description": "La versión corta de mi trayectoria: roles, stack y lo que he construido — pensada para leerse sin adivinar. Léela aquí o llévatela en PDF.",
     "download": "Descargar PDF",
     "professionalCard": "Ver tarjeta profesional",
     "viewerTitle": "Vista previa del currículum"
@@ -74,19 +77,21 @@
   "personal": {
     "name": "MegaBarto",
     "displayName": "MegaBarto",
+    "fullName": "Juan Alejandro Pérez Bermúdez",
     "companyName": "Bartland Labs",
     "description": "Ingeniero en sistemas y computación.",
     "domain": "megabarto.com"
   },
   "autobiography": {
     "introduction": "¡Hola! Soy Juan Alejandro Pérez Bermúdez (o Barto, como me llaman mis amigos), un Ingeniero en Sistemas y Computación con ganas de adquirir experiencia profesional en proyectos de software.",
-    "background": "Tengo experiencia en desarrollo web, trabajando con tecnologías como React, FastAPI y BaaS como Supabase. Actualmente, estoy trabajando en un nuevo proyecto utilizando el stack Flutter + Firebase para crear aplicaciones móviles multiplataforma.",
-    "current": "En la actualidad, trabajo en desarrollo móvil, calidad de software y fomentando el compromiso con la comunidad tecnológica."
+    "background": "Tengo experiencia en desarrollo web, trabajando con tecnologías como React, FastAPI y BaaS como Supabase, así como también utilizando el stack Flutter + Firebase para crear aplicaciones móviles multiplataforma.",
+    "current": "En la actualidad, me encuentro en la búsqueda de un nuevo empleo, para tener la posibilidad de aplicar mis conocimientos y habilidades en un ambiente de trabajo, aportando mis conocimientos en calidad de software, desarrollo de software y fomento de la comunidad tecnológica."
   },
   "projects": {
+    "description": "Ideas que ya salieron del editor: herramientas y sitios pensados para usarse, no para quedar de demo.",
     "portfolio": {
       "title": "Portafolio Personal",
-      "description": "Un sitio web moderno y responsivo construido con React y TypeScript, con internacionalización y patrones de diseño modernos."
+      "description": "Mi portafolio personal como ingeniero en sistemas; muestra mis proyectos y experiencia. Desarrollado con Astro, TypeScript y despliegue en GitHub Pages."
     },
     "project2": {
       "title": "Aplicación Web",
@@ -130,6 +135,7 @@
     "title": "Tecnologías más usadas"
   },
   "certificates": {
+    "description": "Formación que uso de verdad: testing, Docker, Flutter y el resto del stack con el que trabajo día a día.",
     "academyLabel": "Academia",
     "verificationCode": "Código de Verificación",
     "automation": {
@@ -166,7 +172,7 @@
   "contact": {
     "info": {
       "title": "¡Conectemos!",
-      "description": "Siempre estoy abierto a discutir nuevas oportunidades, colaboraciones o simplemente charlar sobre tecnología. ¡No dudes en contactarme!"
+      "description": "Busco activamente hacer parte de nuevas oportunidades, colaboraciones o simplemente charlar sobre tecnología. ¡Contáctame!"
     },
     "methods": {
       "email": "Email",
@@ -189,7 +195,7 @@
   },
   "events": {
     "name": "Eventos Destacados",
-    "description": "Mantente actualizado con los últimos eventos y novedades en los que me he involucrado.",
+    "description": "Desde 2023 empujo la agenda tech del Eje Cafetero: staff, speakers y espacios donde se aprende en voz alta — incluyendo QAConf.",
     "flisol-1": {
       "title": "FLISOL 2023",
       "date": "Abril 27-28, 2023",
@@ -235,6 +241,17 @@
       "date": "Septiembre 11-12, 2025",
       "description": "Fundador y organizador del evento."
     },
+    "qaconf-3": {
+      "title": "QAConf Pereira 2026",
+      "date": "Septiembre 4-5, 2026",
+      "location": "Virtual",
+      "description": "Fundador y organizador. Edición virtual por el terremoto del 10 de agosto de 2026 en Colombia."
+    },
+    "aws-ug-pereira": {
+      "title": "AWS User Group Pereira",
+      "date": "Desde septiembre 2026",
+      "description": "Coorganizador del grupo de usuarios AWS de la ciudad de Pereira."
+    },
     "pertt": {
       "title": "Pereira Tech Talks",
       "date": "Desde 2024",
@@ -253,6 +270,7 @@
     "viewMore": "Ver más información"
   },
   "workExperience": {
+    "description": "De Unity en remoto a Flutter con Firebase y distribución en Dailybot: llevo producto al uso real, con el criterio de que otra persona pueda retomar el trabajo.",
     "current": "Actual",
     "duration": "Duración",
     "durationMonths": "{{months}} meses",
@@ -263,21 +281,98 @@
       "middleTime": "Medio tiempo"
     },
     "descriptions": {
-      "webspro": "Desarrollador web full-stack especializado en frameworks modernos de JavaScript y tecnologías backend. Responsable del desarrollo de aplicaciones web escalables utilizando React, TypeScript y FastAPI. Enfocado en la calidad del código, optimización del rendimiento e implementación de mejores prácticas en desarrollo de software.",
+      "webspro": "En Webspro participé en Cubicage Optimizer, un SaaS de optimización de cubicaje con simulación 3D. Para hacerla real, adapté una aplicación Unity pensada para escritorio Windows para ejecutarla en remoto, desplegando el backend en DigitalOcean mediante paquetes liderados por Wine y gestionando las prioridades de cola con Redis, todo conectado usando FastAPI.",
       "taejf": "En TAEJF S.A.S. retomé y modernicé un proyecto móvil en Flutter apoyado en Firebase como Backend-as-a-Service (Auth, Cloud Functions, Remote Config, Firestore y otras utilidades). Integré y optimicé flujos de autenticación, implementé funciones en la nube y desarrollé soluciones para configuración remota y observabilidad que mejoraron la estabilidad y mantenibilidad del sistema. Además, diseñé y construí aplicaciones complementarias en Next.js y las desplegué en Vercel. Aprendí la lógica de negocio desde cero y resolví de manera proactiva los desafíos técnicos y del producto a lo largo del proyecto.",
-      "dailybot": "Distribution Engineer, enfocado en desarrollar herramientas, automatizaciones, integraciones, proyectos open source y soluciones impulsadas por IA que aceleran el crecimiento y la adopción del producto. Actúo en la intersección de ingeniería, producto y distribución, creando experimentos técnicos, demos, flujos de trabajo inteligentes y plataformas que amplían la visibilidad de Dailybot, optimizan procesos y generan oportunidades de crecimiento a escala."
+      "dailybot": "En Dailybot fui Distribution Engineer en el equipo de ingeniería. Desarrollé y mantuve el sistema de distribución de la plataforma y proyectos relacionados, colaboré en la evolución del producto y apoyé la automatización de procesos con agentes de inteligencia artificial, incluyendo OpenClaw y Hermes."
     }
   },
   "about": {
     "contactTitle": "Contacto",
     "bioTitle": "Sobre mí",
-    "bioLead": "Ingeniero en Sistemas y Computación enfocado en construir software útil, escalable y mantenible.",
-    "bioText": "Soy Juan Alejandro Pérez Bermúdez (Barto), nacido en Manizales y residente en Dosquebradas desde 2009. Soy egresado del Programa de Ingeniería en Sistemas y Computación de la Universidad Tecnológica de Pereira desde 2025.\n\nDesarrollo aplicaciones móviles con Flutter, backend con Firebase y Supabase, y aplicaciones web con Next.js y TypeScript, combinando buenas prácticas de ingeniería, calidad de software y enfoque en experiencia de usuario. Me interesa especialmente la automatización, las pruebas de software, CI/CD y la construcción de soluciones sostenibles a largo plazo. También he trabajado integrando proyectos Unity WebGL con aplicaciones React y desarrollando APIs escalables con FastAPI.\n\nMás allá del desarrollo, participo activamente en la comunidad tecnológica local apoyando la organización de eventos desde 2023 y promoviendo espacios de aprendizaje colaborativo. Formé parte del semillero de investigación SONAR I.S.C., fortaleciendo mi interés por la investigación académica y la calidad de software. Mi mayor logro en comunidad ha sido fundar QAConf, el primer evento especializado en calidad de software de la región, una iniciativa enfocada en conectar estudiantes, profesionales y empresas alrededor de la cultura de calidad y mejora continua.",
+    "bioLead": "Ingeniero de Dosquebradas: escribo software que otra persona pueda retomar, y organizo espacios donde se aprende en voz alta.",
+    "bio": {
+      "p1": "Me llaman Barto. Nací en Manizales, vivo en Dosquebradas desde 2009 y en 2025 cerré el pregrado de Ingeniería en Sistemas y Computación en la UTP. El campus me dejó un hábito más útil que el diploma: preguntar si lo que construimos aguanta el uso real, no solo la demo.",
+      "p2": "En el trabajo salto entre apps Flutter, backends en Firebase o FastAPI y frentes en TypeScript. Me importa menos coleccionar frameworks que dejar pruebas, pipelines y decisiones que no dependan de que yo esté en el chat. Si un despliegue o una API se entiende sin adivinar, el trabajo está bien hecho.",
+      "p3": "Desde 2023 empujo la agenda tech del Eje Cafetero: logística, speakers y la conversación después del evento. Fundar QAConf —el primer encuentro de la región dedicado a calidad de software— es la parte de mi oficio que no cabe en un repositorio."
+    },
     "skillsTitle": "Habilidades",
-    "skills": "Flutter, Firebase, React, Next.js, TypeScript, Python, Testing, QA, Docker, CI/CD, Desarrollo Mobile, Desarrollo Web, APIs REST, Liderazgo, Comunicación",
+    "skillLabels": {
+      "mobile": "Desarrollo Mobile",
+      "web": "Desarrollo Web",
+      "leadership": "Liderazgo",
+      "communication": "Comunicación"
+    },
+    "actions": {
+      "cv": "Currículum",
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    },
     "timelineTitle": "Trayectoria",
-    "timelineLead": "A lo largo de mi trayectoria he participado en proyectos comerciales, académicos y comunitarios, asumiendo tareas que van desde el desarrollo y las pruebas hasta el despliegue, la mejora continua y el soporte a equipos de trabajo. Cada etapa me ha permitido fortalecer una visión más completa del ciclo de vida del software y aportar de forma más sólida a los productos, a la calidad técnica y a la construcción de comunidad tecnológica.",
-    "contactCTA": "¿Te interesa colaborar, construir comunidad o desarrollar una idea? Conversemos."
+    "timelineLead": "A lo largo de mi trayectoria he participado en proyectos comerciales, académicos y comunitarios, asumiendo tareas que van desde el desarrollo y las pruebas hasta el despliegue, la mejora continua y el soporte a equipos de trabajo.",
+    "timeline": {
+      "groups": {
+        "work": "Trabajo",
+        "education": "Formación",
+        "community": "Comunidad"
+      },
+      "kinds": {
+        "education": "Educación",
+        "work": "Trabajo",
+        "event": "Evento",
+        "community": "Comunidad"
+      },
+      "milestones": {
+        "utp": {
+          "title": "Universidad Tecnológica de Pereira",
+          "description": "Pregrado en Ingeniería en Sistemas y Computación. Título en 2025."
+        },
+        "sonar": {
+          "title": "Semillero SONAR I.S.C.",
+          "description": "Calidad de software e investigación con la Red de Semilleros, 2022–2024."
+        },
+        "webspro": {
+          "title": "WebsPro",
+          "description": "Cubicage Optimizer: SaaS de cubicaje con simulación 3D en Unity, en remoto."
+        },
+        "taejf": {
+          "title": "TAEJF",
+          "description": "App para Wellness Box en Flutter + Firebase; apps satélite en Next.js."
+        },
+        "dailybot": {
+          "title": "Dailybot",
+          "description": "Distribution Engineer: distribución del producto y automatización con agentes de IA (OpenClaw, Hermes)."
+        },
+        "qaconf": {
+          "title": "QAConf",
+          "description": "Primer encuentro del Eje Cafetero dedicado a calidad de software. 2 ediciones presenciales y 1 virtual por el terremoto del 10 de agosto."
+        },
+        "awsUg": {
+          "title": "AWS User Group Pereira",
+          "description": "Grupo de usuarios AWS de la ciudad de Pereira; hago parte del equipo organizador."
+        },
+        "flisol": {
+          "title": "FLISOL",
+          "description": "El Festival Latinoamericano de Instalación de Software Libre (FLISOL) vuelve a Pereira en 2023, hago parte del equipo organizador del evento desde 2024"
+        },
+        "sfd": {
+          "title": "Software Freedom Day",
+          "description": "Liderado por el semillero de investigación Backbone. Celebración mundial del software libre (desde 2004): charlas, stands de semilleros y filosofía FLOSS."
+        },
+        "pertt": {
+          "title": "Pereira Tech Talks",
+          "description": "Comunidad de meetups mensuales que busca fomentar la comunidad tecnológica en Pereira; también organiza Pereira Tech Day. Hago parte del equipo organizador."
+        },
+        "oth": {
+          "title": "Open Tech Hackathon",
+          "description": "Hackathon de IA y blockchain coorganizado por comunidades locales; estuve en el staff."
+        },
+        "tribu": {
+          "title": "Tinku — Tribu Hackathon",
+          "description": "Primer hackathon de IA del norte del Valle (The Tribu), en Cartago. Competí con el equipo 418: I'm a Teapot y quedamos terceros."
+        }
+      }
+    },
+    "contactCTA": "¿Listo para hacer real una estupenda idea? ¡Escríbeme!"
   },
   "works": {
     "webspro": "WebsPro",
@@ -290,6 +385,7 @@
     },
     "durations": {
       "webspro": "9 meses",
+      "taejf": "9 meses",
       "dailybot": "3 meses"
     }
   }

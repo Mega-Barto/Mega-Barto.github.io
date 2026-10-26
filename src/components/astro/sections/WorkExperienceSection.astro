@@ -32,6 +32,13 @@ function monthsBetween(isoStart?: string, isoEnd?: string) {
 ---
 
 <Section id="work-experience" titleKey="header.navigation.workExperience">
+  {
+    !isSummary && (
+      <p class="section-description" data-i18n-key="workExperience.description">
+        {t('workExperience.description')}
+      </p>
+    )
+  }
   <div class="work-experience-grid">
     {
       defs.map((work) => (

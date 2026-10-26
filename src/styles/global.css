@@ -30,6 +30,7 @@ body {
   color: var(--color-text-inverse);
   position: relative;
   overflow: hidden;
+  contain: layout style;
 }
 
 /* Subtle gradient overlay for sections */
@@ -85,6 +86,17 @@ body {
   background: var(--gradient-primary);
   border-radius: 2px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.page-section .section-description {
+  text-align: center;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  color: var(--color-secondary-300);
+  margin: 0 auto clamp(1.5rem, 3vw, 3rem);
+  max-width: 640px;
+  line-height: 1.6;
+  padding: 0 1rem;
+  text-wrap: balance;
 }
 
 /* Compatibilidad retro: el viejo wrapper colapsable deja de afectar centrado. */

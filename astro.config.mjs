@@ -4,8 +4,18 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   output: 'static',
   integrations: [sitemap()],
-  site: 'https://mega-barto.github.io',
-  base: '/Mega-Barto.github.io/',
+  site: 'https://megabarto.com',
+  base: '/',
   outDir: './dist',
   compressHTML: true,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
+  vite: {
+    build: {
+      cssMinify: 'lightningcss',
+      cssCodeSplit: true,
+    },
+  },
 });
