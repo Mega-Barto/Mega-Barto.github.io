@@ -65,7 +65,49 @@ const profileImages = Object.values(profileImageModules).map((mod) => mod.defaul
           <h1 data-i18n-key="home.hero.welcome">{t('home.hero.welcome')}</h1>
           <p data-i18n-key="personal.description">{t('personal.description')}</p>
         </div>
+        <a
+          href="#autobiography"
+          class="hero-scroll-indicator"
+          data-hero-scroll
+          data-i18n-key="home.hero.scroll"
+          data-i18n-attr="aria-label"
+          aria-label={t('home.hero.scroll')}
+        >
+          <span class="hero-scroll-arrows" aria-hidden="true">
+            <svg viewBox="0 0 24 12" width="32" height="16" fill="none">
+              <path
+                d="M2 2 L12 10 L22 2"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            <svg viewBox="0 0 24 12" width="32" height="16" fill="none">
+              <path
+                d="M2 2 L12 10 L22 2"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </a>
       </section>
+      <script is:inline>
+        (function () {
+          var indicator = document.querySelector('[data-hero-scroll]');
+          var hero = document.querySelector('.hero-section');
+          if (!indicator || !hero) return;
+          var sync = function () {
+            var past = window.scrollY > hero.offsetHeight * 0.35;
+            indicator.classList.toggle('is-hidden', past);
+            indicator.setAttribute('aria-hidden', past ? 'true' : 'false');
+            indicator.tabIndex = past ? -1 : 0;
+          };
+          sync();
+          window.addEventListener('scroll', sync, { passive: true });
+        })();
+      </script>
       <section id="autobiography" class="autobiography-section">
         <div class="container">
           <h2 class="section-title" data-i18n-key="header.navigation.autobiography">
