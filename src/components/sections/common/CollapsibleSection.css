@@ -1,6 +1,6 @@
 .collapsible-section {
   padding: 4rem 0;
-  background: var(--color-background-projects);
+  background: transparent;
   color: var(--color-text-inverse);
 }
 
