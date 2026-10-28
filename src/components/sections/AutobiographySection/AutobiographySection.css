@@ -1,26 +1,10 @@
 .autobiography-section {
   padding: 6rem 0;
-  background: var(--color-background-projects);
+  background: transparent;
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
-}
-
-/* Ambient gradient background */
-.autobiography-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(ellipse at 10% 20%, rgba(128, 128, 128, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 80%, rgba(96, 96, 96, 0.03) 0%, transparent 45%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .autobiography-content {

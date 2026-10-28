@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
   build-and-lighthouse:
@@ -28,6 +28,7 @@ jobs:
       run: bun install
 
     - name: Verify i18n locales
+      if: github.event_name == 'pull_request'
       run: bun run verify:i18n
 
     - name: Setup Python
@@ -56,15 +57,18 @@ jobs:
         cp src/content/renderCV/rendercv_output/Juan_Alejandro_Pérez_Bermúdez_CV_es.pdf public/
 
     - name: Lint (Biome)
+      if: github.event_name == 'pull_request'
       run: bun run lint
 
     - name: Type-check (Astro)
+      if: github.event_name == 'pull_request'
       run: bun run check
 
     - name: Build
       run: bun run build
 
     - name: Lighthouse CI
+      if: github.event_name == 'pull_request'
       uses: treosh/lighthouse-ci-action@v12
       with:
         configPath: ./lighthouserc.json
