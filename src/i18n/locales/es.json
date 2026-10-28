@@ -62,7 +62,8 @@
     },
     "hero": {
       "welcome": "¡Bienvenido al Portafolio de MegaBarto!",
-      "description": "{{description}}"
+      "description": "{{description}}",
+      "scroll": "Desplazarse al contenido"
     }
   },
   "common": {

@@ -63,7 +63,7 @@
   --gradient-secondary: linear-gradient(135deg, #404040 0%, #505050 100%);
   --gradient-accent: linear-gradient(135deg, #505050 0%, #606060 100%);
   --gradient-dark: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-  --gradient-hero: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  --gradient-hero: linear-gradient(180deg, #222222 0%, var(--color-background-projects) 100%);
   --gradient-card-border: linear-gradient(
     135deg,
     rgba(128, 128, 128, 0.3) 0%,

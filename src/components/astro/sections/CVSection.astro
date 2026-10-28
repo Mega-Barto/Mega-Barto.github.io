@@ -10,7 +10,6 @@ const pdfPaths = {
   en: withBase(CV_PDF_PATHS.en),
   es: withBase(CV_PDF_PATHS.es),
 };
-const professionalCardPath = withBase('/copnia-card/');
 ---
 
 <Section id="cv" titleKey="header.navigation.cv">
@@ -36,14 +35,6 @@ const professionalCardPath = withBase('/copnia-card/');
         rel="noopener noreferrer"
       >
         <span data-i18n-key="cv.download">{t('cv.download')}</span>
-      </a>
-      <a
-        href={professionalCardPath}
-        class="cv-download-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span data-i18n-key="cv.professionalCard">{t('cv.professionalCard')}</span>
       </a>
     </div>
   </div>

@@ -63,7 +63,8 @@
     },
     "hero": {
       "welcome": "Welcome to MegaBarto's Portfolio!",
-      "description": "{{description}}"
+      "description": "{{description}}",
+      "scroll": "Scroll to content"
     }
   },
   "common": {
