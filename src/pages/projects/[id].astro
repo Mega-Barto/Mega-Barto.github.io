@@ -6,6 +6,7 @@ import type { ProjectDef } from '../../content/types';
 import { t } from '../../i18n/t';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { withBase } from '../../utils/baseUrl';
+import { linkifyUrls } from '../../utils/linkify';
 import '../../components/sections/ProjectsSection/ProjectsSection.css';
 
 export function getStaticPaths() {
@@ -35,15 +36,28 @@ const description = t(project.descriptionKey);
       <article class="project-detail-card">
         <header class="project-header">
           <h1 class="project-title">{titleOf(project)}</h1>
-          <span
-            class="project-status"
-            style={{ backgroundColor: getStatusColor(project.status) }}
-            data-i18n-key={`projects.status.${project.status}`}
-          >
-            {t(`projects.status.${project.status}`)}
-          </span>
+          <div class="project-badges">
+            <span
+              class={`project-category-chip project-category-chip--${project.category}`}
+              data-i18n-key={`projects.category.${project.category}`}
+            >
+              {t(`projects.category.${project.category}`)}
+            </span>
+            <span
+              class="project-status"
+              style={{ backgroundColor: getStatusColor(project.status) }}
+              data-i18n-key={`projects.status.${project.status}`}
+            >
+              {t(`projects.status.${project.status}`)}
+            </span>
+          </div>
         </header>
-        <p class="project-description" data-i18n-key={project.descriptionKey}>{t(project.descriptionKey)}</p>
+        <p
+          class="project-description"
+          data-i18n-key={project.descriptionKey}
+          data-i18n-linkify
+          set:html={linkifyUrls(t(project.descriptionKey))}
+        />
         <div class="project-technologies">
           {project.technologies.map((tech) => (
             <span class="tech-tag">{tech}</span>
@@ -57,12 +71,21 @@ const description = t(project.descriptionKey);
           )}
           {project.link && (
             <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-link demo-link">
-              <span data-i18n-key="projects.links.demo">{t('projects.links.demo')}</span>
+              <span data-i18n-key="projects.links.website">{t('projects.links.website')}</span>
             </a>
           )}
           {project.demo && (
             <a href={project.demo} target="_blank" rel="noopener noreferrer" class="project-link demo-link">
-              <span data-i18n-key="projects.links.demo">{t('projects.links.demo')}</span>
+              <span
+                data-i18n-key={project.demoLabelKey ?? 'projects.links.demo'}
+              >
+                {t(project.demoLabelKey ?? 'projects.links.demo')}
+              </span>
+            </a>
+          )}
+          {project.store && (
+            <a href={project.store} target="_blank" rel="noopener noreferrer" class="project-link store-link">
+              <span data-i18n-key="projects.links.playStore">{t('projects.links.playStore')}</span>
             </a>
           )}
         </div>
