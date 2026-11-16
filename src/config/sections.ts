@@ -57,6 +57,6 @@ export const SECTION_SETTINGS = {
   projects: {
     itemsPerPage: 6,
     showFilters: true,
-    categories: ['web', 'mobile', 'api', 'tools'],
+    categories: ['professional', 'personal'],
   },
 } as const;

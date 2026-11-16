@@ -1,5 +1,6 @@
 // Definiciones de tipos para los contenidos estáticos del portafolio.
 export type ProjectStatus = 'completed' | 'in-progress' | 'planned' | 'contributing';
+export type ProjectCategory = 'professional' | 'personal';
 
 export interface ProjectDef {
   id: string;
@@ -10,7 +11,12 @@ export interface ProjectDef {
   link?: string;
   github?: string;
   demo?: string;
+  /** Optional i18n key for the demo/link button (defaults by status). */
+  demoLabelKey?: string;
+  /** Public store listing (e.g. Google Play). */
+  store?: string;
   status: ProjectStatus;
+  category: ProjectCategory;
 }
 
 export interface EventDef {

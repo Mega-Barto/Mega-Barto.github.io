@@ -1,5 +1,6 @@
 import { getStringByPath } from '../i18n/resolveKey';
 import { $language, syncLanguageFromHtml } from '../stores/i18n';
+import { linkifyUrls } from '../utils/linkify';
 
 type Bundle = Record<string, unknown>;
 
@@ -31,6 +32,7 @@ function applyTranslations(bundle: Bundle): void {
       }
     }
     if (attr) el.setAttribute(attr, finalVal);
+    else if (el.hasAttribute('data-i18n-linkify')) el.innerHTML = linkifyUrls(finalVal);
     else el.textContent = finalVal;
   }
 }

@@ -123,21 +123,21 @@ function monthsBetween(isoStart?: string, isoEnd?: string) {
 
 <!-- Work Experience Modal -->
 {!isSummary && (
-  <div class="work-modal-overlay" id="work-modal-overlay">
-    <div class="work-modal">
-      <div class="work-modal-header">
+  <div class="site-modal-overlay" id="work-modal-overlay">
+    <div class="site-modal" id="work-modal-panel" role="dialog" aria-modal="true" aria-labelledby="work-modal-title">
+      <header class="site-modal__header">
         <div class="work-modal-title-row">
-          <h3 class="work-modal-title" id="work-modal-title"></h3>
+          <h3 class="site-modal__title" id="work-modal-title"></h3>
           <div class="work-modal-badges" id="work-modal-badges"></div>
         </div>
-        <button class="work-modal-close" id="work-modal-close" aria-label={t('workExperience.close')}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="site-modal__close" id="work-modal-close" aria-label={t('workExperience.close')}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
-      </div>
-      <div class="work-modal-body">
+      </header>
+      <div class="site-modal__body work-modal__body">
         <div class="work-modal-info" id="work-modal-info">
           <span class="work-modal-time" id="work-modal-time"></span>
           <span class="work-modal-duration" id="work-modal-duration"></span>
@@ -158,80 +158,69 @@ function monthsBetween(isoStart?: string, isoEnd?: string) {
 
 {!isSummary && (
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    import { initSiteModal, openSiteModal } from '../../../scripts/site-modal.ts';
+
+    function initWorkExperienceModal() {
       const overlay = document.getElementById('work-modal-overlay');
+      if (!overlay) return;
+
       const modalTitle = document.getElementById('work-modal-title');
       const modalBadges = document.getElementById('work-modal-badges');
       const modalTime = document.getElementById('work-modal-time');
       const modalDuration = document.getElementById('work-modal-duration');
       const modalDescription = document.getElementById('work-modal-description');
-      const modalLink = document.getElementById('work-modal-link') as HTMLAnchorElement | null;
-      const closeBtn = document.getElementById('work-modal-close');
-      const readMoreBtns = document.querySelectorAll('.work-read-more');
+      const modalLink = document.getElementById('work-modal-link');
 
-      if (!overlay || !modalTitle || !modalDescription || !closeBtn) return;
+      if (!modalTitle || !modalDescription) return;
 
-      readMoreBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const card = btn.closest('.work-card');
-          if (!card) return;
-          
-          const titleEl = card.querySelector('.work-title span');
-          const linkEl = card.querySelector('.work-link');
-          const descEl = card.querySelector('.work-description');
-          const timeEl = card.querySelector('.work-time');
-          const durationEl = card.querySelector('.work-duration');
-          const currentBadge = card.querySelector('.work-current-badge');
-          const otherBadge = card.querySelector('.work-badge');
-          
-          if (titleEl && descEl) {
-            modalTitle.textContent = titleEl.textContent;
-            modalDescription.textContent = descEl.textContent;
-            
-            if (modalTime && timeEl) {
-              modalTime.textContent = timeEl.textContent;
-            }
-            
-            if (modalDuration && durationEl) {
-              modalDuration.textContent = durationEl.textContent;
-            }
-            
-            if (modalLink && linkEl) {
-              modalLink.href = (linkEl as HTMLAnchorElement).href;
-            }
-            
-            if (modalBadges) {
-              modalBadges.innerHTML = '';
-              if (currentBadge) {
-                const badge = currentBadge.cloneNode(true);
-                modalBadges.appendChild(badge);
-              }
-              if (otherBadge) {
-                const badge = otherBadge.cloneNode(true);
-                modalBadges.appendChild(badge);
-              }
-            }
-            
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-          }
-        });
+      initSiteModal({
+        overlayId: 'work-modal-overlay',
+        closeButtonId: 'work-modal-close',
+        boundAttr: 'workModalBound',
       });
 
-      const closeModal = () => {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      };
+      const section = document.getElementById('work-experience');
+      if (!section || section.dataset.workModalClickBound === '1') return;
+      section.dataset.workModalClickBound = '1';
 
-      closeBtn.addEventListener('click', closeModal);
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeModal();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && overlay.classList.contains('active')) {
-          closeModal();
+      section.addEventListener('click', (event) => {
+        const readMore = event.target instanceof Element ? event.target.closest('.work-read-more') : null;
+        if (!readMore || !section.contains(readMore)) return;
+
+        const card = readMore.closest('.work-card');
+        if (!card) return;
+
+        const titleEl = card.querySelector('.work-title span');
+        const linkEl = card.querySelector('.work-link');
+        const descEl = card.querySelector('.work-description');
+        const timeEl = card.querySelector('.work-time');
+        const durationEl = card.querySelector('.work-duration');
+        const currentBadge = card.querySelector('.work-current-badge');
+        const otherBadge = card.querySelector('.work-badge');
+
+        if (!titleEl || !descEl) return;
+
+        modalTitle.textContent = titleEl.textContent;
+        modalDescription.textContent = descEl.textContent;
+
+        if (modalTime && timeEl) modalTime.textContent = timeEl.textContent;
+        if (modalDuration && durationEl) modalDuration.textContent = durationEl.textContent;
+        if (modalLink instanceof HTMLAnchorElement && linkEl instanceof HTMLAnchorElement) {
+          modalLink.href = linkEl.href;
         }
+
+        if (modalBadges) {
+          modalBadges.innerHTML = '';
+          if (currentBadge) modalBadges.appendChild(currentBadge.cloneNode(true));
+          if (otherBadge) modalBadges.appendChild(otherBadge.cloneNode(true));
+        }
+
+        const returnFocus = readMore instanceof HTMLElement ? readMore : null;
+        openSiteModal('work-modal-overlay', returnFocus);
       });
-    });
+    }
+
+    initWorkExperienceModal();
+    document.addEventListener('astro:page-load', initWorkExperienceModal);
   </script>
 )}

@@ -9,6 +9,9 @@ dist-ssr/
 .astro/
 
 # Environment & local overrides
+.env
+.env.*
+!.env.example
 *.local
 
 # Logs

@@ -1,7 +1,13 @@
 ---
-import { getStatusColor, PROJECT_DEFS, sortProjectsByRelevance } from '../../../content/projects';
+import {
+  getStatusColor,
+  PROJECT_CATEGORIES,
+  PROJECT_DEFS,
+  sortProjectsByRelevance,
+} from '../../../content/projects';
 import type { ProjectDef } from '../../../content/types';
 import { t } from '../../../i18n/t';
+import { linkifyUrls } from '../../../utils/linkify';
 import Section from '../Section.astro';
 
 import '../../sections/ProjectsSection/ProjectsSection.css';
@@ -15,11 +21,17 @@ const { variant, viewAllHref } = Astro.props;
 const isSummary = variant === 'summary';
 const sorted: ProjectDef[] = sortProjectsByRelevance(PROJECT_DEFS);
 const defs: ProjectDef[] = isSummary ? sorted.slice(0, 3) : sorted;
+const showFilters = !isSummary;
 
 function projectTitle(p: ProjectDef): { text: string; key?: string } {
   if (p.titleLiteral) return { text: p.titleLiteral };
   if (p.titleKey) return { text: t(p.titleKey), key: p.titleKey };
   return { text: '' };
+}
+
+function demoLabelKey(project: ProjectDef): string {
+  if (project.demoLabelKey) return project.demoLabelKey;
+  return project.status === 'contributing' ? 'projects.links.viewProject' : 'projects.links.demo';
 }
 ---
 
@@ -31,32 +43,76 @@ function projectTitle(p: ProjectDef): { text: string; key?: string } {
       </p>
     )
   }
+  {
+    showFilters && (
+      <div
+        class="project-category-filters"
+        role="group"
+        aria-label={t('projects.filter.category')}
+        data-i18n-key="projects.filter.category"
+        data-i18n-attr="aria-label"
+      >
+        <button
+          type="button"
+          class="category-chip is-active"
+          data-category-filter="all"
+          data-i18n-key="projects.filter.all"
+        >
+          {t('projects.filter.all')}
+        </button>
+        {PROJECT_CATEGORIES.map((category) => (
+          <button
+            type="button"
+            class="category-chip"
+            data-category-filter={category}
+            data-i18n-key={`projects.category.${category}`}
+          >
+            {t(`projects.category.${category}`)}
+          </button>
+        ))}
+      </div>
+    )
+  }
   <div class="projects-grid">
     {
       defs.map((project) => {
         const title = projectTitle(project);
+        const demoKey = demoLabelKey(project);
+        const demoLabel = t(demoKey);
         return (
           <div
             class="project-card"
             data-status={project.status}
+            data-category={project.category}
             data-tech={project.technologies.join(',')}
           >
             <div class="project-header">
               <h3 class="project-title" data-i18n-key={title.key}>
                 {title.text}
               </h3>
-              <span
-                class="project-status"
-                style={`background-color: ${getStatusColor(project.status)};`}
-                data-i18n-key={`projects.status.${project.status}`}
-              >
-                {t(`projects.status.${project.status}`)}
-              </span>
+              <div class="project-badges">
+                <span
+                  class={`project-category-chip project-category-chip--${project.category}`}
+                  data-i18n-key={`projects.category.${project.category}`}
+                >
+                  {t(`projects.category.${project.category}`)}
+                </span>
+                <span
+                  class="project-status"
+                  style={`background-color: ${getStatusColor(project.status)};`}
+                  data-i18n-key={`projects.status.${project.status}`}
+                >
+                  {t(`projects.status.${project.status}`)}
+                </span>
+              </div>
             </div>
             {!isSummary && (
-              <p class="project-description" data-i18n-key={project.descriptionKey}>
-                {t(project.descriptionKey)}
-              </p>
+              <p
+                class="project-description"
+                data-i18n-key={project.descriptionKey}
+                data-i18n-linkify
+                set:html={linkifyUrls(t(project.descriptionKey))}
+              />
             )}
             <div class="project-technologies">
               {project.technologies.map((tech) => (
@@ -75,38 +131,39 @@ function projectTitle(p: ProjectDef): { text: string; key?: string } {
                   {t('projects.links.github')}
                 </a>
               )}
-              {
-                (() => {
-                  const demoKey = project.status === 'contributing' ? 'projects.links.viewProject' : 'projects.links.demo';
-                  const demoLabel = t(demoKey);
-                  return (
-                    <>
-                      {project.link && (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="project-link demo-link"
-                          data-i18n-key={demoKey}
-                        >
-                          {demoLabel}
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="project-link demo-link"
-                          data-i18n-key={demoKey}
-                        >
-                          {demoLabel}
-                        </a>
-                      )}
-                    </>
-                  );
-                })()
-              }
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link demo-link"
+                  data-i18n-key="projects.links.website"
+                >
+                  {t('projects.links.website')}
+                </a>
+              )}
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link demo-link"
+                  data-i18n-key={demoKey}
+                >
+                  {demoLabel}
+                </a>
+              )}
+              {project.store && (
+                <a
+                  href={project.store}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link store-link"
+                  data-i18n-key="projects.links.playStore"
+                >
+                  {t('projects.links.playStore')}
+                </a>
+              )}
             </div>
           </div>
         );
@@ -123,3 +180,36 @@ function projectTitle(p: ProjectDef): { text: string; key?: string } {
     )
   }
 </Section>
+
+{
+  showFilters && (
+    <script>
+      function initProjectCategoryFilters() {
+        const root = document.getElementById('projects');
+        if (!root || root.dataset.categoryFiltersBound === '1') return;
+
+        const buttons = root.querySelectorAll<HTMLButtonElement>('[data-category-filter]');
+        const cards = root.querySelectorAll<HTMLElement>('.project-card[data-category]');
+        if (!buttons.length || !cards.length) return;
+
+        root.dataset.categoryFiltersBound = '1';
+        root.addEventListener('click', (event) => {
+          const target = event.target;
+          if (!(target instanceof Element)) return;
+          const button = target.closest<HTMLButtonElement>('[data-category-filter]');
+          if (!button || !root.contains(button)) return;
+
+          const filter = button.dataset.categoryFilter ?? 'all';
+          buttons.forEach((item) => item.classList.toggle('is-active', item === button));
+          cards.forEach((card) => {
+            const matches = filter === 'all' || card.dataset.category === filter;
+            card.hidden = !matches;
+          });
+        });
+      }
+
+      initProjectCategoryFilters();
+      document.addEventListener('astro:page-load', initProjectCategoryFilters);
+    </script>
+  )
+}

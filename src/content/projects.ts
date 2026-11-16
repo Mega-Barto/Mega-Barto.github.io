@@ -1,4 +1,4 @@
-import type { ProjectDef, ProjectStatus } from './types';
+import type { ProjectCategory, ProjectDef, ProjectStatus } from './types';
 
 export const PROJECT_DEFS: ProjectDef[] = [
   {
@@ -8,6 +8,7 @@ export const PROJECT_DEFS: ProjectDef[] = [
     technologies: ['Astro', 'TypeScript', 'Bun', 'CSS'],
     github: 'https://github.com/Mega-Barto/Mega-Barto.github.io',
     status: 'in-progress',
+    category: 'personal',
   },
   {
     id: '2',
@@ -16,6 +17,7 @@ export const PROJECT_DEFS: ProjectDef[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Electron'],
     github: 'https://github.com/Mega-Barto/PR-Extractor',
     status: 'completed',
+    category: 'personal',
   },
   {
     id: '5',
@@ -25,14 +27,7 @@ export const PROJECT_DEFS: ProjectDef[] = [
     github: 'https://github.com/Mega-Barto/legendary-pokemon-api',
     demo: 'https://megabarto.pythonanywhere.com/',
     status: 'completed',
-  },
-  {
-    id: '6',
-    titleLiteral: 'Chess games API',
-    descriptionKey: 'projects.chess_api.description',
-    technologies: ['Python', 'Django'],
-    status: 'completed',
-    github: 'https://github.com/Mega-Barto/Chess-Games-Api',
+    category: 'personal',
   },
   {
     id: '7',
@@ -42,13 +37,27 @@ export const PROJECT_DEFS: ProjectDef[] = [
     status: 'contributing',
     github: 'https://github.com/pereira-tech-talks/pereiratechtalks.com',
     demo: 'https://pereiratechtalks.org/',
+    category: 'personal',
   },
   {
-    id: '3',
-    titleKey: 'projects.project2.title',
-    descriptionKey: 'projects.project2.description',
-    technologies: ['Next.JS', 'MongoDB'],
-    status: 'planned',
+    id: '8',
+    titleKey: 'projects.sollte.title',
+    descriptionKey: 'projects.sollte.description',
+    technologies: ['Flutter', 'Firebase', 'Dart'],
+    demo: 'https://play.google.com/store/apps/details?id=co.com.sollte&hl=es_CO',
+    demoLabelKey: 'projects.links.viewProject',
+    status: 'completed',
+    category: 'professional',
+  },
+  {
+    id: '9',
+    titleKey: 'projects.qaconf-co.title',
+    descriptionKey: 'projects.qaconf-co.description',
+    technologies: ['Nuxt', 'Supabase', 'Cloudflare Workers'],
+    demo: 'https://www.qaconf.co',
+    demoLabelKey: 'projects.links.viewProject',
+    status: 'in-progress',
+    category: 'professional',
   },
 ];
 
@@ -78,3 +87,5 @@ const STATUS_PRIORITY: Record<ProjectStatus, number> = {
 export function sortProjectsByRelevance(defs: ProjectDef[]): ProjectDef[] {
   return [...defs].sort((a, b) => STATUS_PRIORITY[a.status] - STATUS_PRIORITY[b.status]);
 }
+
+export const PROJECT_CATEGORIES: ProjectCategory[] = ['professional', 'personal'];
