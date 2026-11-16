@@ -72,7 +72,8 @@
         "heading": "Questions",
         "body": "For questions about this notice or your data, email me at"
       },
-      "updated": "Last updated: March 2026."
+      "updatedLabel": "Last updated:",
+      "updatedDate": "November 2026"
     }
   },
   "home": {

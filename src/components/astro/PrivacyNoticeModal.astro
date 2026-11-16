@@ -1,95 +1,84 @@
 ---
-import '../Footer/PrivacyModal.css';
+import { PRIVACY_NOTICE_UPDATED_ISO } from '../../config/privacyNotice';
 import { t } from '../../i18n/t';
 
-const dialogId = 'privacy-notice-dialog';
+const overlayId = 'privacy-modal-overlay';
 const openBtnId = 'privacy-notice-open';
 const closeBtnId = 'privacy-notice-close';
 const titleId = 'privacy-notice-title';
 ---
 
-<dialog class="privacy-dialog" id={dialogId} aria-labelledby={titleId}>
-  <header class="privacy-dialog__header">
-    <h2 class="privacy-dialog__title" id={titleId} data-i18n-key="footer.privacyModal.title">
-      {t('footer.privacyModal.title')}
-    </h2>
-    <button
-      type="button"
-      class="privacy-dialog__close"
-      id={closeBtnId}
-      data-i18n-key="footer.privacyModal.close"
-      data-i18n-attr="aria-label"
-      aria-label={t('footer.privacyModal.close')}
-    >
-      <span aria-hidden="true">×</span>
-    </button>
-  </header>
-  <div class="privacy-dialog__body">
-    <p data-i18n-key="footer.privacyModal.intro">{t('footer.privacyModal.intro')}</p>
-    <h3 data-i18n-key="footer.privacyModal.analytics.heading">
-      {t('footer.privacyModal.analytics.heading')}
-    </h3>
-    <p data-i18n-key="footer.privacyModal.analytics.body" data-i18n-linkify>
-      {t('footer.privacyModal.analytics.body')}
-    </p>
-    <h3 data-i18n-key="footer.privacyModal.cookies.heading">
-      {t('footer.privacyModal.cookies.heading')}
-    </h3>
-    <p data-i18n-key="footer.privacyModal.cookies.body">{t('footer.privacyModal.cookies.body')}</p>
-    <h3 data-i18n-key="footer.privacyModal.contact.heading">
-      {t('footer.privacyModal.contact.heading')}
-    </h3>
-    <p>
-      <span data-i18n-key="footer.privacyModal.contact.body">{t('footer.privacyModal.contact.body')}</span>
-      {' '}
-      <a href="mailto:personal.jperez@gmail.com">personal.jperez@gmail.com</a>.
-    </p>
-    <p class="privacy-dialog__updated" data-i18n-key="footer.privacyModal.updated">
-      {t('footer.privacyModal.updated')}
-    </p>
+<div class="site-modal-overlay" id={overlayId}>
+  <div
+    class="site-modal"
+    id="privacy-modal-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby={titleId}
+  >
+    <header class="site-modal__header">
+      <h2 class="site-modal__title" id={titleId} data-i18n-key="footer.privacyModal.title">
+        {t('footer.privacyModal.title')}
+      </h2>
+      <button
+        type="button"
+        class="site-modal__close"
+        id={closeBtnId}
+        data-i18n-key="footer.privacyModal.close"
+        data-i18n-attr="aria-label"
+        aria-label={t('footer.privacyModal.close')}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+    <div class="site-modal__body site-modal__body--prose">
+      <p data-i18n-key="footer.privacyModal.intro">{t('footer.privacyModal.intro')}</p>
+      <h3 data-i18n-key="footer.privacyModal.analytics.heading">
+        {t('footer.privacyModal.analytics.heading')}
+      </h3>
+      <p data-i18n-key="footer.privacyModal.analytics.body" data-i18n-linkify>
+        {t('footer.privacyModal.analytics.body')}
+      </p>
+      <h3 data-i18n-key="footer.privacyModal.cookies.heading">
+        {t('footer.privacyModal.cookies.heading')}
+      </h3>
+      <p data-i18n-key="footer.privacyModal.cookies.body">{t('footer.privacyModal.cookies.body')}</p>
+      <h3 data-i18n-key="footer.privacyModal.contact.heading">
+        {t('footer.privacyModal.contact.heading')}
+      </h3>
+      <p>
+        <span data-i18n-key="footer.privacyModal.contact.body">{t('footer.privacyModal.contact.body')}</span>
+        {' '}
+        <a href="mailto:personal.jperez@gmail.com">personal.jperez@gmail.com</a>.
+      </p>
+      <p class="site-modal__updated">
+        <span data-i18n-key="footer.privacyModal.updatedLabel">{t('footer.privacyModal.updatedLabel')}</span>
+        {' '}
+        <time datetime={PRIVACY_NOTICE_UPDATED_ISO} data-i18n-key="footer.privacyModal.updatedDate">
+          {t('footer.privacyModal.updatedDate')}
+        </time>.
+      </p>
+    </div>
   </div>
-</dialog>
+</div>
 
-<script define:vars={{ dialogId, openBtnId, closeBtnId }}>
-  const dialog = document.getElementById(dialogId);
-  const openBtn = document.getElementById(openBtnId);
-  const closeBtn = document.getElementById(closeBtnId);
+<script>
+  import { bindSiteModalOpen, initSiteModal } from '../../scripts/site-modal.ts';
 
-  if (dialog instanceof HTMLDialogElement && openBtn instanceof HTMLElement) {
-    let returnFocus = null;
-
-    const openDialog = () => {
-      returnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-      if (!dialog.open) dialog.showModal();
-    };
-
-    openBtn.addEventListener('click', openDialog);
-    openBtn.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openDialog();
-      }
+  function initPrivacyNoticeModal() {
+    initSiteModal({
+      overlayId: 'privacy-modal-overlay',
+      closeButtonId: 'privacy-notice-close',
+      boundAttr: 'privacyModalBound',
     });
-
-    const closeDialog = () => {
-      if (dialog.open) dialog.close();
-    };
-
-    closeBtn?.addEventListener('click', closeDialog);
-
-    dialog.addEventListener('click', (event) => {
-      const rect = dialog.getBoundingClientRect();
-      const inDialog =
-        event.clientX >= rect.left &&
-        event.clientX <= rect.right &&
-        event.clientY >= rect.top &&
-        event.clientY <= rect.bottom;
-      if (!inDialog) closeDialog();
-    });
-
-    dialog.addEventListener('close', () => {
-      returnFocus?.focus();
-      returnFocus = null;
+    bindSiteModalOpen('privacy-notice-open', 'privacy-modal-overlay', {
+      boundAttr: 'privacyModalOpenBound',
     });
   }
+
+  initPrivacyNoticeModal();
+  document.addEventListener('astro:page-load', initPrivacyNoticeModal);
 </script>
