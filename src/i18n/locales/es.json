@@ -94,14 +94,6 @@
       "title": "Portafolio Personal",
       "description": "Mi portafolio personal como ingeniero en sistemas; muestra mis proyectos y experiencia. Desarrollado con Astro, TypeScript y despliegue en GitHub Pages."
     },
-    "project2": {
-      "title": "Aplicación Web",
-      "description": "Una aplicación web full-stack con autenticación de usuarios, características en tiempo real y arquitectura moderna."
-    },
-    "project3": {
-      "title": "Servicio API",
-      "description": "Un servicio REST API robusto con documentación completa y arquitectura escalable."
-    },
     "pr-extractor": {
       "title": "PR Extractor",
       "description": "Aplicación de escritorio construida con Electron para extraer Pull Requests de GitHub y generar cuentas de cobro profesionales en formato PDF."
@@ -109,11 +101,12 @@
     "legendary_pokedex_api": {
       "description": "Una API REST de Flask lista para producción para gestionar datos de Pokémon legendarios y míticos."
     },
-    "chess_api": {
-      "description": "Una API REST (primer acercamiento a Django Rest Framework) que permite almacenar información detallada sobre partidas de ajedrez, incluyendo jugadores con su respectivo ELO y color en la partida, jugadas, lugar y fecha de la competición."
-    },
     "pereiratechtalks-org": {
       "description": "Sitio web de Pereira Tech Talks; contribuciones en diseño, mejoras, mantenimiento y despliegue."
+    },
+    "qaconf-co": {
+      "title": "qaconf.co",
+      "description": "Página web oficial de QAConf; Incluye un CMS hecho a medida para gestionar el contenido de manera sencilla y eficiente. Incluye vistas para eventos, ponentes, staff, sponsors y una sección para autores de artículos del blog, entre otras funcionalidades."
     },
     "status": {
       "completed": "Completado",
@@ -124,12 +117,25 @@
     "links": {
       "github": "Ver Código",
       "demo": "Demo en Vivo",
-      "viewProject": "Ver proyecto"
+      "viewProject": "Ver proyecto",
+      "website": "Sitio web",
+      "playStore": "Google Play"
     },
     "filter": {
       "status": "Estado",
       "technology": "Tecnología",
-      "all": "Todos"
+      "all": "Todos",
+      "category": "Tipo",
+      "professional": "Profesionales",
+      "personal": "Personales"
+    },
+    "sollte": {
+      "title": "Sollte",
+      "description": "App móvil de uso exclusivo para los usuarios de Sollte Fitness and Wellness. Desarrollada en Flutter: WOD del día y la semana, perfil, RMs, calculadora de porcentajes, reservas, alianzas y notificaciones. Disponible en Google Play."
+    },
+    "category": {
+      "professional": "Profesionales",
+      "personal": "Personales"
     }
   },
   "carousel": {

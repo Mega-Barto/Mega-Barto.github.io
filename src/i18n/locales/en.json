@@ -95,14 +95,6 @@
       "title": "Personal Portfolio",
       "description": "My personal portfolio as a systems engineer; it showcases my projects and experience. Built with Astro and TypeScript, and deployed on GitHub Pages."
     },
-    "project2": {
-      "title": "Web Application",
-      "description": "A full-stack web application with user authentication, real-time features, and modern architecture."
-    },
-    "project3": {
-      "title": "API Service",
-      "description": "A robust REST API service with comprehensive documentation and scalable architecture."
-    },
     "pr-extractor": {
       "title": "PR Extractor",
       "description": "Desktop application built with Electron to extract Pull Requests from GitHub and generate professional billing statements in PDF format."
@@ -110,11 +102,20 @@
     "legendary_pokedex_api": {
       "description": "A production-ready Flask REST API for managing legendary and mythical Pokémon data."
     },
-    "chess_api": {
-      "description": "A REST API (first approach to Django Rest Framework) that allows storing detailed information about chess games, including players with their respective ELO and color in the game, moves, location, and date of the competition."
-    },
     "pereiratechtalks-org": {
       "description": "Website for Pereira Tech Talks — contributions include design, improvements, maintenance and deployment."
+    },
+    "qaconf-co": {
+      "title": "qaconf.co",
+      "description": "Official QAConf website; includes a custom CMS to manage content simply and efficiently. Features views for events, speakers, staff, sponsors, and a section for blog article authors, among other capabilities."
+    },
+    "sollte": {
+      "title": "Sollte",
+      "description": "Mobile app for exclusive use by Sollte Fitness and Wellness members. Built with Flutter: daily and weekly WODs, profile, RMs, percentage calculator, class bookings, partner venues, and notifications. Available on Google Play."
+    },
+    "category": {
+      "professional": "Professional",
+      "personal": "Personal"
     },
     "status": {
       "completed": "Completed",
@@ -125,12 +126,17 @@
     "links": {
       "github": "View Code",
       "demo": "Live Demo",
-      "viewProject": "View project"
+      "viewProject": "View project",
+      "playStore": "Google Play",
+      "website": "Website"
     },
     "filter": {
       "status": "Status",
       "technology": "Technology",
-      "all": "All"
+      "category": "Type",
+      "all": "All",
+      "professional": "Professional",
+      "personal": "Personal"
     }
   },
   "carousel": {
