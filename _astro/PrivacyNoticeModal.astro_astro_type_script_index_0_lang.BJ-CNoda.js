@@ -1,0 +1,1 @@
+import{i as a,b as i}from"./site-modal._mQ3GlBi.js";function o(){a({overlayId:"privacy-modal-overlay",closeButtonId:"privacy-notice-close",boundAttr:"privacyModalBound"}),i("privacy-notice-open","privacy-modal-overlay",{boundAttr:"privacyModalOpenBound"})}o();document.addEventListener("astro:page-load",o);
