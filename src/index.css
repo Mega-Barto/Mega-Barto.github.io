@@ -40,6 +40,10 @@
   --color-background-autobiography: #e8e8e8;
   --color-background-projects: #2a2a2a;
 
+  /* Modals (privacy dialog + work overlay) */
+  --modal-backdrop-color: rgba(0, 0, 0, 0.42);
+  --modal-backdrop-blur: 6px;
+
   /* Texto */
   --color-text-primary: #2a2a2a;
   --color-text-secondary: #808080;
