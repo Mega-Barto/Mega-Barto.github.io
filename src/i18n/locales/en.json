@@ -55,6 +55,24 @@
       "privacy": "Privacy",
       "terms": "Terms",
       "cookies": "Cookies"
+    },
+    "privacyModal": {
+      "title": "Privacy notice",
+      "close": "Close privacy notice",
+      "intro": "This site (megabarto.com) is a personal portfolio operated by Bartland Labs. Information you share when contacting me by email or social media is separate from the anonymous analytics described below.",
+      "analytics": {
+        "heading": "Web analytics",
+        "body": "I use Umami (Umami Cloud) to understand visits in aggregate: page views, referrer, device, and approximate browser. I do not use the data for ads or sell it. Learn more: https://umami.is/docs/privacy"
+      },
+      "cookies": {
+        "heading": "Cookies and local storage",
+        "body": "Analytics does not use marketing tracking cookies. The site may store your language preference in the browser’s local storage. We honor the browser’s Do Not Track signal for analytics."
+      },
+      "contact": {
+        "heading": "Questions",
+        "body": "For questions about this notice or your data, email me at"
+      },
+      "updated": "Last updated: March 2026."
     }
   },
   "home": {

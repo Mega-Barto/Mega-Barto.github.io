@@ -54,6 +54,24 @@
       "privacy": "Privacidad",
       "terms": "Términos",
       "cookies": "Cookies"
+    },
+    "privacyModal": {
+      "title": "Aviso de privacidad",
+      "close": "Cerrar aviso de privacidad",
+      "intro": "Este sitio (megabarto.com) es un portafolio personal operado por Bartland Labs. La información que compartes al contactarme por correo o redes es distinta de la analítica anónima descrita abajo.",
+      "analytics": {
+        "heading": "Analítica web",
+        "body": "Uso Umami (Umami Cloud) para entender visitas de forma agregada: páginas vistas, referrer, dispositivo y navegador aproximado. No uso los datos para publicidad ni los vendo. Más información: https://umami.is/docs/privacy"
+      },
+      "cookies": {
+        "heading": "Cookies y almacenamiento local",
+        "body": "La analítica no usa cookies de seguimiento de marketing. El sitio puede guardar tu preferencia de idioma en el almacenamiento local del navegador. Respetamos la señal «Do Not Track» del navegador para la analítica."
+      },
+      "contact": {
+        "heading": "Consultas",
+        "body": "Para preguntas sobre este aviso o tus datos, escríbeme a"
+      },
+      "updated": "Última actualización: marzo de 2026."
     }
   },
   "home": {

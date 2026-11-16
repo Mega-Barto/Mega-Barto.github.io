@@ -1,0 +1,104 @@
+.privacy-dialog {
+  margin: auto;
+  padding: 0;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 20px;
+  max-width: 36rem;
+  width: calc(100% - 2rem);
+  max-height: min(85vh, 32rem);
+  background: linear-gradient(180deg, rgba(42, 42, 42, 0.98) 0%, rgba(26, 26, 26, 0.98) 100%);
+  color: var(--color-text-inverse);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.privacy-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.privacy-dialog__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.privacy-dialog__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.privacy-dialog__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-inverse);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.privacy-dialog__close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.privacy-dialog__close:focus-visible {
+  outline: 2px solid var(--color-status-info);
+  outline-offset: 2px;
+}
+
+.privacy-dialog__body {
+  margin: 0;
+  padding: 1.25rem 1.5rem 1.5rem;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-primary-300);
+}
+
+.privacy-dialog__body h3 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-inverse);
+}
+
+.privacy-dialog__body h3:first-child {
+  margin-top: 0;
+}
+
+.privacy-dialog__body p {
+  margin: 0 0 0.75rem;
+}
+
+.privacy-dialog__body p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-dialog__body a {
+  color: var(--color-accent-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.privacy-dialog__body a:hover {
+  color: var(--color-status-info);
+}
+
+.privacy-dialog__updated {
+  margin-top: 1rem !important;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
